@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Albion Faeries - current online architecture</title>
+  <desc id="desc">Domain at DreamHost, WordPress website on DigitalOcean, email at MXRouting, as of mid-2026.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5346"/>
+    </marker>
+    <style type="text/css"><![CDATA[
+      .bg { fill: #f7f3eb; }
+      .frame { fill: #fffdf8; stroke: #c9bfae; stroke-width: 1.5; }
+      .title { font-family: Georgia, 'Times New Roman', serif; font-size: 22px; fill: #2f2a24; }
+      .subtitle { font-family: Georgia, 'Times New Roman', serif; font-size: 13px; fill: #6a6258; }
+      .label { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; fill: #2f2a24; font-weight: 700; }
+      .body { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 12px; fill: #4a433a; }
+      .small { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; fill: #6a6258; }
+      .mono { font-family: Consolas, 'Courier New', monospace; font-size: 12px; fill: #2f2a24; }
+      .edge { stroke: #5c5346; stroke-width: 1.75; fill: none; marker-end: url(#arrow); }
+      .edge-soft { stroke: #8a8072; stroke-width: 1.25; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrow); }
+      .chip { fill: #e8dfd0; stroke: #c9bfae; stroke-width: 1; }
+      .chip-text { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; fill: #3d372f; }
+      .domain { fill: #dfe8d8; stroke: #8fa57a; stroke-width: 1.75; }
+      .web { fill: #dde7ef; stroke: #7a97ad; stroke-width: 1.75; }
+      .mail { fill: #efe2d6; stroke: #b89272; stroke-width: 1.75; }
+      .users { fill: #f0e6f0; stroke: #a888a8; stroke-width: 1.75; }
+      .footer { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; fill: #7a7268; }
+    ]]></style>
+  </defs>
+
+  <rect class="bg" width="960" height="640" rx="12"/>
+
+  <text class="title" x="40" y="42">Albion Faeries - current online architecture</text>
+  <text class="subtitle" x="40" y="64">From Sparkling Water report, 29 June 2026 - interim after Faenet handover (1 July 2026)</text>
+
+  <rect class="users" x="40" y="100" width="180" height="100" rx="10"/>
+  <text class="label" x="56" y="128">People / Circles</text>
+  <text class="body" x="56" y="150">Browsers and mail clients</text>
+  <text class="small" x="56" y="170">Public site - mailbox users</text>
+  <text class="small" x="56" y="186">info@, gatherings@, etc.</text>
+
+  <rect class="domain" x="300" y="90" width="360" height="120" rx="10"/>
+  <text class="label" x="316" y="118">1. Domain and DNS</text>
+  <text class="mono" x="316" y="142">albionfaeries.org.uk</text>
+  <text class="body" x="316" y="164">Registered / held at DreamHost</text>
+  <text class="small" x="316" y="184">Account: Walnut - Registrant: Blossom</text>
+  <text class="small" x="316" y="200">Paid / secure until Feb 2027</text>
+
+  <rect class="web" x="140" y="300" width="300" height="160" rx="10"/>
+  <text class="label" x="156" y="328">2. Website</text>
+  <text class="body" x="156" y="350">WordPress on DigitalOcean droplet</text>
+  <text class="small" x="156" y="372">Was Stardust - handed to Sparkling Water</text>
+  <text class="small" x="156" y="390">About US$20-30 / month (interim)</text>
+  <text class="small" x="156" y="408">Faenet paid June; Albion pays after</text>
+  <text class="small" x="156" y="426">Deadline to choose new host: ~31 Jan 2027</text>
+  <text class="small" x="156" y="444">Public site: albionfaeries.org.uk</text>
+
+  <rect class="mail" x="520" y="300" width="300" height="160" rx="10"/>
+  <text class="label" x="536" y="328">3. Email</text>
+  <text class="body" x="536" y="350">Hosted at MXRouting</text>
+  <text class="small" x="536" y="372">Managed by Sparkling Water</text>
+  <text class="small" x="536" y="390">Paid until 1 Jan 2027</text>
+  <text class="small" x="536" y="408">13+ @albionfaeries.org.uk mailboxes</text>
+  <text class="small" x="536" y="426">Circle agreed leave here for now</text>
+  <text class="small" x="536" y="444">Move with hosting when Comms ready</text>
+
+  <path class="edge" d="M 220 150 H 300"/>
+  <path class="edge" d="M 390 210 V 300"/>
+  <path class="edge" d="M 560 210 V 300"/>
+  <path class="edge-soft" d="M 130 200 V 300"/>
+
+  <rect class="chip" x="232" y="132" width="56" height="20" rx="6"/>
+  <text class="chip-text" x="242" y="146">looks up</text>
+
+  <rect class="chip" x="318" y="236" width="72" height="20" rx="6"/>
+  <text class="chip-text" x="330" y="250">A / web</text>
+
+  <rect class="chip" x="568" y="236" width="72" height="20" rx="6"/>
+  <text class="chip-text" x="580" y="250">MX mail</text>
+
+  <rect class="chip" x="48" y="236" width="100" height="20" rx="6"/>
+  <text class="chip-text" x="58" y="250">reads site</text>
+
+  <rect class="frame" x="40" y="500" width="880" height="100" rx="10"/>
+  <text class="label" x="56" y="528">Notes</text>
+  <text class="body" x="56" y="550">Three separate providers today - domain (DreamHost), site (DigitalOcean), mail (MXRouting).</text>
+  <text class="body" x="56" y="570">Comms preference from the report: one hosting account for domain + email + website, with a small continuity team.</text>
+  <text class="body" x="56" y="590">Also in the wild: older contact faerieuk@gmail.com on the About page (outside this stack).</text>
+
+  <text class="footer" x="40" y="624">Draft for Comms Circle - current-state only - not a target architecture</text>
+</svg>

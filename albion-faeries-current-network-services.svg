@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Albion Faeries - current network and services diagram</title>
+  <desc id="desc">Core albionfaeries.org.uk stack plus ad-hoc Notion, Proton, Signal, Gmail and forms.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a433a"/>
+    </marker>
+    <style type="text/css"><![CDATA[
+      .bg { fill: #f4f0e8; }
+      .panel { fill: #fffdf8; stroke: #cfc4b2; stroke-width: 1.5; }
+      .title { font-family: Georgia, 'Times New Roman', serif; font-size: 22px; fill: #2a2620; }
+      .subtitle { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 12px; fill: #6a6258; }
+      .h { font-family: Georgia, 'Times New Roman', serif; font-size: 14px; fill: #2a2620; font-weight: 700; }
+      .t { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 12px; fill: #4a433a; }
+      .s { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; fill: #6a6258; }
+      .mono { font-family: Consolas, 'Courier New', monospace; font-size: 11px; fill: #2a2620; }
+      .proto { font-family: Consolas, 'Courier New', monospace; font-size: 10px; fill: #5a5248; }
+      .edge-dns { stroke: #5f7a4a; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .edge-web { stroke: #3f6f8f; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .edge-mail { stroke: #9a6b45; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .edge-adhoc { stroke: #6b5b8c; stroke-width: 1.6; fill: none; marker-end: url(#arrow); stroke-dasharray: 5 4; }
+      .client { fill: #efe6f2; stroke: #9a7fa0; stroke-width: 1.6; }
+      .dns { fill: #e4eedc; stroke: #7f9a68; stroke-width: 1.6; }
+      .web { fill: #dde8f1; stroke: #6e91ab; stroke-width: 1.6; }
+      .mail { fill: #f0e2d6; stroke: #b08968; stroke-width: 1.6; }
+      .notion { fill: #e8e2f2; stroke: #8a7aa8; stroke-width: 1.6; }
+      .proton { fill: #e6f0ec; stroke: #6f9a88; stroke-width: 1.6; }
+      .signal { fill: #dceee8; stroke: #5f9a88; stroke-width: 1.6; }
+      .forms { fill: #f3e9e4; stroke: #b08978; stroke-width: 1.6; }
+      .gmail { fill: #f3e8e8; stroke: #b08080; stroke-width: 1.6; }
+      .cloud { fill: none; stroke: #b7ad9d; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .zone { fill: none; stroke: #b08080; stroke-width: 1.5; stroke-dasharray: 7 5; }
+      .pill { fill: #ebe4d8; stroke: #cfc4b2; stroke-width: 1; }
+      .pillt { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 10px; fill: #3f3930; }
+      .foot { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 10px; fill: #7a7268; }
+    ]]></style>
+  </defs>
+
+  <rect class="bg" width="1100" height="720" rx="10"/>
+
+  <text class="title" x="36" y="36">Albion Faeries - current network / services</text>
+  <text class="subtitle" x="36" y="56">Core AF stack (DreamHost + DigitalOcean + MXroute) plus ad-hoc Notion / Proton / Signal / Gmail / forms</text>
+
+  <!-- People -->
+  <rect class="cloud" x="28" y="88" width="190" height="190" rx="12"/>
+  <text class="h" x="44" y="112">Internet</text>
+
+  <rect class="client" x="46" y="128" width="154" height="58" rx="8"/>
+  <text class="h" x="58" y="148">Web visitors</text>
+  <text class="s" x="58" y="166">Site, events, forms</text>
+  <text class="proto" x="58" y="180">HTTPS</text>
+
+  <rect class="client" x="46" y="200" width="154" height="58" rx="8"/>
+  <text class="h" x="58" y="220">Mail users</text>
+  <text class="s" x="58" y="238">Apps / webmail / lists</text>
+  <text class="proto" x="58" y="252">IMAP/SMTP</text>
+
+  <!-- Core DNS -->
+  <rect class="dns" x="300" y="128" width="250" height="120" rx="10"/>
+  <text class="h" x="316" y="152">DreamHost (core)</text>
+  <text class="t" x="316" y="174">Domain + DNS</text>
+  <text class="mono" x="316" y="196">albionfaeries.org.uk</text>
+  <text class="s" x="316" y="216">Walnut / Blossom | to Feb 2027</text>
+  <text class="proto" x="316" y="234">A / MX for AF domain</text>
+
+  <!-- Also linked -->
+  <rect class="panel" x="600" y="128" width="470" height="120" rx="10"/>
+  <text class="h" x="616" y="152">Also linked from site / practice</text>
+  <text class="s" x="616" y="174">Mailchimp subscribe (Connect page)</text>
+  <text class="s" x="616" y="192">Facebook / Faenet / Slack links</text>
+  <text class="s" x="616" y="210">newsletter@lists.albionfaeries.org.uk</text>
+  <text class="s" x="616" y="228">Polls often used in Signal to decide Circle times</text>
+
+  <!-- Core services -->
+  <rect class="web" x="40" y="360" width="240" height="140" rx="10"/>
+  <text class="h" x="56" y="384">DigitalOcean (core)</text>
+  <text class="t" x="56" y="406">WordPress website</text>
+  <text class="s" x="56" y="426">Sparkling Water (from Stardust)</text>
+  <text class="s" x="56" y="444">~US$20-30 / month interim</text>
+  <text class="proto" x="56" y="464">https://albionfaeries.org.uk/</text>
+  <text class="s" x="56" y="482">Public pages / about / connect</text>
+
+  <rect class="mail" x="310" y="360" width="250" height="140" rx="10"/>
+  <text class="h" x="326" y="384">MXroute (core email)</text>
+  <text class="t" x="326" y="406">@albionfaeries.org.uk boxes</text>
+  <text class="s" x="326" y="426">Sparkling Water | paid to Jan 2027</text>
+  <text class="s" x="326" y="444">13+ boxes (info@, gatherings@...)</text>
+  <text class="s" x="326" y="462">Also: newsletter@lists...</text>
+  <text class="s" x="326" y="480">DNS control needed for bounce fixes</text>
+
+  <!-- Ad-hoc zone -->
+  <rect class="zone" x="600" y="280" width="470" height="380" rx="12"/>
+  <text class="h" x="616" y="304">Ad-hoc / personal setups (not core AF stack)</text>
+  <text class="s" x="616" y="322">Outside DreamHost DNS - owned by whoever set them up</text>
+
+  <rect class="notion" x="620" y="338" width="430" height="70" rx="8"/>
+  <text class="h" x="636" y="360">Notion</text>
+  <text class="s" x="636" y="380">Event mini-sites</text>
+  <text class="s" x="636" y="396">Different accounts / people each gathering</text>
+
+  <rect class="proton" x="620" y="420" width="430" height="70" rx="8"/>
+  <text class="h" x="636" y="442">Proton</text>
+  <text class="s" x="636" y="462">Gathering / event mailboxes</text>
+  <text class="s" x="636" y="478">Various accounts / owners</text>
+
+  <rect class="signal" x="620" y="502" width="430" height="70" rx="8"/>
+  <text class="h" x="636" y="524">Signal</text>
+  <text class="s" x="636" y="544">Circles | Events | General Albion Fae</text>
+  <text class="s" x="636" y="560">Primary organising and social groups</text>
+
+  <rect class="forms" x="620" y="584" width="205" height="60" rx="8"/>
+  <text class="h" x="636" y="606">Fillout forms</text>
+  <text class="s" x="636" y="624">e.g. vehicle form (Lugh)</text>
+
+  <rect class="gmail" x="845" y="584" width="205" height="60" rx="8"/>
+  <text class="h" x="861" y="606">Gmail (legacy / ops)</text>
+  <text class="s" x="861" y="624">faerieuk@ / albionfaeries@</text>
+
+  <!-- Paths: non-crossing -->
+  <path class="edge-dns" d="M 200 158 H 300"/>
+  <rect class="pill" x="230" y="140" width="40" height="16" rx="4"/>
+  <text class="pillt" x="238" y="152">DNS</text>
+
+  <path class="edge-dns" d="M 200 230 H 260 V 200 H 300"/>
+
+  <path class="edge-web" d="M 380 248 V 300 H 160 V 360"/>
+  <rect class="pill" x="170" y="282" width="48" height="16" rx="4"/>
+  <text class="pillt" x="178" y="294">A/web</text>
+
+  <path class="edge-mail" d="M 500 248 V 360"/>
+  <rect class="pill" x="512" y="290" width="40" height="16" rx="4"/>
+  <text class="pillt" x="520" y="302">MX</text>
+
+  <path class="edge-web" d="M 36 158 V 430 H 40"/>
+  <rect class="pill" x="4" y="280" width="40" height="16" rx="4"/>
+  <text class="pillt" x="8" y="292">HTTPS</text>
+
+  <path class="edge-mail" d="M 123 258 V 320 H 435 V 360"/>
+  <rect class="pill" x="250" y="302" width="64" height="16" rx="4"/>
+  <text class="pillt" x="258" y="314">IMAP/SMTP</text>
+
+  <!-- Ad-hoc: top then far right, clears upper panels -->
+  <path class="edge-adhoc" d="M 123 128 V 72 H 1085 V 470 H 1070"/>
+  <rect class="pill" x="760" y="54" width="150" height="16" rx="4"/>
+  <text class="pillt" x="770" y="66">Ad-hoc tools (no AF DNS)</text>
+
+  <text class="foot" x="36" y="700">Draft for Comms  |  logical architecture  |  inventory still growing as setups surface</text>
+</svg>

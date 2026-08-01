@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Site Structure Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--mist), var(--surface));
+    }
+
+    a { color: var(--fern); }
+    a:hover { color: var(--foxglove-deep); }
+
+    .wrap {
+      width: min(100% - 2 * var(--gutter), var(--page));
+      margin-inline: auto;
+      padding-block: 2.5rem 5rem;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2.25rem;
+    }
+
+    .topnav .brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--deep-fern);
+      text-decoration: none;
+    }
+
+    .topnav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.1rem;
+      font-size: var(--fs-small);
+      font-weight: 600;
+    }
+
+    .topnav nav a {
+      text-decoration: none;
+      color: var(--bark);
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.1rem;
+    }
+
+    .topnav nav a[aria-current="page"],
+    .topnav nav a:hover {
+      color: var(--foxglove-deep);
+      border-color: var(--foxglove);
+    }
+
+    .label {
+      font-size: var(--fs-label);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fern);
+      margin: 0 0 0.75rem;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      letter-spacing: -0.03em;
+      color: var(--deep-fern);
+      font-weight: 600;
+      line-height: var(--lh-tight);
+    }
+
+    h1 {
+      font-size: var(--fs-h1);
+      max-width: 18ch;
+      margin: 0 0 0.85rem;
+    }
+
+    .lede {
+      max-width: 40rem;
+      color: var(--bark);
+      margin: 0 0 2.5rem;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .section { margin-block: 3rem; scroll-margin-top: 1rem; }
+    .section > h2 { font-size: var(--fs-h2); margin: 0 0 0.5rem; }
+    .section > .intro { max-width: 40rem; color: var(--bark); margin: 0 0 1.5rem; }
+
+    .map {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    .node {
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, white 88%, var(--dew));
+      padding: 1.1rem 1.2rem;
+    }
+
+    .node.primary {
+      background: var(--deep-fern);
+      color: var(--mist);
+      border-color: transparent;
+    }
+
+    .node.primary h3 { color: var(--mist); }
+    .node.primary p { color: color-mix(in srgb, var(--mist) 82%, transparent); }
+
+    .node.event {
+      background: color-mix(in srgb, var(--petal) 55%, white);
+      border-color: color-mix(in srgb, var(--foxglove) 35%, var(--stroke));
+    }
+
+    .node.later {
+      background: transparent;
+      border-style: dashed;
+    }
+
+    .node h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.15rem;
+    }
+
+    .node p {
+      margin: 0;
+      font-size: var(--fs-small);
+      color: var(--bark);
+    }
+
+    .node ul {
+      margin: 0.65rem 0 0;
+      padding-left: 1.05rem;
+      font-size: var(--fs-small);
+    }
+
+    .node li { margin: 0.25rem 0; }
+
+    .path {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+      margin: 1rem 0 0;
+      font-size: var(--fs-small);
+      color: var(--fern);
+      font-weight: 600;
+    }
+
+    .path span {
+      background: var(--dew);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-sm);
+      padding: 0.2rem 0.5rem;
+      color: var(--deep-fern);
+    }
+
+    .wire {
+      border: 1px solid var(--stroke-strong);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--surface-raised);
+      margin-bottom: 1.5rem;
+    }
+
+    .wire-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.65rem 0.9rem;
+      background: var(--dew);
+      border-bottom: 1px solid var(--stroke);
+      font-size: var(--fs-small);
+      font-weight: 700;
+      color: var(--deep-fern);
+    }
+
+    .wire-bar em {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--fern);
+    }
+
+    .wire-frame {
+      position: relative;
+      min-height: 22rem;
+    }
+
+    /* Home wireframe */
+    .home-hero {
+      min-height: 18rem;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--mist);
+      background:
+        linear-gradient(105deg, rgba(23, 53, 40, 0.72), rgba(154, 50, 96, 0.42)),
+        repeating-linear-gradient(120deg, rgba(255,255,255,0.05) 0 10px, transparent 10px 20px),
+        radial-gradient(circle at 70% 40%, #6a9472, #173528 60%);
+    }
+
+    .home-hero .brand-mark {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      margin: 0;
+      max-width: 10ch;
+    }
+
+    .home-hero .tag {
+      margin: 0.75rem 0 1.15rem;
+      max-width: 28rem;
+      font-size: 1.05rem;
+      opacity: 0.92;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+    .fake-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .fake-btn.primary { background: var(--foxglove); color: #fff; }
+    .fake-btn.ghost {
+      background: transparent;
+      color: var(--mist);
+      border: 1.5px solid rgba(247, 251, 248, 0.55);
+    }
+
+    .home-after {
+      display: grid;
+      gap: 0;
+    }
+
+    .band {
+      padding: 1.35rem clamp(1.1rem, 3vw, 2rem);
+      border-top: 1px solid var(--stroke);
+    }
+
+    .band h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.35rem;
+    }
+
+    .band p {
+      margin: 0;
+      max-width: 36rem;
+      color: var(--bark);
+      font-size: var(--fs-small);
+    }
+
+    .band.alt { background: color-mix(in srgb, var(--dew) 55%, white); }
+
+    .anno {
+      margin: 0.65rem 0 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--foxglove-deep);
+    }
+
+    .page-shell {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 20rem;
+    }
+
+    .page-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .page-nav strong {
+      font-family: var(--font-display);
+      color: var(--deep-fern);
+      font-size: 1.1rem;
+    }
+
+    .page-nav .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--fern);
+    }
+
+    .page-main { padding: 1.35rem 1.1rem 1.6rem; }
+    .page-main h3 { margin: 0 0 0.5rem; font-size: 1.7rem; }
+    .page-main p { margin: 0; color: var(--bark); max-width: 36rem; }
+
+    .list-blocks {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+    }
+
+    .list-item {
+      display: grid;
+      gap: 0.15rem;
+      padding: 0.85rem 0.95rem;
+      border-left: 3px solid var(--foxglove);
+      background: color-mix(in srgb, var(--mist) 70%, white);
+    }
+
+    .list-item strong {
+      font-family: var(--font-display);
+      color: var(--deep-fern);
+    }
+
+    .list-item span { font-size: var(--fs-small); color: var(--bark); }
+
+    .page-foot {
+      padding: 0.85rem 1.1rem;
+      background: var(--deep-fern);
+      color: color-mix(in srgb, var(--mist) 85%, transparent);
+      font-size: var(--fs-small);
+    }
+
+    .compare {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    .compare .box {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      padding: 1.1rem 1.2rem;
+    }
+
+    .compare .box h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+    .compare .box ul { margin: 0; padding-left: 1.05rem; font-size: var(--fs-small); }
+    .compare .from { background: #f3f1ef; }
+    .compare .to { background: color-mix(in srgb, var(--lichen) 30%, white); }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--stroke);
+      font-size: var(--fs-small);
+      color: var(--fern);
+      max-width: 42rem;
+    }
+
+    .two {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <nav aria-label="Design docs">
+        <a href="style-guide.html">Style guide</a>
+        <a href="site-structure.html" aria-current="page">Site structure</a>
+      </nav>
+    </header>
+
+    <p class="label">Information architecture · public hearth</p>
+    <h1>Site structure mockup</h1>
+    <p class="lede">
+      A slim public site Albion can actually keep warm - with room for event minisites under the same domain.
+      Circle archives and auth stay out of this first rebuild (per Digital Homecoming phases).
+    </p>
+
+    <section class="section" id="map">
+      <h2>Map of the public home</h2>
+      <p class="intro">Fewer top-level doors than the current WordPress tree. History and media nest under Who we are / Gatherings instead of competing in the nav.</p>
+
+      <div class="map">
+        <article class="node primary">
+          <h3>Home</h3>
+          <p>Brand hearth. One hero, one promise, two paths.</p>
+          <ul>
+            <li>Albion Faeries (hero mark)</li>
+            <li>Short promise line</li>
+            <li>CTAs: What's on / Get involved</li>
+          </ul>
+        </article>
+
+        <article class="node">
+          <h3>What's on</h3>
+          <p>Living list of near-term invitations.</p>
+          <ul>
+            <li>Upcoming gatherings</li>
+            <li>London full moons</li>
+            <li>Links into event minisites</li>
+          </ul>
+        </article>
+
+        <article class="node">
+          <h3>Gatherings</h3>
+          <p>What a gathering is, how to come, where we land.</p>
+          <ul>
+            <li>How gatherings work</li>
+            <li>Featherstone / Glastonbury / other</li>
+            <li>Previous gatherings (archive)</li>
+          </ul>
+        </article>
+
+        <article class="node">
+          <h3>Who we are</h3>
+          <p>Identity without a lecture.</p>
+          <ul>
+            <li>Albion Faeries today</li>
+            <li>Radical Faerie history</li>
+            <li>Ancestors / remembrance</li>
+            <li>Circles in brief</li>
+          </ul>
+        </article>
+
+        <article class="node">
+          <h3>Get involved</h3>
+          <p>The soft doorway.</p>
+          <ul>
+            <li>Come to a circle or gathering</li>
+            <li>Newsletter signup</li>
+            <li>Contact / Faerie Circles</li>
+            <li>Donate</li>
+          </ul>
+        </article>
+
+        <article class="node event">
+          <h3>Event minisites</h3>
+          <p>Templated, Events Circle–run.</p>
+          <ul>
+            <li><code>lughnasadh.albionfaeries.org.uk</code></li>
+            <li><code>beltane.albionfaeries.org.uk</code></li>
+            <li>Call, practicals, helpers, forms</li>
+          </ul>
+        </article>
+
+        <article class="node later">
+          <h3>Later · not August</h3>
+          <p>Keep out of the first public rebuild.</p>
+          <ul>
+            <li>Circle document archive</li>
+            <li>Auth'd contributor space</li>
+            <li>Blog / media deep rebuild</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="path" aria-label="Example visitor path">
+        <span>Arrive home</span> →
+        <span>What's on</span> →
+        <span>lughnasadh.…</span> →
+        <span>Newsletter</span>
+      </div>
+    </section>
+
+    <section class="section" id="from-to">
+      <h2>From current IA to proposed</h2>
+      <div class="compare">
+        <div class="box from">
+          <h3>Today (WordPress)</h3>
+          <ul>
+            <li>About (+ history, ancestors)</li>
+            <li>Gatherings (+ venues, previous)</li>
+            <li>Faerie Media</li>
+            <li>Faerie Blog</li>
+            <li>Contact (+ circles, newsletter rules)</li>
+            <li>Donate</li>
+            <li>Home as 3 equal feature columns</li>
+          </ul>
+        </div>
+        <div class="box to">
+          <h3>Proposed public nav</h3>
+          <ul>
+            <li>What's on</li>
+            <li>Gatherings</li>
+            <li>Who we are</li>
+            <li>Get involved</li>
+            <li>Donate (also in Get involved)</li>
+            <li>Home as one full-bleed composition</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="home-wire">
+      <h2>Home · structure wire</h2>
+      <p class="intro">First viewport: brand, one line, CTA group, dominant image plane. No stats, schedules, or promo chips on the hero.</p>
+
+      <div class="wire">
+        <div class="wire-bar">Wire · Home <em>viewport 1 = hearth only</em></div>
+        <div class="wire-frame">
+          <div class="home-hero">
+            <p class="label" style="color:rgba(238,245,240,0.8)">Full-bleed photo · gathering / land</p>
+            <p class="brand-mark">Albion Faeries</p>
+            <p class="tag">An online space of fabulousness for the Radical Faeries of old Albion.</p>
+            <div class="cta-row">
+              <span class="fake-btn primary">See what's on</span>
+              <span class="fake-btn ghost">Get involved</span>
+            </div>
+          </div>
+          <div class="home-after">
+            <div class="band">
+              <h3>What's stirring</h3>
+              <p>One short line, then a single featured invitation (gathering or full moon) - not a dashboard of three equal cards.</p>
+              <p class="anno">Section job: point to the next real-world hello</p>
+            </div>
+            <div class="band alt">
+              <h3>Who gathers here</h3>
+              <p>One breath of who the Albion Faeries are, linking into Who we are. No word-cloud as the visual idea.</p>
+              <p class="anno">Section job: belonging without a manifesto dump</p>
+            </div>
+            <div class="band">
+              <h3>Join the list</h3>
+              <p>Newsletter as its own quiet closing hearth - one field, one button, foxglove once.</p>
+              <p class="anno">Section job: stay in touch</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inner-wires">
+      <h2>Inner pages · skeleton</h2>
+      <p class="intro">Same chrome everywhere: compact brand, short nav, deep-fern footer. Content sections keep one job each.</p>
+
+      <div class="two">
+        <div class="wire">
+          <div class="wire-bar">Wire · What's on</div>
+          <div class="page-shell">
+            <div class="page-nav">
+              <strong>Albion Faeries</strong>
+              <div class="links"><span>What's on</span><span>Gatherings</span><span>Who we are</span><span>Get involved</span></div>
+            </div>
+            <div class="page-main">
+              <h3>What's on</h3>
+              <p>Invitations coming soon - gatherings and London full moons.</p>
+              <div class="list-blocks">
+                <div class="list-item">
+                  <strong>Lughnasadh Gathering</strong>
+                  <span>Open call · opens minisite</span>
+                </div>
+                <div class="list-item" style="border-color:var(--fern)">
+                  <strong>London Full Moon</strong>
+                  <span>Drum circle · workshop · social</span>
+                </div>
+              </div>
+              <p class="anno">Interaction rows OK - they are the action</p>
+            </div>
+            <div class="page-foot">Footer · contact · donate · care note</div>
+          </div>
+        </div>
+
+        <div class="wire">
+          <div class="wire-bar">Wire · Event minisite</div>
+          <div class="page-shell">
+            <div class="page-nav">
+              <strong>Lughnasadh · Albion</strong>
+              <div class="links"><span>The call</span><span>Practicals</span><span>Help</span><span>Main site</span></div>
+            </div>
+            <div class="page-main">
+              <p class="label">event.albionfaeries.org.uk</p>
+              <h3>Lughnasadh</h3>
+              <p>Own hero atmosphere, then: dates & place, the call, how to join, helpers, contact for that gathering only.</p>
+              <p class="anno">Template Events Circle can reuse without owning the whole platform</p>
+            </div>
+            <div class="page-foot">Part of Albion Faeries · back to hearth</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="two" style="margin-top:1.25rem">
+        <div class="wire">
+          <div class="wire-bar">Wire · Who we are</div>
+          <div class="page-shell">
+            <div class="page-nav">
+              <strong>Albion Faeries</strong>
+              <div class="links"><span>What's on</span><span>Gatherings</span><span>Who we are</span><span>Get involved</span></div>
+            </div>
+            <div class="page-main">
+              <h3>Who we are</h3>
+              <p>Opening: Albion in the global Faerie web. Then optional deeper paths - history, ancestors - as calm links, not a mega-menu dump on arrival.</p>
+              <p class="anno">Retain content; change the doorway</p>
+            </div>
+            <div class="page-foot">Footer</div>
+          </div>
+        </div>
+
+        <div class="wire">
+          <div class="wire-bar">Wire · Get involved</div>
+          <div class="page-shell">
+            <div class="page-nav">
+              <strong>Albion Faeries</strong>
+              <div class="links"><span>What's on</span><span>Gatherings</span><span>Who we are</span><span>Get involved</span></div>
+            </div>
+            <div class="page-main">
+              <h3>Get involved</h3>
+              <p>Come along · newsletter · contact · circles · donate. Facebook becomes optional/secondary if kept at all; the public path should not depend on it.</p>
+              <p class="anno">Informal network, clear first steps</p>
+            </div>
+            <div class="page-foot">Footer</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="content-keep">
+      <h2>Content to retain vs reshape</h2>
+      <div class="map">
+        <article class="node">
+          <h3>Keep (words / memory)</h3>
+          <ul>
+            <li>Fabulousness tagline</li>
+            <li>About / history / ancestors pages</li>
+            <li>Gathering place knowledge</li>
+            <li>Newsletter + donate paths</li>
+            <li>Contact addresses under AF domain</li>
+          </ul>
+        </article>
+        <article class="node">
+          <h3>Reshape</h3>
+          <ul>
+            <li>Home away from 3-column dashboard</li>
+            <li>Media + blog demoted or later</li>
+            <li>Nav depth flattened</li>
+            <li>Event calls → subdomain templates</li>
+          </ul>
+        </article>
+        <article class="node later">
+          <h3>Out of public MVP</h3>
+          <ul>
+            <li>Circle document vault</li>
+            <li>Member login</li>
+            <li>Full mail migration UI</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Structure draft for local design - August 2026. Pairs with the
+      <a href="style-guide.html">Foxglove Glade style guide</a>.
+      When this feels right, next step is a clickable homepage prototype using these tokens.
+    </p>
+  </div>
+</body>
+</html>

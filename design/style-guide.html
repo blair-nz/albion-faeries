@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Style Guide (Foxglove Glade)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(194, 74, 124, 0.12), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(217, 164, 65, 0.14), transparent 50%),
+        linear-gradient(180deg, var(--mist), var(--surface) 40%, var(--dew));
+      min-height: 100vh;
+    }
+
+    a { color: var(--fern); }
+    a:hover { color: var(--foxglove-deep); }
+
+    .wrap {
+      width: min(100% - 2 * var(--gutter), var(--page));
+      margin-inline: auto;
+      padding-block: 2.5rem 5rem;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+
+    .topnav .brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--deep-fern);
+      text-decoration: none;
+    }
+
+    .topnav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.1rem;
+      font-size: var(--fs-small);
+      font-weight: 600;
+    }
+
+    .topnav nav a {
+      text-decoration: none;
+      color: var(--bark);
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.1rem;
+    }
+
+    .topnav nav a[aria-current="page"],
+    .topnav nav a:hover {
+      color: var(--foxglove-deep);
+      border-color: var(--foxglove);
+    }
+
+    .hero-label {
+      font-size: var(--fs-label);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fern);
+      margin: 0 0 0.75rem;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      line-height: var(--lh-tight);
+      letter-spacing: -0.03em;
+      color: var(--deep-fern);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: var(--fs-hero);
+      max-width: 14ch;
+      margin: 0 0 1rem;
+    }
+
+    .lede {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      max-width: 40rem;
+      color: var(--bark);
+      margin: 0 0 1.5rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: var(--fs-small);
+      color: var(--fern);
+      margin-bottom: 3.5rem;
+    }
+
+    .section {
+      margin-block: 3.5rem;
+      scroll-margin-top: 1.5rem;
+    }
+
+    .section > h2 {
+      font-size: var(--fs-h2);
+      margin: 0 0 0.5rem;
+    }
+
+    .section > .intro {
+      max-width: var(--measure);
+      margin: 0 0 1.75rem;
+      color: var(--bark);
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+
+    .panel {
+      background: color-mix(in srgb, var(--surface-raised) 86%, transparent);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.35rem;
+    }
+
+    .swatch {
+      border-radius: var(--radius-md);
+      min-height: 6.5rem;
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--stroke);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .swatch strong {
+      font-size: var(--fs-small);
+      font-weight: 700;
+    }
+
+    .swatch span {
+      font-size: 0.78rem;
+      opacity: 0.85;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .swatch.on-dark { color: #f7fbf8; }
+    .swatch.on-light { color: var(--ink); }
+
+    .type-sample {
+      border-top: 1px solid var(--stroke);
+      padding: 1.1rem 0;
+    }
+
+    .type-sample:first-child { border-top: 0; padding-top: 0; }
+
+    .type-meta {
+      font-size: var(--fs-label);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--fern);
+      margin-bottom: 0.35rem;
+    }
+
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: var(--lh-tight);
+      letter-spacing: -0.035em;
+      color: var(--deep-fern);
+      margin: 0;
+    }
+
+    .display-m {
+      font-family: var(--font-display);
+      font-size: var(--fs-h2);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--foxglove-deep);
+      margin: 0.35rem 0 0;
+    }
+
+    .do-dont {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    .do, .dont {
+      border-radius: var(--radius-lg);
+      padding: 1.15rem 1.25rem;
+      border: 1px solid var(--stroke);
+    }
+
+    .do { background: color-mix(in srgb, var(--lichen) 28%, white); }
+    .dont { background: color-mix(in srgb, var(--petal) 45%, white); }
+
+    .do h3, .dont h3 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .dont h3 { color: var(--foxglove-deep); }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    ul.clean li { margin: 0.35rem 0; }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      min-height: 2.75rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: default;
+      transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--foxglove);
+      color: #fff8fb;
+    }
+
+    .btn-primary:hover { background: var(--foxglove-deep); color: #fff8fb; }
+
+    .btn-secondary {
+      background: var(--deep-fern);
+      color: var(--mist);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--deep-fern);
+      border-color: var(--stroke-strong);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      background: var(--dew);
+      color: var(--deep-fern);
+      font-size: var(--fs-small);
+      font-weight: 600;
+      border: 1px solid var(--stroke);
+    }
+
+    .motion-demo {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    .motion-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background: var(--surface-raised);
+      min-height: 9rem;
+      padding: 1.1rem;
+    }
+
+    .motion-card p {
+      margin: 0.35rem 0 0;
+      font-size: var(--fs-small);
+      color: var(--bark);
+    }
+
+    .float-leaf {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 60% 40% 55% 45%;
+      background: color-mix(in srgb, var(--fern) 70%, var(--lichen));
+      margin-top: 1rem;
+      animation: drift 4.5s var(--ease-out) infinite alternate;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) rotate(-4deg); }
+      to { transform: translate(12px, -10px) rotate(8deg); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 1.1s var(--ease-out) 0.15s forwards;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .underline-grow {
+      display: inline-block;
+      position: relative;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--deep-fern);
+      font-weight: 600;
+    }
+
+    .underline-grow::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.15rem;
+      width: 100%;
+      height: 3px;
+      background: var(--foxglove);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: grow 1.6s var(--ease-out) 0.4s infinite alternate;
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    .voice-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+      line-height: var(--lh-snug);
+      color: var(--deep-fern);
+      max-width: 28rem;
+      margin: 0;
+    }
+
+    .footer-note {
+      margin-top: 4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--stroke);
+      font-size: var(--fs-small);
+      color: var(--fern);
+      max-width: 40rem;
+    }
+
+    .atmosphere {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 12rem;
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(120deg, rgba(23, 53, 40, 0.55), rgba(194, 74, 124, 0.35)),
+        repeating-linear-gradient(
+          -18deg,
+          rgba(238, 245, 240, 0.08) 0 8px,
+          rgba(238, 245, 240, 0.02) 8px 16px
+        ),
+        radial-gradient(circle at 20% 30%, #6f9b78, transparent 40%),
+        radial-gradient(circle at 80% 70%, #c24a7c, transparent 35%),
+        #173528;
+      color: var(--mist);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .atmosphere strong {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <nav aria-label="Design docs">
+        <a href="style-guide.html" aria-current="page">Style guide</a>
+        <a href="site-structure.html">Site structure</a>
+      </nav>
+    </header>
+
+    <p class="hero-label">Working draft · Foxglove Glade</p>
+    <h1 class="reveal">A stylish, fun Albion Fae look</h1>
+    <p class="lede reveal">
+      Light-forward, a little wild, warmly queer: dew on fern, foxglove in the hedge,
+      gathering laughter after rain. Built for a simple public hearth - not another black sidebar dashboard.
+    </p>
+    <div class="meta">
+      <span class="chip">Public site first</span>
+      <span class="chip">Event minisites later</span>
+      <span class="chip">Circle tools after that</span>
+    </div>
+
+    <section class="section" id="direction">
+      <h2>Direction</h2>
+      <p class="intro">
+        Name: <strong>Foxglove Glade</strong>. Mood: fabulous without costume-shop kitsch;
+        pagan without gothic gloom; British countryside without cream-and-terracotta cafe branding.
+        The brand name is the hero. Imagery of real places and faces does the rest.
+      </p>
+      <div class="grid-2">
+        <div class="atmosphere">
+          <span class="chip" style="align-self:flex-start;margin-bottom:auto;background:rgba(247,251,248,0.16);color:#f7fbf8;border-color:rgba(247,251,248,0.28)">Hero atmosphere sample</span>
+          <strong>Albion Faeries</strong>
+          <span style="opacity:0.9;margin-top:0.35rem">An online space of fabulousness for the Radical Faeries of old Albion.</span>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;font-size:1.15rem">Design principles</h3>
+          <ul class="clean">
+            <li><strong>Brand first</strong> - "Albion Faeries" is the loudest mark on the first screen.</li>
+            <li><strong>One composition</strong> - home is a hearth, not a three-column control panel.</li>
+            <li><strong>Real glade</strong> - photos of gatherings, halls, land; not stock sparkles.</li>
+            <li><strong>Kind clarity</strong> - accessible type, plain words, mobile-first.</li>
+            <li><strong>Fun with restraint</strong> - foxglove accents and soft motion, not emoji confetti.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colour">
+      <h2>Colour</h2>
+      <p class="intro">
+        Cool mist grounds keep us away from warm-cream cliches. Fern carries stewardship.
+        Foxglove is the queer pulse. Pollen is rare - for highlights, not fills.
+      </p>
+      <div class="grid-3">
+        <div class="swatch on-light" style="background:var(--mist)"><strong>Mist</strong><span>#EEF5F0 · page wash</span></div>
+        <div class="swatch on-light" style="background:var(--dew)"><strong>Dew</strong><span>#DCE9E1 · bands / chips</span></div>
+        <div class="swatch on-light" style="background:var(--lichen)"><strong>Lichen</strong><span>#B7C9B4 · soft structure</span></div>
+        <div class="swatch on-dark" style="background:var(--fern)"><strong>Fern</strong><span>#2F5D45 · links / UI</span></div>
+        <div class="swatch on-dark" style="background:var(--deep-fern)"><strong>Deep fern</strong><span>#173528 · headings / footer</span></div>
+        <div class="swatch on-dark" style="background:var(--foxglove)"><strong>Foxglove</strong><span>#C24A7C · primary CTA</span></div>
+        <div class="swatch on-dark" style="background:var(--foxglove-deep)"><strong>Foxglove deep</strong><span>#9A3260 · hover / emphasis</span></div>
+        <div class="swatch on-light" style="background:var(--pollen)"><strong>Pollen</strong><span>#D9A441 · rare spark</span></div>
+        <div class="swatch on-dark" style="background:var(--bark)"><strong>Bark</strong><span>#2A2622 · body text</span></div>
+      </div>
+      <div class="do-dont" style="margin-top:1.25rem">
+        <div class="do">
+          <h3>Lean into</h3>
+          <ul class="clean">
+            <li>Mist-to-dew atmospheres and photographic overlays</li>
+            <li>One foxglove action per view</li>
+            <li>Deep fern for type hierarchy</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Steer away from</h3>
+          <ul class="clean">
+            <li>Black left-rail + white dashboard grids</li>
+            <li>Purple-to-indigo default "queer web" gradients</li>
+            <li>Pill forests, neon glow, emoji bullets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <h2>Typography</h2>
+      <p class="intro">
+        <strong>Fraunces</strong> for brand and headlines - soft optical serif with a wink.
+        <strong>Figtree</strong> for body and UI - friendly, readable, not Inter/Roboto.
+      </p>
+      <div class="panel">
+        <div class="type-sample">
+          <div class="type-meta">Display · Fraunces 700</div>
+          <p class="display-xl">Albion Faeries</p>
+          <p class="display-m">come as you are, leave a little more yourself</p>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta">Body · Figtree 400/600</div>
+          <p style="margin:0;max-width:36rem">
+            The Albion Faeries are part of the global Radical Faerie web - awakening,
+            nature-loving, compassionate queers finding each other in old Albion and beyond.
+            Come to a full-moon circle, a gathering, or start with the newsletter.
+          </p>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta">Label · Figtree 700 caps</div>
+          <p class="hero-label" style="margin:0">Next gathering · Lughnasadh</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <h2>Voice</h2>
+      <p class="intro">Warm, clear, a little camp. Never corporate. Never gatekeepy. Invite first; explain second.</p>
+      <div class="grid-2">
+        <div class="panel">
+          <p class="voice-quote">An online space of fabulousness for the Radical Faeries of old Albion.</p>
+          <p style="margin:1rem 0 0;font-size:var(--fs-small);color:var(--fern)">Keep the inherited line - it already sounds like us.</p>
+        </div>
+        <div class="do-dont">
+          <div class="do">
+            <h3>Say</h3>
+            <ul class="clean">
+              <li>"Come along to a circle or gathering."</li>
+              <li>"What's on this moon."</li>
+              <li>"Gatherings Circle can publish the call."</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h3>Avoid</h3>
+            <ul class="clean">
+              <li>"Synergise your spiritual journey."</li>
+              <li>"Members-only portal unlock."</li>
+              <li>Jargon that needs a wizard.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <h2>Components</h2>
+      <p class="intro">Few pieces, used with intention. Cards are for things people act on (an event, a form) - not for wrapping every paragraph.</p>
+      <div class="panel" style="margin-bottom:1rem">
+        <div class="type-meta">Buttons</div>
+        <div class="btn-row" style="margin-top:0.75rem">
+          <span class="btn btn-primary">See what's on</span>
+          <span class="btn btn-secondary">Who we are</span>
+          <span class="btn btn-ghost">Join the newsletter</span>
+        </div>
+        <p style="margin:0.9rem 0 0;font-size:var(--fs-small);color:var(--bark)">
+          Corners soft but not pill-full. One primary foxglove button per section.
+        </p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <div class="type-meta">Nav pattern</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;color:var(--deep-fern);font-weight:600">Albion Faeries</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small)">What's on · Gatherings · Who we are · Get involved · Donate</p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Brand mark left or centre-large on home; compact elsewhere. No black mega-rail.</p>
+        </div>
+        <div class="panel">
+          <div class="type-meta">Event chip</div>
+          <p style="margin:0.65rem 0 0">
+            <span class="chip">Lughnasadh · Northumberland</span>
+            <span class="chip" style="margin-left:0.35rem;background:var(--petal);color:var(--foxglove-deep)">Call open</span>
+          </p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Small status marks only - never a strip of competing badges over the hero.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="motion">
+      <h2>Motion</h2>
+      <p class="intro">Presence, not noise. Ship a few intentional moves on the public site.</p>
+      <div class="motion-demo">
+        <div class="motion-card">
+          <div class="type-meta">1 · Rise in</div>
+          <strong class="reveal" style="display:inline-block;font-family:var(--font-display);font-size:1.35rem;color:var(--deep-fern)">Hello, lovely</strong>
+          <p>Hero text and first section enter softly on load.</p>
+        </div>
+        <div class="motion-card">
+          <div class="type-meta">2 · Underline grow</div>
+          <span class="underline-grow">What's on</span>
+          <p>Focus / hover on key links - foxglove underline expands.</p>
+        </div>
+        <div class="motion-card">
+          <div class="type-meta">3 · Leaf drift</div>
+          <div class="float-leaf" aria-hidden="true"></div>
+          <p>Optional ambient shape in the hero - very slow, reduced-motion aware.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="imagery">
+      <h2>Imagery</h2>
+      <p class="intro">
+        Full-bleed heroes from Albion life: Featherstone halls, Glastonbury land, circle tables, muddy boots, glitter if it actually happened.
+        Prefer one dominant photograph over collages. No floating sticker labels on the hero.
+      </p>
+      <div class="do-dont">
+        <div class="do">
+          <h3>Yes</h3>
+          <ul class="clean">
+            <li>Edge-to-edge gathering photos</li>
+            <li>Natural light, imperfect joy</li>
+            <li>Consent-aware faces and credits</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>No</h3>
+          <ul class="clean">
+            <li>Inset rounded media cards in the hero</li>
+            <li>Generic stock "mystical forest"</li>
+            <li>Word-cloud identity graphics as the main idea</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="a11y">
+      <h2>Accessibility and care</h2>
+      <p class="intro">Aligned with Digital Homecoming: accessible, kind, simple before clever.</p>
+      <div class="grid-2">
+        <div class="panel">
+          <ul class="clean">
+            <li>Body text at least 17px; long lines capped near 70 characters.</li>
+            <li>Foxglove on mist checked for contrast on buttons (white label).</li>
+            <li><code>prefers-reduced-motion</code> disables drift and long entrances.</li>
+            <li>Focus rings in pollen/fern - never remove outlines.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <ul class="clean">
+            <li>Public vs Circle-only content stays clearly separated.</li>
+            <li>Minimum personal data on forms.</li>
+            <li>Plain-language alternatives beside faerie poetry.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Draft style guide for local exploration by Blair / Comms - August 2026.
+      Tokens live in <code>design/tokens.css</code>. Next: site structure mockup, then a real homepage prototype.
+      This is not yet a Circle-ratified brand system.
+    </p>
+  </div>
+
+  <script>
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll(".float-leaf, .reveal, .underline-grow").forEach(function (el) {
+        el.style.animation = "none";
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      });
+      document.querySelectorAll(".underline-grow").forEach(function (el) {
+        el.style.borderBottom = "3px solid var(--foxglove)";
+      });
+    }
+  </script>
+</body>
+</html>

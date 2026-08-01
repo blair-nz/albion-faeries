@@ -1,0 +1,21 @@
+# Local / editor
+.cursor/
+.DS_Store
+Thumbs.db
+*.tmp
+_extract_docs.py
+
+# Community working docs and gathering materials (not for public git)
+Lughnasadh 2026/
+*.docx
+*.pdf
+*.xlsx
+*.aac
+*.jpg
+*.jpeg
+*.png
+!albion-faeries-current-network-services.png
+
+# Keep architecture diagrams that are already shared as project artefacts
+!albion-faeries-current-architecture.svg
+!albion-faeries-current-network-services.svg
