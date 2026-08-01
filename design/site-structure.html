@@ -128,6 +128,11 @@
       border-color: color-mix(in srgb, var(--foxglove) 35%, var(--stroke));
     }
 
+    .node.circle {
+      background: color-mix(in srgb, var(--circle-wash) 80%, white);
+      border-color: color-mix(in srgb, var(--circle-accent) 35%, var(--stroke));
+    }
+
     .node.later {
       background: transparent;
       border-style: dashed;
@@ -393,16 +398,16 @@
       </nav>
     </header>
 
-    <p class="label">Information architecture · public hearth</p>
+    <p class="label">Information architecture · hearth + Circles</p>
     <h1>Site structure mockup</h1>
     <p class="lede">
-      A slim public site Albion can actually keep warm - with room for event minisites under the same domain.
-      Circle archives and auth stay out of this first rebuild (per Digital Homecoming phases).
+      One Albion home with three layers: a slim public hearth, event minisites under the same domain,
+      and a signed-in Circles space for notes, actions, and living memory.
     </p>
 
     <section class="section" id="map">
-      <h2>Map of the public home</h2>
-      <p class="intro">Fewer top-level doors than the current WordPress tree. History and media nest under Who we are / Gatherings instead of competing in the nav.</p>
+      <h2>Map of the whole home</h2>
+      <p class="intro">Fewer public doors than the current WordPress tree. Private Circles sit behind a clear threshold - same brand, different enclosure.</p>
 
       <div class="map">
         <article class="node primary">
@@ -442,7 +447,7 @@
             <li>Albion Faeries today</li>
             <li>Radical Faerie history</li>
             <li>Ancestors / remembrance</li>
-            <li>Circles in brief</li>
+            <li>How Circles work (public explainer)</li>
           </ul>
         </article>
 
@@ -452,14 +457,15 @@
           <ul>
             <li>Come to a circle or gathering</li>
             <li>Newsletter signup</li>
-            <li>Contact / Faerie Circles</li>
+            <li>Contact</li>
             <li>Donate</li>
+            <li>Quiet link: Circle sign-in</li>
           </ul>
         </article>
 
         <article class="node event">
           <h3>Event minisites</h3>
-          <p>Templated, Events Circle–run.</p>
+          <p>Templated, Events Circle-run.</p>
           <ul>
             <li><code>lughnasadh.albionfaeries.org.uk</code></li>
             <li><code>beltane.albionfaeries.org.uk</code></li>
@@ -467,13 +473,23 @@
           </ul>
         </article>
 
-        <article class="node later">
-          <h3>Later · not August</h3>
-          <p>Keep out of the first public rebuild.</p>
+        <article class="node circle">
+          <h3>Private Circles</h3>
+          <p>Signed-in working memory for Circles.</p>
           <ul>
-            <li>Circle document archive</li>
-            <li>Auth'd contributor space</li>
+            <li><code>circles.albionfaeries.org.uk</code> (or <code>/circles</code>)</li>
+            <li>Comms · Gatherings &amp; Events · Finance</li>
+            <li>Notes, actions, templates, archive</li>
+            <li>Roles: Convenor, Record keeper, helpers</li>
+          </ul>
+        </article>
+
+        <article class="node later">
+          <h3>Later polish</h3>
+          <p>Useful, but not required to define the shape.</p>
+          <ul>
             <li>Blog / media deep rebuild</li>
+            <li>Full mail migration tooling</li>
           </ul>
         </article>
       </div>
@@ -484,32 +500,33 @@
         <span>lughnasadh.…</span> →
         <span>Newsletter</span>
       </div>
+      <div class="path" aria-label="Example Circle path" style="margin-top:0.5rem">
+        <span>Circle sign-in</span> →
+        <span>My Circles</span> →
+        <span>Comms notes</span> →
+        <span>Open actions</span>
+      </div>
     </section>
 
     <section class="section" id="from-to">
       <h2>From current IA to proposed</h2>
       <div class="compare">
         <div class="box from">
-          <h3>Today (WordPress)</h3>
+          <h3>Today</h3>
           <ul>
-            <li>About (+ history, ancestors)</li>
-            <li>Gatherings (+ venues, previous)</li>
-            <li>Faerie Media</li>
-            <li>Faerie Blog</li>
-            <li>Contact (+ circles, newsletter rules)</li>
-            <li>Donate</li>
+            <li>WordPress public tree (About, Gatherings, Media, Blog, Contact)</li>
             <li>Home as 3 equal feature columns</li>
+            <li>Circle work in Signal + personal Notion / drives</li>
+            <li>No shared digital action list</li>
           </ul>
         </div>
         <div class="box to">
-          <h3>Proposed public nav</h3>
+          <h3>Proposed</h3>
           <ul>
-            <li>What's on</li>
-            <li>Gatherings</li>
-            <li>Who we are</li>
-            <li>Get involved</li>
-            <li>Donate (also in Get involved)</li>
+            <li>Public nav: What's on · Gatherings · Who we are · Get involved</li>
             <li>Home as one full-bleed composition</li>
+            <li>Event minisites under AF domain</li>
+            <li>Private Circles space for notes, actions, templates</li>
           </ul>
         </div>
       </div>
@@ -627,12 +644,106 @@
             </div>
             <div class="page-main">
               <h3>Get involved</h3>
-              <p>Come along · newsletter · contact · circles · donate. Facebook becomes optional/secondary if kept at all; the public path should not depend on it.</p>
+              <p>Come along · newsletter · contact · donate. Circle sign-in as a quiet secondary path for faeries who already hold Circle work - not the main public CTA.</p>
               <p class="anno">Informal network, clear first steps</p>
             </div>
-            <div class="page-foot">Footer</div>
+            <div class="page-foot">Footer · Circle sign-in</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="circles-wire">
+      <h2>Private Circles · structure wire</h2>
+      <p class="intro">
+        Same Foxglove Glade family with Circle wash and copper accent.
+        Jobs: find your Circle, read the latest notes, carry open actions, use templates so work does not vanish.
+      </p>
+
+      <div class="two">
+        <div class="wire">
+          <div class="wire-bar">Wire · Circles home <em>signed in</em></div>
+          <div class="page-shell">
+            <div class="page-nav" style="background:var(--circle-wash)">
+              <strong>Circles · Albion</strong>
+              <div class="links"><span>My Circles</span><span>Actions</span><span>Sign out</span></div>
+            </div>
+            <div class="page-main" style="background:var(--circle-panel)">
+              <h3>My Circles</h3>
+              <p>Only Circles this faerie can enter. Each opens notes, actions, and templates.</p>
+              <div class="list-blocks">
+                <div class="list-item" style="border-color:var(--circle-accent)">
+                  <strong>Communications</strong>
+                  <span>Convenor needed · Record keeper needed · 4 open actions</span>
+                </div>
+                <div class="list-item" style="border-color:var(--fern)">
+                  <strong>Gatherings &amp; Events</strong>
+                  <span>Venue notes · gathering how-to · Lughnasadh helpers</span>
+                </div>
+                <div class="list-item" style="border-color:var(--lichen)">
+                  <strong>Finance</strong>
+                  <span>Hosting costs · insurance exploration</span>
+                </div>
+              </div>
+              <p class="anno">Threshold clear: this is not the public site</p>
+            </div>
+            <div class="page-foot">Back to public hearth · care &amp; access note</div>
+          </div>
+        </div>
+
+        <div class="wire">
+          <div class="wire-bar">Wire · Circle room · Comms</div>
+          <div class="page-shell">
+            <div class="page-nav" style="background:var(--circle-wash)">
+              <strong>Comms Circle</strong>
+              <div class="links"><span>Notes</span><span>Actions</span><span>Templates</span><span>People</span></div>
+            </div>
+            <div class="page-main" style="background:var(--circle-panel)">
+              <h3>Notes &amp; actions</h3>
+              <p>Latest meeting note on top. Open actions with owner and due date - reviewed at the start of each meeting (Moot mandate).</p>
+              <div class="list-blocks">
+                <div class="list-item" style="border-color:var(--circle-accent)">
+                  <strong>Bring hosting recommendation to Finance</strong>
+                  <span>Owner: Blair · Due: next Comms · Open</span>
+                </div>
+                <div class="list-item" style="border-color:var(--fern)">
+                  <strong>Confirm two DNS administrators</strong>
+                  <span>Owner: Comms · Due: Gate 1 · Open</span>
+                </div>
+              </div>
+              <p class="anno">Templates: moot minutes, Circle notes, gathering how-to</p>
+            </div>
+            <div class="page-foot">Archivists can find this later · exportable</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map" style="margin-top:1.25rem">
+        <article class="node circle">
+          <h3>Who is inside</h3>
+          <ul>
+            <li>Circle members invited by Convenor / Record keeper</li>
+            <li>Helper faeries for a gathering (scoped access)</li>
+            <li>Archivists across Circles where agreed</li>
+          </ul>
+        </article>
+        <article class="node circle">
+          <h3>What lives here</h3>
+          <ul>
+            <li>Moot and Circle notes (digital)</li>
+            <li>Action lists with owners</li>
+            <li>Venue / gathering knowledge</li>
+            <li>Templates and standards</li>
+          </ul>
+        </article>
+        <article class="node circle">
+          <h3>What stays elsewhere</h3>
+          <ul>
+            <li>Signal for chat and polls (for now)</li>
+            <li>Public calls on event minisites</li>
+            <li>Safeguarding records with separate care rules</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -656,13 +767,13 @@
             <li>Media + blog demoted or later</li>
             <li>Nav depth flattened</li>
             <li>Event calls → subdomain templates</li>
+            <li>Circle work → shared Circles space</li>
           </ul>
         </article>
         <article class="node later">
-          <h3>Out of public MVP</h3>
+          <h3>Later polish</h3>
           <ul>
-            <li>Circle document vault</li>
-            <li>Member login</li>
+            <li>Blog / media deep rebuild</li>
             <li>Full mail migration UI</li>
           </ul>
         </article>
@@ -672,7 +783,7 @@
     <p class="footer-note">
       Structure draft for local design - August 2026. Pairs with the
       <a href="style-guide.html">Foxglove Glade style guide</a>.
-      When this feels right, next step is a clickable homepage prototype using these tokens.
+      When this feels right, next step is a clickable homepage (and Circle sign-in) prototype using these tokens.
     </p>
   </div>
 </body>

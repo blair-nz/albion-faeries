@@ -426,12 +426,13 @@
     <h1 class="reveal">A stylish, fun Albion Fae look</h1>
     <p class="lede reveal">
       Light-forward, a little wild, warmly queer: dew on fern, foxglove in the hedge,
-      gathering laughter after rain. Built for a simple public hearth - not another black sidebar dashboard.
+      gathering laughter after rain. One visual family for the public hearth, event minisites,
+      and the private Circles space - not another black sidebar dashboard.
     </p>
     <div class="meta">
-      <span class="chip">Public site first</span>
-      <span class="chip">Event minisites later</span>
-      <span class="chip">Circle tools after that</span>
+      <span class="chip">Public hearth</span>
+      <span class="chip">Event minisites</span>
+      <span class="chip">Private Circles</span>
     </div>
 
     <section class="section" id="direction">
@@ -455,7 +456,33 @@
             <li><strong>Real glade</strong> - photos of gatherings, halls, land; not stock sparkles.</li>
             <li><strong>Kind clarity</strong> - accessible type, plain words, mobile-first.</li>
             <li><strong>Fun with restraint</strong> - foxglove accents and soft motion, not emoji confetti.</li>
+            <li><strong>Two thresholds</strong> - public invites; Circles hold working memory behind a clear door.</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="layers">
+      <h2>Three layers, one look</h2>
+      <p class="intro">
+        Same fonts, mist, fern, and foxglove everywhere. What changes is enclosure and density -
+        not a second brand for "the app".
+      </p>
+      <div class="grid-3">
+        <div class="panel">
+          <div class="type-meta">Public hearth</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.25rem;color:var(--deep-fern);font-weight:600">Open glade</p>
+          <p style="margin:0.4rem 0 0;font-size:var(--fs-small);color:var(--bark)">Full-bleed atmosphere, short invites, newsletter. Anyone can arrive.</p>
+        </div>
+        <div class="panel">
+          <div class="type-meta">Event minisites</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.25rem;color:var(--deep-fern);font-weight:600">Gathering call</p>
+          <p style="margin:0.4rem 0 0;font-size:var(--fs-small);color:var(--bark)">Same language, event-named hero. Practicals and helpers for one gathering.</p>
+        </div>
+        <div class="panel" style="background:var(--circle-wash);border-color:color-mix(in srgb, var(--circle-accent) 28%, var(--stroke))">
+          <div class="type-meta" style="color:var(--circle-accent)">Private Circles</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.25rem;color:var(--deep-fern);font-weight:600">Inner glade</p>
+          <p style="margin:0.4rem 0 0;font-size:var(--fs-small);color:var(--bark)">Signed-in work space: notes, actions, templates. Quieter wash, copper accent, still Albion.</p>
         </div>
       </div>
     </section>
@@ -476,6 +503,8 @@
         <div class="swatch on-dark" style="background:var(--foxglove-deep)"><strong>Foxglove deep</strong><span>#9A3260 · hover / emphasis</span></div>
         <div class="swatch on-light" style="background:var(--pollen)"><strong>Pollen</strong><span>#D9A441 · rare spark</span></div>
         <div class="swatch on-dark" style="background:var(--bark)"><strong>Bark</strong><span>#2A2622 · body text</span></div>
+        <div class="swatch on-light" style="background:var(--circle-wash)"><strong>Circle wash</strong><span>#E7EFE9 · private ground</span></div>
+        <div class="swatch on-dark" style="background:var(--circle-accent)"><strong>Circle copper</strong><span>#8A4F2E · Circle accent</span></div>
       </div>
       <div class="do-dont" style="margin-top:1.25rem">
         <div class="do">
@@ -539,6 +568,7 @@
               <li>"Come along to a circle or gathering."</li>
               <li>"What's on this moon."</li>
               <li>"Gatherings Circle can publish the call."</li>
+              <li>"Open actions from the last Comms moot."</li>
             </ul>
           </div>
           <div class="dont">
@@ -547,6 +577,7 @@
               <li>"Synergise your spiritual journey."</li>
               <li>"Members-only portal unlock."</li>
               <li>Jargon that needs a wizard.</li>
+              <li>Calling Circles a "dashboard" or "admin console".</li>
             </ul>
           </div>
         </div>
@@ -555,24 +586,25 @@
 
     <section class="section" id="components">
       <h2>Components</h2>
-      <p class="intro">Few pieces, used with intention. Cards are for things people act on (an event, a form) - not for wrapping every paragraph.</p>
+      <p class="intro">Few pieces, used with intention. Cards are for things people act on (an event, a form, an action row) - not for wrapping every paragraph.</p>
       <div class="panel" style="margin-bottom:1rem">
         <div class="type-meta">Buttons</div>
         <div class="btn-row" style="margin-top:0.75rem">
           <span class="btn btn-primary">See what's on</span>
           <span class="btn btn-secondary">Who we are</span>
           <span class="btn btn-ghost">Join the newsletter</span>
+          <span class="btn btn-ghost" style="border-color:color-mix(in srgb, var(--circle-accent) 45%, var(--stroke));color:var(--circle-accent)">Circle sign-in</span>
         </div>
         <p style="margin:0.9rem 0 0;font-size:var(--fs-small);color:var(--bark)">
-          Corners soft but not pill-full. One primary foxglove button per section.
+          Corners soft but not pill-full. Foxglove for public primary actions; copper ghost for the Circle door.
         </p>
       </div>
       <div class="grid-2">
         <div class="panel">
-          <div class="type-meta">Nav pattern</div>
+          <div class="type-meta">Public nav</div>
           <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;color:var(--deep-fern);font-weight:600">Albion Faeries</p>
           <p style="margin:0.35rem 0 0;font-size:var(--fs-small)">What's on · Gatherings · Who we are · Get involved · Donate</p>
-          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Brand mark left or centre-large on home; compact elsewhere. No black mega-rail.</p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Brand mark left or centre-large on home; compact elsewhere. Circle sign-in lives in the footer or a quiet corner - never competing with the hero.</p>
         </div>
         <div class="panel">
           <div class="type-meta">Event chip</div>
@@ -583,11 +615,56 @@
           <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Small status marks only - never a strip of competing badges over the hero.</p>
         </div>
       </div>
+      <div class="grid-2" style="margin-top:1rem">
+        <div class="panel" style="background:var(--circle-wash)">
+          <div class="type-meta" style="color:var(--circle-accent)">Circle chrome</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.2rem;color:var(--deep-fern);font-weight:600">Circles · Albion Faeries</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small)">Comms · Gatherings &amp; Events · Finance · Archivists</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--bark)">Signed in as Moon Baby · Sign out</p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Soft Circle list, not a black mega-rail. Show only Circles this faerie can enter.</p>
+        </div>
+        <div class="panel" style="background:var(--circle-panel)">
+          <div class="type-meta" style="color:var(--circle-accent)">Action row</div>
+          <p style="margin:0.65rem 0 0;border-left:3px solid var(--circle-accent);padding-left:0.75rem">
+            <strong style="display:block;font-family:var(--font-display);color:var(--deep-fern)">Draft hosting recommendation for Finance</strong>
+            <span style="font-size:var(--fs-small);color:var(--bark)">Owner: Blair · Due: before next Comms</span>
+          </p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">Actions are first-class objects - owner, due, status - matching the Moot's digital-notes mandate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="circles-ui">
+      <h2>Private Circles · UI tone</h2>
+      <p class="intro">
+        The Circles space is still Foxglove Glade: Fraunces + Figtree, mist and fern.
+        It is denser and more useful, never colder. Think record-keeper's table, not SaaS admin.
+      </p>
+      <div class="do-dont">
+        <div class="do">
+          <h3>Lean into</h3>
+          <ul class="clean">
+            <li>Circle wash background and copper accent for "you are inside"</li>
+            <li>Notes, open actions, templates as the main jobs</li>
+            <li>Clear roles: Convenor, Record keeper, helper</li>
+            <li>Plain language about who can see what</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Steer away from</h3>
+          <ul class="clean">
+            <li>Exposing Circle titles or notes on the public hero</li>
+            <li>Metric strips, KPI cards, notification badge storms</li>
+            <li>A second dark theme that breaks the brand</li>
+            <li>Locking knowledge in one personal Notion forever</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="motion">
       <h2>Motion</h2>
-      <p class="intro">Presence, not noise. Ship a few intentional moves on the public site.</p>
+      <p class="intro">Presence, not noise. Ship a few intentional moves on the public hearth; Circles stay calmer and more utilitarian.</p>
       <div class="motion-demo">
         <div class="motion-card">
           <div class="type-meta">1 · Rise in</div>
@@ -647,9 +724,10 @@
         </div>
         <div class="panel">
           <ul class="clean">
-            <li>Public vs Circle-only content stays clearly separated.</li>
-            <li>Minimum personal data on forms.</li>
+            <li>Public vs Circle-only content stays clearly separated in URL, chrome, and copy.</li>
+            <li>Minimum personal data; Circle records need agreed retention and access.</li>
             <li>Plain-language alternatives beside faerie poetry.</li>
+            <li>Sign-in and permissions explained without wizard jargon.</li>
           </ul>
         </div>
       </div>
@@ -657,7 +735,7 @@
 
     <p class="footer-note">
       Draft style guide for local exploration by Blair / Comms - August 2026.
-      Tokens live in <code>design/tokens.css</code>. Next: site structure mockup, then a real homepage prototype.
+      Tokens live in <code>design/tokens.css</code>. Covers public hearth, event minisites, and private Circles.
       This is not yet a Circle-ratified brand system.
     </p>
   </div>

@@ -18,6 +18,12 @@
   --copper: #b57a52;
   --petal: #f3d5e2;
 
+  /* Circle space (private inner glade - same family, quieter enclosure) */
+  --circle-wash: #e7efe9;
+  --circle-panel: #f4f8f5;
+  --circle-ink: #1a221c;
+  --circle-accent: #8a4f2e;
+
   /* Surfaces */
   --surface: #f7fbf8;
   --surface-raised: #ffffff;
