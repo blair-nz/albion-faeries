@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" role="img" aria-labelledby="title desc">
+  <title id="title">Radical Faeries of Albion - Trilithon Dawn</title>
+  <desc id="desc">A trilithon gateway with a rising sun, and the Radical Faeries of Albion wordmark.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .wm-main {
+        font-family: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+        font-weight: 700;
+        font-size: 34px;
+        letter-spacing: 0.04em;
+        fill: #1a1f1c;
+      }
+      .wm-sub {
+        font-family: "Figtree", "Segoe UI", Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.34em;
+        fill: #3a3530;
+      }
+    ]]></style>
+    <linearGradient id="sunFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="55%" stop-color="#f09a42"/>
+      <stop offset="100%" stop-color="#e25d52"/>
+    </linearGradient>
+    <linearGradient id="stoneFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a645c"/>
+      <stop offset="100%" stop-color="#3a3530"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: trilithon with dawn sun through the gate -->
+  <g transform="translate(36, 36)">
+    <!-- Soft chalk ground -->
+    <ellipse cx="200" cy="176" rx="120" ry="14" fill="#c5d2bf" opacity="0.65"/>
+
+    <!-- Rising sun held in the portal -->
+    <circle cx="200" cy="118" r="44" fill="url(#sunFill)"/>
+    <circle cx="200" cy="118" r="26" fill="#ffd166" opacity="0.4"/>
+
+    <!-- Left upright -->
+    <rect x="122" y="48" width="40" height="122" rx="3" fill="url(#stoneFill)"/>
+    <rect x="128" y="56" width="7" height="104" rx="2" fill="#e8ebe3" opacity="0.2"/>
+    <!-- Right upright -->
+    <rect x="238" y="48" width="40" height="122" rx="3" fill="url(#stoneFill)"/>
+    <rect x="265" y="56" width="7" height="104" rx="2" fill="#1a1f1c" opacity="0.2"/>
+    <!-- Lintel -->
+    <rect x="112" y="34" width="176" height="26" rx="3" fill="url(#stoneFill)"/>
+    <rect x="122" y="40" width="156" height="5" rx="2" fill="#e8ebe3" opacity="0.18"/>
+
+    <!-- Small lichen flecks -->
+    <circle cx="136" cy="100" r="3" fill="#5f8a4e" opacity="0.55"/>
+    <circle cx="144" cy="106" r="2" fill="#5f8a4e" opacity="0.4"/>
+    <circle cx="262" cy="92" r="2.5" fill="#5f8a4e" opacity="0.5"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text class="wm-main" x="430" y="128" text-anchor="middle">Radical Faeries</text>
+  <line x1="348" y1="142" x2="512" y2="142" stroke="#3d7a8c" stroke-width="1.5" stroke-linecap="round"/>
+  <text class="wm-sub" x="430" y="164" text-anchor="middle">OF ALBION</text>
+</svg>
+

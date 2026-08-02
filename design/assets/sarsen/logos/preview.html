@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Logo concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600&family=Newsreader:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --chalk: #e8ebe3;
+      --ink: #1a1f1c;
+      --sky: #3d7a8c;
+      --sarsen: #6a645c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Figtree, "Segoe UI", Tahoma, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(61,122,140,0.12), transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(240,154,66,0.12), transparent 45%),
+        var(--chalk);
+      min-height: 100vh;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.35rem;
+      text-align: center;
+    }
+    .lede {
+      text-align: center;
+      max-width: 36rem;
+      margin: 0 auto 2.5rem;
+      color: var(--sarsen);
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      gap: 1.75rem;
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+    figure {
+      margin: 0;
+      padding: 1.5rem 1.25rem 1.25rem;
+      background: rgba(247, 248, 243, 0.85);
+      border: 1px solid rgba(26, 31, 28, 0.12);
+      border-radius: 0.65rem;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background:
+        linear-gradient(45deg, #dde3d8 25%, transparent 25%),
+        linear-gradient(-45deg, #dde3d8 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #dde3d8 75%),
+        linear-gradient(-45deg, transparent 75%, #dde3d8 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+      background-color: #f7f8f3;
+      border-radius: 0.3rem;
+    }
+    figcaption {
+      margin-top: 1rem;
+    }
+    figcaption strong {
+      display: block;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    figcaption span {
+      color: var(--sarsen);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    code {
+      font-size: 0.85em;
+      color: var(--sky);
+    }
+  </style>
+</head>
+<body>
+  <h1>Stonehenge logo concepts</h1>
+  <p class="lede">Three marks for Radical Faeries of Albion, drawn from the Sarsen Dawn palette: chalk, sarsen, dawn sun, sky, lichen.</p>
+
+  <div class="grid">
+    <figure>
+      <img src="logo-trilithon-dawn.svg" alt="Trilithon Dawn logo" width="640" height="280" />
+      <figcaption>
+        <strong>1. Trilithon Dawn</strong>
+        <span>A single gateway trilithon with sunrise held in the portal. Strong icon mark; reads clearly as a brand badge. File: <code>logo-trilithon-dawn.svg</code></span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="logo-stone-circle.svg" alt="Stone Circle logo" width="640" height="300" />
+      <figcaption>
+        <strong>2. Stone Circle</strong>
+        <span>Bird's-eye henge plan around a dawn hearth, open to the east. Suggests gathering and circle. File: <code>logo-stone-circle.svg</code></span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="logo-henge-horizon.svg" alt="Henge Horizon logo" width="720" height="260" />
+      <figcaption>
+        <strong>3. Henge Horizon</strong>
+        <span>Silhouette row of trilithons on the chalk plain under a dawn disc. Most literally Stonehenge; good for wide headers. File: <code>logo-henge-horizon.svg</code></span>
+      </figcaption>
+    </figure>
+  </div>
+</body>
+</html>

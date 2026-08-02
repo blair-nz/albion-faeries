@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-labelledby="title desc">
+  <title id="title">Radical Faeries of Albion - Henge Horizon</title>
+  <desc id="desc">A silhouette row of Stonehenge trilithons under a dawn disc, with the Radical Faeries of Albion wordmark.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .wm-main {
+        font-family: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 0.05em;
+        fill: #1a1f1c;
+      }
+      .wm-sub {
+        font-family: "Figtree", "Segoe UI", Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.36em;
+        fill: #245566;
+      }
+    ]]></style>
+    <linearGradient id="dawnSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d7a8c" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#f09a42" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#e25d52" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="sunDisc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="60%" stop-color="#f09a42"/>
+      <stop offset="100%" stop-color="#e25d52"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Soft dawn wash behind the stones -->
+  <rect x="40" y="24" width="640" height="120" rx="8" fill="url(#dawnSky)"/>
+
+  <!-- Horizon sun sitting on the lintel line -->
+  <circle cx="360" cy="78" r="36" fill="url(#sunDisc)"/>
+  <circle cx="360" cy="78" r="22" fill="#ffd166" opacity="0.35"/>
+
+  <!-- Ground line -->
+  <path d="M60 148 Q360 162 660 148" fill="none" stroke="#c5d2bf" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Henge silhouette: three trilithons + flanking uprights -->
+  <g fill="#1a1f1c">
+    <!-- Far left lone uprights -->
+    <rect x="96" y="108" width="10" height="42" rx="1"/>
+    <rect x="114" y="102" width="12" height="48" rx="1"/>
+
+    <!-- Left trilithon -->
+    <rect x="148" y="78" width="16" height="72" rx="1"/>
+    <rect x="182" y="78" width="16" height="72" rx="1"/>
+    <rect x="144" y="68" width="58" height="14" rx="1"/>
+
+    <!-- Centre trilithon (taller, sun behind) -->
+    <rect x="318" y="62" width="20" height="88" rx="1"/>
+    <rect x="362" y="62" width="20" height="88" rx="1"/>
+    <rect x="312" y="50" width="76" height="16" rx="1"/>
+
+    <!-- Right trilithon -->
+    <rect x="500" y="80" width="16" height="70" rx="1"/>
+    <rect x="534" y="84" width="14" height="66" rx="1"/>
+    <rect x="496" y="70" width="56" height="14" rx="1"/>
+
+    <!-- Far right uprights -->
+    <rect x="588" y="104" width="12" height="46" rx="1"/>
+    <rect x="610" y="110" width="10" height="40" rx="1"/>
+
+    <!-- Small fallen / leaning suggestion -->
+    <rect x="250" y="120" width="28" height="10" rx="1" transform="rotate(-18 264 125)"/>
+  </g>
+
+  <!-- Tiny lichen on one upright -->
+  <circle cx="156" cy="118" r="2.5" fill="#5f8a4e" opacity="0.7"/>
+  <circle cx="162" cy="124" r="1.8" fill="#5f8a4e" opacity="0.5"/>
+
+  <!-- Wordmark -->
+  <text class="wm-main" x="360" y="204" text-anchor="middle">Radical Faeries</text>
+  <text class="wm-sub" x="360" y="230" text-anchor="middle">OF ALBION</text>
+</svg>

@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Albion Faeries - Option 1: Megalith by Night</title>
+  <link rel="icon" href="assets/sarsen/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/sarsen/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/sarsen/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -73,6 +76,16 @@
     .pillar.star { background: linear-gradient(160deg, #171d30, #0c101c 60%, rgba(224,181,106,0.25)); }
     .pillar strong { font-family: var(--font-display); font-size: 1.25rem; }
     .pillar p { margin: 0.35rem 0 0; font-size: var(--fs-small); color: var(--bark); }
+    .mark-row {
+      display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: end;
+      margin: 0 0 1.25rem;
+    }
+    .mark-size { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .mark-size img {
+      display: block; border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--stroke-strong);
+    }
+    .mark-size span { font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--mute); }
     .footer-note { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--stroke); font-size: var(--fs-small); color: var(--mute); max-width: 42rem; }
   </style>
 </head>
@@ -133,6 +146,37 @@
       </div>
     </section>
 
+    <section class="section" id="mark">
+      <h2>Mark</h2>
+      <p class="intro">
+        Moon-circle emblem: nested trilithons under a crescent, star gold on night plum.
+        Site favicon and apple touch icon. Keep the circle intact - do not crop to a square stone crop.
+      </p>
+      <div class="mark-row">
+        <div class="mark-size">
+          <img src="assets/sarsen/favicon.svg" alt="Albion Faeries moon-circle mark" width="128" height="128" />
+          <span>128</span>
+        </div>
+        <div class="mark-size">
+          <img src="assets/sarsen/favicon.svg" alt="" width="64" height="64" />
+          <span>64</span>
+        </div>
+        <div class="mark-size">
+          <img src="assets/sarsen/favicon.svg" alt="" width="32" height="32" />
+          <span>32 · favicon</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="type-meta">Files</div>
+        <ul class="clean" style="margin-top:0.65rem">
+          <li><code>assets/sarsen/favicon.svg</code> - primary favicon</li>
+          <li><code>assets/sarsen/favicon.ico</code> - legacy fallback</li>
+          <li><code>assets/sarsen/apple-touch-icon.png</code> - 180px home-screen</li>
+          <li><code>assets/sarsen/mark-moon-circle.png</code> - 512px master raster</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="colour">
       <h2>Colour</h2>
       <p class="intro">Ink and night blue, not purple glow stacks. Star cream for type. Ember gold used sparingly like a distant fire.</p>
@@ -161,7 +205,7 @@
             <li><strong>Brand first</strong> in starlight, not buried in widgets.</li>
             <li><strong>Dark with kindness</strong> - body text stays large and pale.</li>
             <li><strong>No neon haze</strong> - skip purple glow and sparkle emoji.</li>
-            <li><strong>Same stones as Dawn</strong> - one mark, two times of day.</li>
+            <li><strong>Moon-circle mark</strong> - nested trilithons under crescent; use as favicon and brand badge.</li>
             <li><strong>Circles</strong> - deeper void, gold accent, calmer motion.</li>
           </ul>
         </div>

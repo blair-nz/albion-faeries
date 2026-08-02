@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">Albion Faeries</title>
+  <desc id="desc">Moonlit Stonehenge circle mark for Radical Faeries of Albion.</desc>
+  <defs>
+    <radialGradient id="night" cx="42%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#4D405F"/>
+      <stop offset="100%" stop-color="#241E31"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0D995"/>
+      <stop offset="100%" stop-color="#B88A46"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="180" cy="180" r="156" fill="url(#night)"/>
+  <circle cx="180" cy="180" r="146" fill="none" stroke="#D4B66C" stroke-width="3" opacity="0.85"/>
+
+  <path d="M234 85 A76 76 0 1 0 234 236 A62 62 0 1 1 234 85 Z" fill="url(#gold)" opacity="0.95"/>
+
+  <g fill="#D7CFB9">
+    <path d="M98 159 Q94 159 93 165 L81 282 Q80 292 89 292 H119 Q127 292 126 283 L116 165 Q115 159 110 159 Z"/>
+    <path d="M247 159 Q241 159 241 166 L231 283 Q230 292 238 292 H269 Q279 292 277 282 L265 165 Q264 159 259 159 Z"/>
+    <path d="M88 126 Q88 118 96 117 L266 111 Q275 111 275 120 L272 160 Q271 168 264 168 L97 173 Q90 173 89 165 Z"/>
+    <path d="M144 204 Q140 204 139 210 L133 283 Q132 292 140 292 H160 Q168 292 167 284 L161 210 Q160 204 156 204 Z"/>
+    <path d="M203 204 Q199 204 198 210 L192 284 Q191 292 199 292 H219 Q227 292 226 283 L220 210 Q219 204 215 204 Z"/>
+    <path d="M137 183 Q137 177 143 177 L218 174 Q224 174 224 180 L222 206 Q222 212 216 212 L144 215 Q138 215 138 209 Z"/>
+  </g>
+
+  <path d="M78 298 Q180 320 282 298" fill="none" stroke="#6E815D" stroke-width="6" stroke-linecap="round"/>
+
+  <g fill="#F7E8B5">
+    <circle cx="111" cy="89" r="3"/>
+    <circle cx="288" cy="127" r="2.5"/>
+    <circle cx="67" cy="175" r="2"/>
+    <path d="M272 76 C275 86 278 89 288 92 C278 95 275 98 272 108 C269 98 266 95 256 92 C266 89 269 86 272 76 Z"/>
+  </g>
+</svg>
