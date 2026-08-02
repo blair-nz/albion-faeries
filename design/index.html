@@ -14,83 +14,128 @@
       margin: 0;
       min-height: 100vh;
       font-family: var(--font-body);
-      color: var(--ink);
+      color: #f0ebe3;
       background:
-        radial-gradient(900px 480px at 0% 0%, rgba(194, 74, 124, 0.14), transparent 55%),
-        radial-gradient(800px 420px at 100% 10%, rgba(47, 93, 69, 0.14), transparent 50%),
-        var(--mist);
+        radial-gradient(900px 520px at 8% 0%, rgba(224, 122, 42, 0.14), transparent 55%),
+        radial-gradient(780px 420px at 100% 12%, rgba(90, 120, 70, 0.12), transparent 50%),
+        radial-gradient(700px 500px at 50% 100%, rgba(80, 100, 160, 0.1), transparent 55%),
+        #0c0e12;
       display: grid;
       place-items: center;
       padding: var(--gutter);
     }
-
-    main {
-      width: min(100%, 36rem);
-    }
-
+    main { width: min(100%, 42rem); }
     .label {
       font-size: var(--fs-label);
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--fern);
+      color: #c4b8a4;
       margin: 0 0 0.75rem;
     }
-
     h1 {
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 6vw, 3.5rem);
       letter-spacing: -0.035em;
       line-height: 1.05;
-      color: var(--deep-fern);
+      color: #f7f0e6;
       margin: 0 0 0.85rem;
     }
-
-    p {
-      margin: 0 0 1.75rem;
-      color: var(--bark);
+    .lede {
+      margin: 0 0 2rem;
+      color: #a8a092;
       line-height: var(--lh-body);
       font-size: 1.1rem;
     }
-
-    .cards {
-      display: grid;
-      gap: 0.85rem;
-    }
-
-    a.card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid var(--stroke);
+    .options { display: grid; gap: 1rem; }
+    .option {
+      border: 1px solid rgba(247, 240, 230, 0.14);
       border-radius: var(--radius-lg);
-      padding: 1.15rem 1.25rem;
-      background: color-mix(in srgb, white 90%, var(--dew));
-      transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease;
+      padding: 1.2rem 1.3rem;
     }
-
-    a.card:hover {
-      transform: translateY(-2px);
-      border-color: var(--foxglove);
+    .option.night {
+      background: #12182c;
+      border-color: rgba(244, 239, 230, 0.18);
+      color: #f4efe6;
     }
-
-    a.card strong {
-      display: block;
+    .option h2 {
       font-family: var(--font-display);
-      font-size: 1.35rem;
-      color: var(--deep-fern);
-      margin-bottom: 0.25rem;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.35rem;
+    }
+    .option.night h2 { color: #f4efe6; }
+    .option > p {
+      margin: 0 0 0.9rem;
+      font-size: var(--fs-small);
+    }
+    .option.night > p { color: #a8a29a; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .option.night .links a {
+      color: #070b18;
+      background: #e0b56a;
+      border: 1px solid transparent;
+    }
+    .option.night .links a:last-child {
+      background: transparent;
+      color: #f4efe6;
+      border-color: rgba(244,239,230,0.28);
     }
 
-    a.card span {
-      font-size: var(--fs-small);
-      color: var(--bark);
+    .option.forest {
+      background:
+        linear-gradient(135deg, rgba(11,22,8,0.92), rgba(58,85,40,0.85)),
+        #0b1608;
+      border-color: rgba(155, 200, 78, 0.35);
+      color: #eef3e6;
+    }
+    .option.forest h2 { color: #eef3e6; }
+    .option.forest > p { color: #aebca0; }
+    .option.forest .links a {
+      color: #0b1608;
+      background: #9bc84e;
+      border: 1px solid transparent;
+    }
+    .option.forest .links a:last-child {
+      background: transparent;
+      color: #eef3e6;
+      border-color: rgba(238,243,230,0.28);
+    }
+
+    .option.fire {
+      background:
+        linear-gradient(135deg, rgba(7,6,4,0.95), rgba(80,40,12,0.88)),
+        #16110c;
+      border-color: rgba(240, 160, 64, 0.4);
+      color: #f7f0e6;
+    }
+    .option.fire h2 { color: #f7f0e6; }
+    .option.fire > p { color: #b8a898; }
+    .option.fire .links a {
+      color: #070604;
+      background: #e07a2a;
+      border: 1px solid transparent;
+    }
+    .option.fire .links a:last-child {
+      background: transparent;
+      color: #f7f0e6;
+      border-color: rgba(247,240,230,0.28);
     }
 
     .note {
       margin-top: 1.5rem;
       font-size: var(--fs-small);
-      color: var(--fern);
+      color: #8a8074;
     }
   </style>
 </head>
@@ -98,18 +143,38 @@
   <main>
     <p class="label">Local design kit · August 2026</p>
     <h1>Albion Faeries</h1>
-    <p>Style exploration for the Albion rebuild - Foxglove Glade across public hearth, event minisites, and private Circles.</p>
-    <div class="cards">
-      <a class="card" href="style-guide.html">
-        <strong>1. Style guide</strong>
-        <span>Colour, type, voice, components, Circles UI tone, motion.</span>
-      </a>
-      <a class="card" href="site-structure.html">
-        <strong>2. Site structure</strong>
-        <span>Public IA, event minisites, private Circles wires.</span>
-      </a>
+    <p class="lede">Three active visual directions. Same site structure; different light.</p>
+
+    <div class="options">
+      <section class="option night">
+        <h2>1 · Megalith by Night</h2>
+        <p>Moonlit night over stone - ink sky, star gold, public-domain night photo.</p>
+        <div class="links">
+          <a href="style-guide-sarsen-night.html">Style guide</a>
+          <a href="site-structure-sarsen-night.html">Site structure</a>
+        </div>
+      </section>
+
+      <section class="option forest">
+        <h2>2 · Deep Glade</h2>
+        <p>Deep England forest film - moss canopy, leaf light, looping woodland atmosphere.</p>
+        <div class="links">
+          <a href="style-guide-deep-glade.html">Style guide</a>
+          <a href="site-structure-deep-glade.html">Site structure</a>
+        </div>
+      </section>
+
+      <section class="option fire">
+        <h2>3 · Faery Fire</h2>
+        <p>Golden embers on coal - looping faery-fire film, amber spark, hearth warmth.</p>
+        <div class="links">
+          <a href="style-guide-faery-fire.html">Style guide</a>
+          <a href="site-structure-faery-fire.html">Site structure</a>
+        </div>
+      </section>
     </div>
-    <p class="note">Open this folder locally in a browser. No build step required.</p>
+
+    <p class="note">Foxglove Glade and Sarsen Dawn are hidden from this index (files kept). Hot Spore remains archived.</p>
   </main>
 </body>
 </html>

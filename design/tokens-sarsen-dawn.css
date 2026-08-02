@@ -1,0 +1,82 @@
+/* Albion Faeries - Option 2: Sarsen Dawn
+   Cooler willow chalk, teal horizon, ember sunrise - standing stone ground. */
+
+:root {
+  /* Ground + mist */
+  --chalk: #e8ebe3;
+  --mist-gold: #c5d2bf;
+  --willow: #c5d2bf;
+
+  /* Sunrise metal */
+  --apricot: #f09a42;
+  --honey: #f09a42;
+  --rose-dawn: #e25d52;
+  --ember: #e25d52;
+  --sun: #ffd166;
+
+  /* Horizon */
+  --sky: #3d7a8c;
+  --sky-deep: #245566;
+  --tide: #3d7a8c;
+  --tide-deep: #245566;
+
+  /* Stone + earth */
+  --sarsen: #6a645c;
+  --sarsen-deep: #3a3530;
+  --lichen: #5f8a4e;
+  --moss: #5f8a4e;
+  --earth: #a67c52;
+  --bracken: #a67c52;
+  --ink: #1a1f1c;
+  --bark: #2c342f;
+
+  --circle-wash: #dde3d8;
+  --circle-panel: #f2f4ee;
+  --circle-accent: #9a6230;
+
+  --surface: #eef1ea;
+  --surface-raised: #f7f8f3;
+  --stroke: rgba(26, 31, 28, 0.14);
+  --stroke-strong: rgba(26, 31, 28, 0.28);
+
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 7vw, 5.4rem);
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --measure: 38rem;
+  --page: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.1rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+
+  --henge-ground-h: clamp(4.5rem, 12vw, 8.5rem);
+
+  --tex-stone: url("assets/sarsen/texture-sarsen.jpg");
+  --tex-chalk: url("assets/sarsen/texture-chalk.jpg");
+  --tex-dawn-wash: url("assets/sarsen/texture-dawn-sky.jpg");
+  --tex-fern: url("assets/sarsen/texture-fern.jpg");
+  --tex-bark: url("assets/sarsen/texture-bark.jpg");
+  --tex-bracken: url("assets/sarsen/texture-bracken.jpg");
+  --tex-hawthorn: url("assets/sarsen/texture-hawthorn.jpg");
+  --tex-mist: url("assets/sarsen/texture-mist.jpg");
+  --tex-oak: url("assets/sarsen/texture-oak.jpg");
+  --tex-sky: url("assets/sarsen/photo-dawn.jpg");
+  --photo-henge: url("assets/sarsen/photo-dawn.jpg");
+  --henge-ground: url("assets/sarsen/henge-ground.svg");
+}

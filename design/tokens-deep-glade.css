@@ -1,0 +1,54 @@
+/* Albion Faeries - Option 4: Deep Glade
+   Deep England woodland - moss canopy, sunshaft, living forest video. */
+
+:root {
+  --canopy: #0b1608;
+  --moss-deep: #152414;
+  --moss: #3a5528;
+  --leaf: #9bc84e;
+  --leaf-bright: #c5e078;
+  --sunshaft: #f2e7a8;
+  --stream: #8aa4a8;
+  --bark: #2c2418;
+  --lichen: #6a7a48;
+  --mist: #e4ebd8;
+  --ink: #eef3e6;
+  --mute: #aebca0;
+
+  --circle-wash: #101c0e;
+  --circle-panel: #182616;
+  --circle-accent: #d0b15a;
+
+  --surface: rgba(11, 22, 8, 0.78);
+  --surface-raised: rgba(21, 36, 20, 0.88);
+  --stroke: rgba(238, 243, 230, 0.14);
+  --stroke-strong: rgba(238, 243, 230, 0.28);
+
+  --font-display: "Libre Baskerville", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 7vw, 5.4rem);
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --measure: 38rem;
+  --page: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.1rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+
+  --forest-poster: url("assets/deep-glade/forest-poster.jpg");
+}

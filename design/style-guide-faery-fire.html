@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Option 3: Faery Fire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens-faery-fire.css" />
+  <link rel="stylesheet" href="faery-fire-shell.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body.faery-fire { font-size: var(--fs-body); line-height: var(--lh-body); }
+    a { color: var(--spark); }
+    a:hover { color: var(--glow); }
+    .wrap { width: min(100% - 2 * var(--gutter), var(--page)); margin-inline: auto; padding-block: 2.5rem 5rem; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+    .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--mist); text-decoration: none; }
+    .option-nav { display: flex; flex-direction: column; align-items: flex-end; gap: 0.45rem; font-size: var(--fs-small); font-weight: 700; }
+    .option-nav .style-row, .option-nav .doc-row { display: flex; flex-wrap: wrap; gap: 0.55rem 0.95rem; justify-content: flex-end; align-items: center; }
+    .option-nav a { text-decoration: none; color: var(--mute); border-bottom: 2px solid transparent; padding-bottom: 0.1rem; }
+    .option-nav .style-row a { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; color: var(--mute); }
+    .option-nav .style-row a[aria-current="true"], .option-nav .doc-row a[aria-current="page"], .option-nav a:hover { color: var(--spark); border-color: var(--ember); }
+    .hero-label { font-size: var(--fs-label); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--flame); margin: 0 0 0.75rem; }
+    h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.03em; color: var(--mist); font-weight: 700; line-height: var(--lh-tight); }
+    h1 { font-size: var(--fs-hero); max-width: 14ch; margin: 0 0 1rem; text-shadow: 0 2px 28px rgba(224,122,42,0.35); }
+    .lede { font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 40rem; color: var(--mute); margin: 0 0 1.5rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .chip { display: inline-flex; padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); background: rgba(224,122,42,0.14); border: 1px solid var(--stroke); font-size: var(--fs-small); font-weight: 700; color: var(--mist); }
+    .section { margin-block: 3.5rem; }
+    .section > h2 { font-size: var(--fs-h2); margin: 0 0 0.5rem; }
+    .section > .intro { max-width: var(--measure); margin: 0 0 1.75rem; color: var(--mute); }
+    .grid-2 { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+    .grid-3 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+    .panel {
+      background: var(--surface-raised);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.35rem;
+      backdrop-filter: blur(10px);
+    }
+    .video-frame {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--stroke-strong);
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--coal) var(--fire-poster) center / cover;
+    }
+    .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .swatch { border-radius: var(--radius-md); min-height: 6.2rem; padding: 0.85rem; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--stroke); color: var(--mist); }
+    .swatch strong { font-size: var(--fs-small); font-weight: 800; }
+    .swatch span { font-size: 0.78rem; opacity: 0.85; }
+    .type-meta { font-size: var(--fs-label); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--flame); margin-bottom: 0.35rem; }
+    .display-xl { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4rem); margin: 0; letter-spacing: -0.035em; }
+    .display-m { font-family: var(--font-display); font-size: var(--fs-h2); font-style: italic; font-weight: 500; color: var(--spark); margin: 0.35rem 0 0; }
+    .do-dont { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+    .do, .dont { border-radius: var(--radius-lg); padding: 1.15rem 1.25rem; border: 1px solid var(--stroke); background: var(--surface-raised); }
+    .do h3, .dont h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+    .dont h3 { color: var(--flame); }
+    ul.clean { margin: 0; padding-left: 1.1rem; color: var(--mute); }
+    ul.clean li { margin: 0.35rem 0; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.65rem 1.25rem; border-radius: var(--radius-sm); border: 2px solid transparent; font-weight: 800; font-size: 0.95rem; }
+    .btn-primary { background: var(--ember); color: var(--coal); }
+    .btn-secondary { background: var(--spark); color: var(--coal); }
+    .btn-ghost { background: transparent; color: var(--mist); border-color: var(--stroke-strong); }
+    .pillars { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+    .pillar { border-radius: var(--radius-lg); border: 1px solid var(--stroke); overflow: hidden; min-height: 11rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: flex-end; color: var(--mist); }
+    .pillar.video { background: linear-gradient(180deg, rgba(7,6,4,0.15), rgba(7,6,4,0.78)), var(--fire-poster) center / cover; }
+    .pillar.coal { background: linear-gradient(160deg, var(--ash), var(--coal)); }
+    .pillar.ember { background: linear-gradient(160deg, var(--ember), var(--spark)); color: var(--coal); }
+    .pillar strong { font-family: var(--font-display); font-size: 1.35rem; }
+    .pillar p { margin: 0.35rem 0 0; font-size: var(--fs-small); }
+    .footer-note { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--stroke); font-size: var(--fs-small); color: var(--mute); max-width: 42rem; }
+  </style>
+</head>
+<body class="faery-fire">
+  <div class="fire-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="assets/faery-fire/fire-poster.jpg">
+      <source src="assets/faery-fire/fire-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="veil"></div>
+  </div>
+
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <nav class="option-nav" aria-label="Design kit navigation">
+        <div class="style-row" aria-label="Visual direction">
+          <a href="style-guide-sarsen-night.html">Megalith by Night</a>
+          <a href="style-guide-deep-glade.html">Deep Glade</a>
+          <a href="style-guide-faery-fire.html" aria-current="true">Faery Fire</a>
+        </div>
+        <div class="doc-row" aria-label="This option">
+          <a href="style-guide-faery-fire.html" aria-current="page">Style guide</a>
+          <a href="site-structure-faery-fire.html">Site structure</a>
+        </div>
+      </nav>
+    </header>
+
+    <p class="hero-label">Option 3 · Faery Fire</p>
+    <h1>Embers in the dark</h1>
+    <p class="lede">
+      Coal-black night and drifting gold: a hearth of faery fire, not neon mystic purple.
+      The film loops behind the page - soft orbs of light, warm and wild.
+    </p>
+    <div class="meta">
+      <span class="chip">Fire film</span>
+      <span class="chip">Coal + amber</span>
+      <span class="chip">Public + Circles</span>
+    </div>
+
+    <section class="section" id="atmosphere">
+      <h2>Atmosphere film</h2>
+      <p class="intro">
+        Web-optimised loop from <code>art/FaeryFire.mp4</code> (~0.3&nbsp;MB H.264, muted).
+        Full-bleed behind the page; a coal veil keeps type readable.
+      </p>
+      <div class="video-frame">
+        <video autoplay muted loop playsinline poster="assets/faery-fire/fire-poster.jpg" controls>
+          <source src="assets/faery-fire/fire-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section class="section" id="pillars">
+      <h2>Pillars of the look</h2>
+      <p class="intro">Moving embers for place, coal for depth, flame for the pulse.</p>
+      <div class="pillars">
+        <div class="pillar video">
+          <strong>Faery fire</strong>
+          <p>Looping ember film as the page plane.</p>
+        </div>
+        <div class="pillar coal">
+          <strong>Coal dark</strong>
+          <p>Veils, Circle chrome, readable panels.</p>
+        </div>
+        <div class="pillar ember">
+          <strong>Amber pulse</strong>
+          <p>CTAs and rare spark accents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colour">
+      <h2>Colour</h2>
+      <p class="intro">
+        Near-black coal keeps the kit easy on the eyes. Ember and spark carry warmth without purple haze.
+      </p>
+      <div class="grid-3">
+        <div class="swatch" style="background:var(--coal)"><strong>Coal</strong><span>#070604</span></div>
+        <div class="swatch" style="background:var(--ash)"><strong>Ash</strong><span>#16110C</span></div>
+        <div class="swatch" style="background:var(--cinder)"><strong>Cinder</strong><span>#8A4A22</span></div>
+        <div class="swatch" style="background:var(--ember);color:var(--coal)"><strong>Ember</strong><span>#E07A2A · CTA</span></div>
+        <div class="swatch" style="background:var(--flame);color:var(--coal)"><strong>Flame</strong><span>#F0A040</span></div>
+        <div class="swatch" style="background:var(--spark);color:var(--coal)"><strong>Spark</strong><span>#FFD56A</span></div>
+        <div class="swatch" style="background:var(--glow);color:var(--coal)"><strong>Glow</strong><span>#FFF1C2</span></div>
+        <div class="swatch" style="background:var(--smoke);color:var(--coal)"><strong>Smoke</strong><span>#A89888</span></div>
+        <div class="swatch" style="background:var(--mist);color:var(--coal)"><strong>Mist</strong><span>#F4EBE0</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <h2>Typography</h2>
+      <p class="intro"><strong>Cormorant Garamond</strong> for brand and headlines - warm literary firelight. <strong>Figtree</strong> for body and UI.</p>
+      <div class="panel">
+        <div class="type-meta">Display · Cormorant Garamond</div>
+        <p class="display-xl">Albion Faeries</p>
+        <p class="display-m">sparks gather where we gather</p>
+        <p style="margin:1rem 0 0;max-width:36rem;color:var(--mute)">
+          The Albion Faeries are part of the global Radical Faerie web - awakening, nature-loving,
+          compassionate queers finding each other in old Albion and beyond.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <h2>Components</h2>
+      <div class="panel" style="margin-bottom:1rem">
+        <div class="type-meta">Buttons</div>
+        <div class="btn-row" style="margin-top:0.75rem">
+          <span class="btn btn-primary">See what's on</span>
+          <span class="btn btn-secondary">Who we are</span>
+          <span class="btn btn-ghost">Circle sign-in</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <div class="type-meta">Public nav</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.45rem;font-weight:700">Albion Faeries</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);font-weight:600;color:var(--mute)">What's on · Gatherings · Who we are · Get involved</p>
+        </div>
+        <div class="panel" style="background:var(--circle-wash)">
+          <div class="type-meta" style="color:var(--circle-accent)">Circle chrome</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.3rem;font-weight:700">Circles · Albion</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--mute)">Deeper ash panels; spark accent; film optional behind Circles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <h2>Voice</h2>
+      <div class="do-dont">
+        <div class="do">
+          <h3>Say</h3>
+          <ul class="clean">
+            <li>"Come warm yourself at the hearth."</li>
+            <li>"What's glowing this moon."</li>
+            <li>"Open actions from the last Comms moot."</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Avoid</h3>
+          <ul class="clean">
+            <li>Neon festival flyer energy</li>
+            <li>Purple "mystic UI" jargon</li>
+            <li>Fire-and-brimstone drama</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Faery Fire draft · August 2026. Atmosphere from <code>art/FaeryFire.mp4</code>,
+      web loop in <code>assets/faery-fire/</code>. Pair with <a href="site-structure-faery-fire.html">site structure</a>.
+      Not Circle-ratified.
+    </p>
+  </div>
+  <script>
+    (function () {
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      document.querySelectorAll("video").forEach(function (v) {
+        v.removeAttribute("autoplay");
+        v.pause();
+      });
+    })();
+  </script>
+</body>
+</html>

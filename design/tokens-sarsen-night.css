@@ -1,0 +1,56 @@
+/* Albion Faeries - Megalith by Night (was Sarsen Night)
+   Starry night over stone - ink sky, pale starlight, standing stone. */
+
+:root {
+  --void: #070b18;
+  --night: #12182c;
+  --horizon: #2a221c;
+  --star: #f4efe6;
+  --moon: #e8e0d0;
+  --sarsen: #6a665e;
+  --sarsen-deep: #3a3732;
+  --ember-glow: #c4894a;
+  --lichen-dim: #5a6a52;
+  --ink: #e8e4dc;
+  --mute: #a8a29a;
+  --bark: #cfc6b8;
+
+  --circle-wash: #0c101c;
+  --circle-panel: #151b2e;
+  --circle-accent: #e0b56a;
+
+  --surface: #0e121f;
+  --surface-raised: #171d30;
+  --stroke: rgba(244, 239, 230, 0.12);
+  --stroke-strong: rgba(244, 239, 230, 0.22);
+
+  --font-display: "Syne", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 7vw, 5.4rem);
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --measure: 38rem;
+  --page: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.1rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+
+  --tex-stone: url("assets/sarsen/texture-sarsen.jpg");
+  --tex-sky: url("assets/sarsen/photo-night.jpg");
+  --photo-henge: url("assets/sarsen/photo-night.jpg");
+}

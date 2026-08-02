@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Option 1: Megalith by Night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens-sarsen-night.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      color: var(--ink);
+      background: radial-gradient(900px 500px at 80% 0%, rgba(224, 181, 106, 0.08), transparent 50%), var(--void);
+      min-height: 100vh;
+    }
+    a { color: var(--circle-accent); }
+    a:hover { color: var(--star); }
+    .wrap { width: min(100% - 2 * var(--gutter), var(--page)); margin-inline: auto; padding-block: 2.5rem 5rem; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+    .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.03em; color: var(--star); text-decoration: none; }
+    .option-nav { display: flex; flex-direction: column; align-items: flex-end; gap: 0.45rem; font-size: var(--fs-small); font-weight: 700; }
+    .option-nav .style-row, .option-nav .doc-row { display: flex; flex-wrap: wrap; gap: 0.55rem 0.95rem; justify-content: flex-end; align-items: center; }
+    .option-nav a { text-decoration: none; color: var(--mute); border-bottom: 2px solid transparent; padding-bottom: 0.1rem; }
+    .option-nav .style-row a { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; color: var(--bark); }
+    .option-nav .style-row a[aria-current="true"], .option-nav .doc-row a[aria-current="page"], .option-nav a:hover { color: var(--star); border-color: var(--circle-accent); }
+    .hero-label { font-size: var(--fs-label); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--circle-accent); margin: 0 0 0.75rem; }
+    h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.04em; color: var(--star); font-weight: 700; line-height: var(--lh-tight); }
+    h1 { font-size: var(--fs-hero); max-width: 14ch; margin: 0 0 1rem; }
+    .lede { font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 40rem; color: var(--bark); margin: 0 0 1.5rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .chip { display: inline-flex; padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); background: rgba(244,239,230,0.06); border: 1px solid var(--stroke); font-size: var(--fs-small); font-weight: 700; color: var(--star); }
+    .section { margin-block: 3.5rem; }
+    .section > h2 { font-size: var(--fs-h2); margin: 0 0 0.5rem; }
+    .section > .intro { max-width: var(--measure); margin: 0 0 1.75rem; color: var(--mute); }
+    .grid-2 { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+    .grid-3 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+    .panel { background: var(--surface-raised); border: 1px solid var(--stroke); border-radius: var(--radius-lg); padding: 1.25rem 1.35rem; }
+    .photo-frame { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--stroke-strong); }
+    .photo-frame img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 40%; }
+    .swatch { border-radius: var(--radius-md); min-height: 6.2rem; padding: 0.85rem; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--stroke); color: var(--star); }
+    .swatch strong { font-size: var(--fs-small); font-weight: 800; }
+    .swatch span { font-size: 0.78rem; opacity: 0.85; }
+    .stone-panel {
+      min-height: 10rem; border-radius: var(--radius-lg); border: 1px solid var(--stroke-strong);
+      background: linear-gradient(180deg, rgba(7,11,24,0.2), rgba(7,11,24,0.72)), var(--tex-stone) center / cover;
+      color: var(--star); padding: 1.25rem; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .stone-panel strong { font-family: var(--font-display); font-size: 1.6rem; }
+    .type-meta { font-size: var(--fs-label); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--circle-accent); margin-bottom: 0.35rem; }
+    .display-xl { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4rem); margin: 0; letter-spacing: -0.045em; }
+    .display-m { font-family: var(--font-display); font-size: var(--fs-h2); font-weight: 600; color: var(--circle-accent); margin: 0.35rem 0 0; }
+    .do-dont { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+    .do, .dont { border-radius: var(--radius-lg); padding: 1.15rem 1.25rem; border: 1px solid var(--stroke); background: var(--surface-raised); }
+    .do h3, .dont h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+    .dont h3 { color: var(--ember-glow); }
+    ul.clean { margin: 0; padding-left: 1.1rem; color: var(--bark); }
+    ul.clean li { margin: 0.35rem 0; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.65rem 1.25rem; border-radius: var(--radius-sm); border: 2px solid transparent; font-weight: 800; font-size: 0.95rem; }
+    .btn-primary { background: var(--circle-accent); color: var(--void); }
+    .btn-secondary { background: var(--star); color: var(--void); }
+    .btn-ghost { background: transparent; color: var(--star); border-color: var(--stroke-strong); }
+    .pillars { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+    .pillar { border-radius: var(--radius-lg); border: 1px solid var(--stroke); overflow: hidden; min-height: 11rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: flex-end; color: var(--star); }
+    .pillar.sky { background: linear-gradient(180deg, rgba(7,11,24,0.15), rgba(7,11,24,0.55)), var(--tex-sky) center / cover; }
+    .pillar.stone { background: linear-gradient(180deg, rgba(7,11,24,0.25), rgba(7,11,24,0.7)), var(--tex-stone) center / cover; }
+    .pillar.star { background: linear-gradient(160deg, #171d30, #0c101c 60%, rgba(224,181,106,0.25)); }
+    .pillar strong { font-family: var(--font-display); font-size: 1.25rem; }
+    .pillar p { margin: 0.35rem 0 0; font-size: var(--fs-small); color: var(--bark); }
+    .footer-note { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--stroke); font-size: var(--fs-small); color: var(--mute); max-width: 42rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <nav class="option-nav" aria-label="Design kit navigation">
+        <div class="style-row" aria-label="Visual direction">
+          <a href="style-guide-sarsen-night.html" aria-current="true">Megalith by Night</a>
+          <a href="style-guide-deep-glade.html">Deep Glade</a>
+          <a href="style-guide-faery-fire.html">Faery Fire</a>
+        </div>
+        <div class="doc-row" aria-label="This option">
+          <a href="style-guide-sarsen-night.html" aria-current="page">Style guide</a>
+          <a href="site-structure-sarsen-night.html">Site structure</a>
+        </div>
+      </nav>
+    </header>
+
+    <p class="hero-label">Option 1 · Megalith by Night</p>
+    <h1>Stars over standing stone</h1>
+    <p class="lede">
+      A dark hearth: ink-blue night (not neon purple), pale moonlight, standing stone under cloud.
+      Quiet fabulousness - campfire gold as the only warm spark.
+    </p>
+    <div class="meta">
+      <span class="chip">Moonlit night</span>
+      <span class="chip">Sarsen stone</span>
+      <span class="chip">Public + Circles</span>
+    </div>
+
+    <section class="section" id="atmosphere">
+      <h2>Atmosphere photo</h2>
+      <p class="intro">
+        Public-domain Stonehenge under a moonlit sky. Full-bleed hero plane on the live site; shown here as the visual anchor for this option.
+      </p>
+      <div class="photo-frame">
+        <img src="assets/sarsen/photo-night.jpg" alt="Stonehenge at night under a bright moon and dark clouds" width="1600" height="900" />
+      </div>
+    </section>
+
+    <section class="section" id="pillars">
+      <h2>Three pillars of the look</h2>
+      <div class="pillars">
+        <div class="pillar sky">
+          <strong>Night sky</strong>
+          <p>Hero plane, deep page wash, hush.</p>
+        </div>
+        <div class="pillar stone">
+          <strong>Sarsen</strong>
+          <p>Weight, footers, gathering practicals.</p>
+        </div>
+        <div class="pillar star">
+          <strong>Star gold</strong>
+          <p>Primary CTA and Circle accent only.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colour">
+      <h2>Colour</h2>
+      <p class="intro">Ink and night blue, not purple glow stacks. Star cream for type. Ember gold used sparingly like a distant fire.</p>
+      <div class="grid-3">
+        <div class="swatch" style="background:var(--void)"><strong>Void</strong><span>#070B18</span></div>
+        <div class="swatch" style="background:var(--night)"><strong>Night</strong><span>#12182C</span></div>
+        <div class="swatch" style="background:var(--horizon)"><strong>Horizon</strong><span>#2A221C</span></div>
+        <div class="swatch" style="background:var(--sarsen)"><strong>Sarsen</strong><span>#6A665E</span></div>
+        <div class="swatch" style="background:var(--sarsen-deep)"><strong>Sarsen deep</strong><span>#3A3732</span></div>
+        <div class="swatch" style="background:var(--circle-accent);color:var(--void)"><strong>Star gold</strong><span>#E0B56A · CTA</span></div>
+        <div class="swatch" style="background:var(--star);color:var(--void)"><strong>Star</strong><span>#F4EFE6 · type</span></div>
+        <div class="swatch" style="background:var(--ember-glow);color:var(--void)"><strong>Ember</strong><span>#C4894A · rare</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="stone">
+      <h2>Stone at night</h2>
+      <div class="grid-2">
+        <div class="stone-panel">
+          <strong>Albion Faeries</strong>
+          <span style="opacity:0.85;margin-top:0.35rem">Stone band under starlight</span>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;font-size:1.15rem">Principles</h3>
+          <ul class="clean">
+            <li><strong>Brand first</strong> in starlight, not buried in widgets.</li>
+            <li><strong>Dark with kindness</strong> - body text stays large and pale.</li>
+            <li><strong>No neon haze</strong> - skip purple glow and sparkle emoji.</li>
+            <li><strong>Same stones as Dawn</strong> - one mark, two times of day.</li>
+            <li><strong>Circles</strong> - deeper void, gold accent, calmer motion.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <h2>Typography</h2>
+      <p class="intro"><strong>Syne</strong> for brand and headlines - modern, slightly odd under the stars. <strong>Figtree</strong> for body.</p>
+      <div class="panel">
+        <div class="type-meta">Display · Syne</div>
+        <p class="display-xl">Albion Faeries</p>
+        <p class="display-m">the circle holds after the light goes</p>
+        <p style="margin:1rem 0 0;max-width:36rem;color:var(--bark)">
+          The Albion Faeries are part of the global Radical Faerie web - awakening, nature-loving,
+          compassionate queers finding each other in old Albion and beyond.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <h2>Components</h2>
+      <div class="panel" style="margin-bottom:1rem">
+        <div class="type-meta">Buttons</div>
+        <div class="btn-row" style="margin-top:0.75rem">
+          <span class="btn btn-primary">See what's on</span>
+          <span class="btn btn-secondary">Who we are</span>
+          <span class="btn btn-ghost">Circle sign-in</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <div class="type-meta">Public nav</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--star)">Albion Faeries</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);font-weight:600;color:var(--mute)">What's on · Gatherings · Who we are · Get involved</p>
+        </div>
+        <div class="panel" style="background:var(--circle-wash)">
+          <div class="type-meta">Circle chrome</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--star)">Circles · Albion</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--mute)">Void panels, star-gold accent, almost no motion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <h2>Voice</h2>
+      <div class="do-dont">
+        <div class="do">
+          <h3>Say</h3>
+          <ul class="clean">
+            <li>"Come along to a circle or gathering."</li>
+            <li>"What's glowing this moon."</li>
+            <li>"Open actions from the last Comms moot."</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Avoid</h3>
+          <ul class="clean">
+            <li>Gothic cosplay voice</li>
+            <li>Purple "mystic UI" jargon</li>
+            <li>Gatekeepy night-club energy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Megalith by Night draft · August 2026. Stone texture is original; hero photo is CC0 public domain (see assets/sarsen/PHOTO-LICENSE.txt).
+      Pair with <a href="site-structure-sarsen-night.html">site structure</a>. Not Circle-ratified.
+    </p>
+  </div>
+</body>
+</html>

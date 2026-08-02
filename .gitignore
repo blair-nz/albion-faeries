@@ -15,7 +15,13 @@ Lughnasadh 2026/
 *.jpeg
 *.png
 !albion-faeries-current-network-services.png
+!design/assets/**/*.png
+!design/assets/**/*.jpg
+!design/assets/**/*.jpeg
 
 # Keep architecture diagrams that are already shared as project artefacts
 !albion-faeries-current-architecture.svg
 !albion-faeries-current-network-services.svg
+
+.wrangler/
+

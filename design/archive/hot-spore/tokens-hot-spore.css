@@ -1,0 +1,70 @@
+/* Albion Faeries - Option 2: Hot Spore design tokens
+   Heat-grain textures are original (inspired by a colour/mood direction from Yellow).
+   Doodle illustrations credited separately where used.
+   Draft for local design exploration - not a Circle decision yet. */
+
+:root {
+  /* Heat textures */
+  --magenta: #e84a8a;
+  --magenta-deep: #c22668;
+  --ember: #f07820;
+  --ember-deep: #d45a0c;
+  --gold: #f0c01a;
+  --gold-hot: #ffcc33;
+
+  /* Void + doodle ink */
+  --void: #0a090b;
+  --charcoal: #2c272a;
+  --smoke: #4a4347;
+  --ash: #c8c0c4;
+
+  /* Readable surfaces */
+  --cream: #fff6eb;
+  --ink: #140e12;
+  --bark: #2a1c22;
+
+  /* Circle space - same heat family, quieter */
+  --circle-wash: #1a1216;
+  --circle-panel: #241a20;
+  --circle-accent: #f0c01a;
+
+  /* Surfaces */
+  --surface: #fff6eb;
+  --surface-raised: #fffaf3;
+  --stroke: rgba(20, 14, 18, 0.14);
+  --stroke-strong: rgba(20, 14, 18, 0.3);
+  --stroke-on-dark: rgba(255, 246, 235, 0.18);
+
+  /* Type - quirky display + friendly body */
+  --font-display: "Bricolage Grotesque", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 7vw, 5.5rem);
+  --fs-h1: clamp(2rem, 4vw, 3.25rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --measure: 38rem;
+  --page: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius-sm: 0.4rem;
+  --radius-md: 0.85rem;
+  --radius-lg: 1.35rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med: 420ms;
+  --dur-slow: 900ms;
+
+  /* Original Hot Spore textures (not third-party project assets) */
+  --tex-dunes: url("assets-hot-spore/texture-dunes.jpg");
+  --tex-wood: url("assets-hot-spore/texture-wood.jpg");
+}

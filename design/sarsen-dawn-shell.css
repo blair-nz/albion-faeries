@@ -1,0 +1,85 @@
+/* Sarsen Dawn page shell:
+   chalk + Albion ground textures, sunrise from the right, henge silhouette on the ground. */
+
+body.sarsen-dawn {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  padding-bottom: calc(var(--henge-ground-h) * 0.72);
+  background-color: var(--chalk);
+  background-image:
+    radial-gradient(
+      65% 110% at 100% 30%,
+      color-mix(in srgb, var(--sun) 58%, transparent) 0%,
+      color-mix(in srgb, var(--apricot) 34%, transparent) 24%,
+      color-mix(in srgb, var(--ember) 16%, transparent) 48%,
+      transparent 72%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 55%,
+      color-mix(in srgb, var(--apricot) 14%, transparent) 78%,
+      color-mix(in srgb, var(--sun) 22%, transparent) 100%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--tide) 12%, transparent),
+      transparent 38%,
+      color-mix(in srgb, var(--willow) 42%, transparent) 78%,
+      color-mix(in srgb, var(--bracken) 18%, transparent)
+    ),
+    var(--tex-mist),
+    var(--tex-hawthorn),
+    var(--tex-chalk);
+  background-size:
+    auto,
+    auto,
+    auto,
+    cover,
+    520px 340px,
+    400px 400px;
+  background-position:
+    100% 28%,
+    0 0,
+    0 0,
+    100% 0%,
+    0 100%,
+    0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-attachment: fixed, fixed, fixed, fixed, scroll, scroll;
+  background-blend-mode: normal, normal, normal, soft-light, soft-light, normal;
+}
+
+/* Ground-line Stonehenge silhouette */
+.henge-ground {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  height: var(--henge-ground-h);
+  pointer-events: none;
+  background-image: var(--henge-ground);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+  color: var(--ink);
+  filter: drop-shadow(0 -2px 10px color-mix(in srgb, var(--apricot) 25%, transparent));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.sarsen-dawn {
+    animation: sunrise-shift 16s var(--ease-out) infinite alternate;
+  }
+
+  @keyframes sunrise-shift {
+    from {
+      background-position: 100% 26%, 0 0, 0 0, 100% 0%, 0 100%, 0 0;
+    }
+    to {
+      background-position: 100% 40%, 0 0, 0 0, 96% 8%, -20px 100%, 10px 8px;
+    }
+  }
+}

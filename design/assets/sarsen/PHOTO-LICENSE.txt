@@ -1,0 +1,21 @@
+Albion Faeries design kit - Sarsen atmosphere photos
+CC0 / public domain. No attribution required. Kept here for provenance.
+
+photo-dawn.jpg
+  Source: PxHere, Creative Commons CC0
+  https://pxhere.com/en/photo/556127
+  Stonehenge under a dawn / dusk sky (sky-dominant crop for hero use)
+
+photo-night.jpg
+  Source: PxHere, Creative Commons CC0
+  https://pxhere.com/en/photo/1076573
+  Also mirrored on Rawpixel / Pixy (CC0)
+
+texture-sarsen.jpg, texture-chalk.jpg, texture-dawn-sky.jpg, texture-night-sky.jpg
+  Original procedural textures for this design kit.
+
+henge-ground.svg
+  Original simplified silhouette for the ground line (not a photograph).
+
+Albion ground photo textures (fern, bark, oak, hawthorn, mist, bracken):
+  See pagan/LICENSE.txt (CC0 / public domain sources).

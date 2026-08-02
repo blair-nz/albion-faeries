@@ -1,0 +1,56 @@
+/* Faery Fire: fixed ember-film atmosphere + readable coal veil */
+
+body.faery-fire {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  background: var(--coal);
+  position: relative;
+}
+
+.fire-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--coal) var(--fire-poster) center / cover no-repeat;
+}
+
+.fire-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.fire-bg .veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      115deg,
+      rgba(7, 6, 4, 0.88) 0%,
+      rgba(7, 6, 4, 0.62) 38%,
+      rgba(7, 6, 4, 0.4) 62%,
+      rgba(22, 17, 12, 0.55) 100%
+    ),
+    radial-gradient(
+      70% 60% at 75% 40%,
+      rgba(240, 160, 64, 0.16),
+      transparent 58%
+    );
+}
+
+body.faery-fire > .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fire-bg video {
+    display: none;
+  }
+}

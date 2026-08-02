@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Albion Faeries - Site Structure Mockup</title>
+  <title>Albion Faeries - Deep Glade Site Structure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="tokens.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens-deep-glade.css" />
+  <link rel="stylesheet" href="deep-glade-shell.css" />
   <style>
     * { box-sizing: border-box; }
     body {
@@ -66,7 +67,7 @@
 
     .option-nav a {
       text-decoration: none;
-      color: var(--bark);
+      color: var(--mute);
       border-bottom: 2px solid transparent;
       padding-bottom: 0.1rem;
     }
@@ -75,14 +76,13 @@
       font-family: var(--font-display);
       font-weight: 600;
       letter-spacing: -0.02em;
-      color: var(--fern);
     }
 
     .option-nav .style-row a[aria-current="true"],
     .option-nav .doc-row a[aria-current="page"],
     .option-nav a:hover {
-      color: var(--foxglove-deep);
-      border-color: var(--foxglove);
+      color: var(--star);
+      border-color: var(--circle-accent);
     }
 
     .label {
@@ -404,26 +404,129 @@
       gap: 1.25rem;
       grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     }
+  
+    .option-nav { display:flex; flex-direction:column; align-items:flex-end; gap:0.45rem; font-size:var(--fs-small); font-weight:700; }
+    .option-nav .style-row, .option-nav .doc-row { display:flex; flex-wrap:wrap; gap:0.55rem 0.95rem; justify-content:flex-end; align-items:center; }
+    .option-nav a { text-decoration:none; color:var(--mute); border-bottom:2px solid transparent; padding-bottom:0.1rem; }
+    .option-nav .style-row a { font-family:var(--font-display); font-weight:700; letter-spacing:-0.03em; color:var(--bark); }
+    .option-nav .style-row a[aria-current="true"], .option-nav .doc-row a[aria-current="page"], .option-nav a:hover { color:var(--star); border-color:var(--circle-accent); }
+    body { background: var(--void); color: var(--ink); }
+    a { color: var(--circle-accent); }
+    a:hover { color: var(--star); }
+    .label { color: var(--circle-accent); }
+    h1,h2,h3 { color: var(--star); }
+    .lede, .intro, .body, p { color: var(--bark); }
+    .topnav .brand { color: var(--star); font-family: var(--font-display); }
+    .node { background: var(--surface-raised); border-color: var(--stroke); }
+    .node h3 { color: var(--star); }
+    .node p, .node li { color: var(--mute); }
+    .node.primary { background: linear-gradient(180deg, rgba(7,11,24,0.2), rgba(7,11,24,0.65)), var(--tex-sky) center/cover; border:0; }
+    .node.primary h3, .node.primary p, .node.primary li { color: var(--star); }
+    .node.event { background: rgba(224,181,106,0.08); border-color: rgba(224,181,106,0.35); }
+    .node.circle { background: var(--circle-wash); border-color: #1c2438; }
+    .node.circle h3 { color: var(--circle-accent); }
+    .node.later { border-color: var(--stroke); }
+    .path { color: var(--mute); }
+    .path span { background: rgba(244,239,230,0.06); color: var(--star); border-color: var(--stroke); }
+    .wire { background: var(--surface-raised); border-color: var(--stroke-strong); }
+    .wire-bar { background: #151b2e; color: var(--star); border-color: var(--stroke); }
+    .wire-bar em { color: var(--circle-accent); }
+    .home-hero {
+      min-height: 22rem;
+      background: linear-gradient(180deg, rgba(7,11,24,0.12), rgba(7,11,24,0.72)), var(--tex-sky) center/cover;
+      color: var(--star);
+    }
+    .fake-btn.primary { background: var(--circle-accent); color: var(--void); }
+    .fake-btn.ghost { color: var(--star); border-color: rgba(244,239,230,0.4); }
+    .band { border-color: var(--stroke); color: var(--bark); }
+    .band h3 { color: var(--star); }
+    .band.alt { background: rgba(244,239,230,0.04); }
+    .anno { color: var(--circle-accent); }
+    .page-nav { border-color: var(--stroke); }
+    .page-nav strong { color: var(--star); }
+    .page-nav .links { color: var(--circle-accent); }
+    .page-main h3 { color: var(--star); }
+    .page-main p { color: var(--bark); }
+    .list-item { border-left-color: var(--circle-accent); background: rgba(244,239,230,0.04); }
+    .list-item strong { color: var(--star); }
+    .list-item span { color: var(--mute); }
+    .page-foot { background: #05070f; color: var(--mute); }
+    .compare .box { border-color: var(--stroke); }
+    .compare .from { background: #12182c; color: var(--bark); }
+    .compare .to { background: rgba(224,181,106,0.08); }
+    .compare h3 { color: var(--star); }
+    .footer-note { color: var(--mute); border-color: var(--stroke); }
+
+
+    /* Deep Glade overrides */
+    body.deep-glade { background: transparent; }
+    body { color: var(--ink); }
+    a { color: var(--leaf-bright); }
+    a:hover { color: var(--sunshaft); }
+    .label { color: var(--leaf); }
+    h1,h2,h3 { color: var(--mist); font-family: var(--font-display); }
+    .topnav .brand { color: var(--mist); font-family: var(--font-display); }
+    .option-nav .style-row a { color: var(--mute); }
+    .option-nav .style-row a[aria-current="true"], .option-nav .doc-row a[aria-current="page"], .option-nav a:hover { color: var(--leaf-bright); border-color: var(--leaf); }
+    .option-nav a { color: var(--mute); }
+    .node { background: var(--surface-raised); border-color: var(--stroke); color: var(--ink); backdrop-filter: blur(6px); }
+    .node.primary { background: linear-gradient(180deg, rgba(11,22,8,0.35), rgba(11,22,8,0.7)), var(--forest-poster) center/cover; color: var(--mist); border:0; }
+    .node.primary h3, .node.primary p, .node.primary li { color: var(--mist); }
+    .node.event { background: color-mix(in srgb, var(--leaf) 18%, var(--moss-deep)); border-color: color-mix(in srgb, var(--leaf) 40%, var(--stroke)); }
+    .node.circle { background: var(--circle-wash); border-color: color-mix(in srgb, var(--circle-accent) 35%, var(--stroke)); }
+    .path span { background: color-mix(in srgb, var(--leaf) 25%, var(--moss-deep)); color: var(--mist); }
+    .wire { background: var(--surface-raised); border-color: var(--stroke); backdrop-filter: blur(6px); }
+    .wire-bar { background: color-mix(in srgb, var(--moss) 55%, var(--canopy)); color: var(--mist); }
+    .wire-bar em { color: var(--leaf-bright); }
+    .home-hero {
+      min-height: 22rem;
+      background: linear-gradient(180deg, rgba(11,22,8,0.25), rgba(11,22,8,0.72)), var(--forest-poster) center/cover;
+      color: var(--mist);
+    }
+    .home-hero .brand-mark { color: var(--mist); }
+    .fake-btn.primary { background: var(--leaf); color: var(--canopy); }
+    .fake-btn.ghost { color: var(--mist); border-color: rgba(238,243,230,0.45); }
+    .band { color: var(--ink); }
+    .band.alt { background: color-mix(in srgb, var(--moss) 35%, var(--moss-deep)); color: var(--mist); }
+    .anno { color: var(--leaf-bright); }
+    .page-nav strong { color: var(--mist); }
+    .page-nav .links { color: var(--leaf-bright); }
+    .list-item { border-left-color: var(--leaf); background: color-mix(in srgb, var(--moss-deep) 70%, transparent); color: var(--mist); }
+    .list-item strong { color: var(--mist); }
+    .page-foot { background: var(--moss-deep); color: var(--mist); }
+    .compare .from { background: var(--moss-deep); color: var(--mist); }
+    .compare .to { background: color-mix(in srgb, var(--leaf) 20%, var(--moss-deep)); color: var(--mist); }
+    .footer-note { color: var(--mute); }
+    .lede, .intro, .node p, .node li { color: var(--mute); }
+    .node h3 { color: var(--mist); }
+
   </style>
 </head>
-<body>
+<body class="deep-glade">
+  <div class="forest-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="assets/deep-glade/forest-poster.jpg">
+      <source src="assets/deep-glade/forest-bg.mp4" type="video/mp4" />
+      <source src="assets/deep-glade/forest-bg.webm" type="video/webm" />
+    </video>
+    <div class="veil"></div>
+  </div>
   <div class="wrap">
     <header class="topnav">
       <a class="brand" href="index.html">Albion Faeries / Design</a>
       <nav class="option-nav" aria-label="Design kit navigation">
         <div class="style-row" aria-label="Visual direction">
           <a href="site-structure-sarsen-night.html">Megalith by Night</a>
-          <a href="site-structure-deep-glade.html">Deep Glade</a>
+          <a href="site-structure-deep-glade.html" aria-current="true">Deep Glade</a>
           <a href="site-structure-faery-fire.html">Faery Fire</a>
         </div>
         <div class="doc-row" aria-label="This option">
-          <a href="style-guide.html">Style guide</a>
-          <a href="site-structure.html" aria-current="page">Site structure</a>
+          <a href="style-guide-deep-glade.html">Style guide</a>
+          <a href="site-structure-deep-glade.html" aria-current="page">Site structure</a>
         </div>
       </nav>
     </header>
 
-    <p class="label">Foxglove Glade · information architecture</p>
+    <p class="label">Deep Glade · information architecture</p>
     <h1>Site structure mockup</h1>
     <p class="lede">
       One Albion home with three layers: a slim public hearth, event minisites under the same domain,
@@ -565,7 +668,7 @@
         <div class="wire-bar">Wire · Home <em>viewport 1 = hearth only</em></div>
         <div class="wire-frame">
           <div class="home-hero">
-            <p class="label" style="color:rgba(238,245,240,0.8)">Full-bleed photo · gathering / land</p>
+            <p class="label" style="color:rgba(238,245,240,0.8)">Full-bleed forest film · living green</p>
             <p class="brand-mark">Albion Faeries</p>
             <p class="tag">An online space of fabulousness for the Radical Faeries of old Albion.</p>
             <div class="cta-row">
@@ -586,7 +689,7 @@
             </div>
             <div class="band">
               <h3>Join the list</h3>
-              <p>Newsletter as its own quiet closing hearth - one field, one button, foxglove once.</p>
+              <p>Newsletter as its own quiet closing hearth - one field, one button, star gold once.</p>
               <p class="anno">Section job: stay in touch</p>
             </div>
           </div>
@@ -596,7 +699,7 @@
 
     <section class="section" id="inner-wires">
       <h2>Inner pages · skeleton</h2>
-      <p class="intro">Same chrome everywhere: compact brand, short nav, deep-fern footer. Content sections keep one job each.</p>
+      <p class="intro">Same chrome everywhere: compact brand, short nav, void footer. Content sections keep one job each.</p>
 
       <div class="two">
         <div class="wire">
@@ -681,7 +784,7 @@
     <section class="section" id="circles-wire">
       <h2>Private Circles · structure wire</h2>
       <p class="intro">
-        Same Foxglove Glade family with Circle wash and copper accent.
+        Same Deep Glade family with canopy veil and leaf-light accent.
         Jobs: find your Circle, read the latest notes, carry open actions, use templates so work does not vanish.
       </p>
 
@@ -806,10 +909,19 @@
     </section>
 
     <p class="footer-note">
-      Foxglove Glade structure draft · August 2026. Same IA as Sarsen Dawn / Night, different temperature.
-      Pair with the <a href="style-guide.html">Foxglove Glade style guide</a>.
+      Deep Glade structure draft · August 2026. Same IA as the other options, different temperature.
+      Pair with the <a href="style-guide-deep-glade.html">Deep Glade style guide</a>.
       Next step: pick a direction, then a clickable homepage prototype.
     </p>
   </div>
+  <script>
+    (function () {
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      document.querySelectorAll("video").forEach(function (v) {
+        v.removeAttribute("autoplay");
+        v.pause();
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+/* Albion Faeries - Option 3: Faery Fire
+   Coal dark, amber embers, looping faery-fire film. */
+
+:root {
+  --coal: #070604;
+  --ash: #16110c;
+  --ember: #e07a2a;
+  --flame: #f0a040;
+  --spark: #ffd56a;
+  --glow: #fff1c2;
+  --cinder: #8a4a22;
+  --smoke: #a89888;
+  --mist: #f4ebe0;
+  --ink: #f7f0e6;
+  --mute: #b8a898;
+
+  --circle-wash: #100c08;
+  --circle-panel: #1a1410;
+  --circle-accent: #ffd56a;
+
+  --surface: rgba(7, 6, 4, 0.78);
+  --surface-raised: rgba(22, 17, 12, 0.88);
+  --stroke: rgba(247, 240, 230, 0.14);
+  --stroke-strong: rgba(247, 240, 230, 0.28);
+
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 7vw, 5.4rem);
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --measure: 38rem;
+  --page: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.1rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+
+  --fire-poster: url("assets/faery-fire/fire-poster.jpg");
+}

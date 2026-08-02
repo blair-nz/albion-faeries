@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Option 2: Sarsen Dawn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens-sarsen-dawn.css" />
+  <link rel="stylesheet" href="sarsen-dawn-shell.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body.sarsen-dawn {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+    }
+    a { color: var(--sky-deep); }
+    a:hover { color: var(--bark); }
+    .wrap { width: min(100% - 2 * var(--gutter), var(--page)); margin-inline: auto; padding-block: 2rem 4rem; position: relative; z-index: 1; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+    .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .option-nav { display: flex; flex-direction: column; align-items: flex-end; gap: 0.45rem; font-size: var(--fs-small); font-weight: 700; }
+    .option-nav .style-row, .option-nav .doc-row { display: flex; flex-wrap: wrap; gap: 0.55rem 0.95rem; justify-content: flex-end; align-items: center; }
+    .option-nav a { text-decoration: none; color: var(--bark); border-bottom: 2px solid transparent; padding-bottom: 0.1rem; }
+    .option-nav .style-row a { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; color: var(--sarsen); }
+    .option-nav .style-row a[aria-current="true"], .option-nav .doc-row a[aria-current="page"], .option-nav a:hover { color: var(--sky-deep); border-color: var(--apricot); }
+    .hero-label { font-size: var(--fs-label); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky-deep); margin: 0 0 0.75rem; }
+    h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.03em; color: var(--ink); font-weight: 700; line-height: var(--lh-tight); }
+    h1 { font-size: var(--fs-hero); max-width: 14ch; margin: 0 0 1rem; }
+    .lede { font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 40rem; color: var(--bark); margin: 0 0 1.5rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .chip { display: inline-flex; padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--apricot) 28%, white); border: 1px solid var(--stroke); font-size: var(--fs-small); font-weight: 700; }
+    .section { margin-block: 3.5rem; }
+    .section > h2 { font-size: var(--fs-h2); margin: 0 0 0.5rem; }
+    .section > .intro { max-width: var(--measure); margin: 0 0 1.75rem; color: var(--bark); }
+    .grid-2 { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+    .grid-3 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+    .panel {
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 88%, transparent), color-mix(in srgb, var(--mist-gold) 35%, white)),
+        var(--tex-chalk);
+      background-size: auto, 320px 320px;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.35rem;
+    }
+    .photo-frame {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 3px solid color-mix(in srgb, var(--sarsen-deep) 70%, transparent);
+      box-shadow:
+        0 0 0 1px rgba(31,28,25,0.2),
+        inset 0 0 0 1px rgba(244,239,230,0.2);
+      background:
+        linear-gradient(180deg, rgba(31,28,25,0.15), transparent 30%),
+        var(--tex-stone) center / 220px;
+    }
+    .photo-frame img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center bottom; }
+    .swatch { border-radius: var(--radius-md); min-height: 6.2rem; padding: 0.85rem; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--stroke); }
+    .swatch strong { font-size: var(--fs-small); font-weight: 800; }
+    .swatch span { font-size: 0.78rem; opacity: 0.9; }
+    .on-dark { color: #f7f3eb; }
+    .on-light { color: var(--ink); }
+    .stone-panel {
+      min-height: 10rem; border-radius: var(--radius-lg); border: 1px solid var(--stroke-strong);
+      background: linear-gradient(180deg, rgba(244,239,230,0.18), rgba(31,28,25,0.35)), var(--tex-stone) center / cover;
+      color: var(--chalk); padding: 1.25rem; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .stone-panel strong { font-family: var(--font-display); font-size: 1.6rem; }
+    .type-meta { font-size: var(--fs-label); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--sky-deep); margin-bottom: 0.35rem; }
+    .display-xl { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4rem); margin: 0; letter-spacing: -0.035em; }
+    .display-m { font-family: var(--font-display); font-size: var(--fs-h2); font-style: italic; font-weight: 400; color: var(--sky-deep); margin: 0.35rem 0 0; }
+    .do-dont { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+    .do, .dont { border-radius: var(--radius-lg); padding: 1.15rem 1.25rem; border: 1px solid var(--stroke); }
+    .do {
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--apricot) 22%, transparent), color-mix(in srgb, var(--apricot) 10%, white)),
+        var(--tex-chalk);
+      background-size: auto, 280px;
+    }
+    .dont {
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--rose-dawn) 26%, transparent), color-mix(in srgb, var(--rose-dawn) 12%, white)),
+        var(--tex-chalk);
+      background-size: auto, 280px;
+    }
+    .do h3, .dont h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+    ul.clean { margin: 0; padding-left: 1.1rem; }
+    ul.clean li { margin: 0.35rem 0; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.65rem 1.25rem; border-radius: var(--radius-sm); border: 2px solid transparent; font-weight: 800; font-size: 0.95rem; }
+    .btn-primary { background: var(--apricot); color: var(--ink); }
+    .btn-secondary { background: var(--sarsen-deep); color: var(--chalk); }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--stroke-strong); }
+    .pillars { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+    .pillar { border-radius: var(--radius-lg); border: 1px solid var(--stroke); overflow: hidden; min-height: 11rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: flex-end; }
+    .pillar.sky { background: linear-gradient(180deg, color-mix(in srgb, var(--tide) 40%, transparent), color-mix(in srgb, var(--willow) 70%, transparent)), var(--tex-sky) center bottom / cover; color: var(--chalk); }
+    .pillar.stone { background: linear-gradient(180deg, rgba(232,235,227,0.1), rgba(26,31,28,0.5)), var(--tex-stone) center / cover; color: var(--chalk); }
+    .pillar.sun { background: linear-gradient(160deg, var(--sun), var(--honey) 55%, var(--ember)); color: var(--ink); }
+    .pillar.fern { background: linear-gradient(180deg, rgba(26,31,28,0.15), rgba(26,31,28,0.55)), var(--tex-fern) center / cover; color: var(--chalk); }
+    .pillar strong { font-family: var(--font-display); font-size: 1.25rem; }
+    .pillar p { margin: 0.35rem 0 0; font-size: var(--fs-small); }
+    .tex-grid { display: grid; gap: 0.85rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+    .tex-tile {
+      min-height: 8.5rem; border-radius: var(--radius-md); border: 1px solid var(--stroke-strong);
+      padding: 0.75rem; display: flex; flex-direction: column; justify-content: flex-end;
+      color: var(--chalk); background-size: cover; background-position: center;
+      box-shadow: inset 0 -3rem 2.5rem rgba(26,31,28,0.45);
+    }
+    .tex-tile strong { font-size: var(--fs-small); font-weight: 800; }
+    .tex-tile span { font-size: 0.72rem; opacity: 0.9; }
+    .footer-note { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--stroke); font-size: var(--fs-small); color: var(--sarsen); max-width: 42rem; }
+  </style>
+</head>
+<body class="sarsen-dawn">
+  <div class="henge-ground" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <nav class="option-nav" aria-label="Design kit navigation">
+        <div class="style-row" aria-label="Visual direction">
+          <a href="style-guide-sarsen-night.html">Megalith by Night</a>
+          <a href="style-guide-deep-glade.html">Deep Glade</a>
+          <a href="style-guide-faery-fire.html">Faery Fire</a>
+        </div>
+        <div class="doc-row" aria-label="This option">
+          <a href="style-guide-sarsen-dawn.html" aria-current="page">Style guide</a>
+          <a href="site-structure-sarsen-dawn.html">Site structure</a>
+        </div>
+      </nav>
+    </header>
+
+    <p class="hero-label">Option 2 · Sarsen Dawn</p>
+    <h1>Summer light on standing stone</h1>
+    <p class="lede">
+      Inspired by Stonehenge at summer solstice sunrise: apricot sky, long shadows, chalk and sarsen underfoot.
+      Brand first; willow chalk underfoot, sunrise from the right, a henge line on the ground.
+    </p>
+    <div class="meta">
+      <span class="chip">Solstice sunrise</span>
+      <span class="chip">Sarsen stone</span>
+      <span class="chip">Public + Circles</span>
+    </div>
+
+    <section class="section" id="atmosphere">
+      <h2>Atmosphere photo</h2>
+      <p class="intro">
+        Public-domain Stonehenge at sunrise. Full-bleed hero plane on the live site; shown here as the visual anchor for this option.
+      </p>
+      <div class="photo-frame">
+        <img src="assets/sarsen/photo-dawn.jpg" alt="Stonehenge silhouetted under a vivid dawn sky with a crescent moon" width="1920" height="1080" />
+      </div>
+    </section>
+
+    <section class="section" id="pillars">
+      <h2>Pillars of the look</h2>
+      <p class="intro">Stone for weight, teal horizon for cool air, honey-ember for the pulse, fern for Albion ground.</p>
+      <div class="pillars">
+        <div class="pillar stone">
+          <strong>Sarsen</strong>
+          <p>Footers, Circle chrome, ground silhouette.</p>
+        </div>
+        <div class="pillar sky">
+          <strong>Tide horizon</strong>
+          <p>Cool dawn air, section breaks, hope without lilac.</p>
+        </div>
+        <div class="pillar sun">
+          <strong>Honey + ember</strong>
+          <p>Primary CTAs and rare solstice sparks.</p>
+        </div>
+        <div class="pillar fern">
+          <strong>Fern floor</strong>
+          <p>Quiet botanical texture - Albion undergrowth.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colour">
+      <h2>Colour</h2>
+      <p class="intro">
+        Willow chalk and teal horizon keep this off cream-cafe and purple-mystical defaults.
+        Honey and ember carry the sunrise; moss and bracken root it in the ground.
+      </p>
+      <div class="grid-3">
+        <div class="swatch on-light" style="background:var(--chalk)"><strong>Willow chalk</strong><span>#E8EBE3</span></div>
+        <div class="swatch on-light" style="background:var(--willow)"><strong>Willow mist</strong><span>#C5D2BF</span></div>
+        <div class="swatch on-light" style="background:var(--honey)"><strong>Honey</strong><span>#F09A42 · CTA</span></div>
+        <div class="swatch on-dark" style="background:var(--ember)"><strong>Ember</strong><span>#E25D52</span></div>
+        <div class="swatch on-light" style="background:var(--sun)"><strong>Sol</strong><span>#FFD166</span></div>
+        <div class="swatch on-dark" style="background:var(--tide)"><strong>Tide</strong><span>#3D7A8C</span></div>
+        <div class="swatch on-dark" style="background:var(--moss)"><strong>Moss</strong><span>#5F8A4E</span></div>
+        <div class="swatch on-dark" style="background:var(--bracken)"><strong>Bracken</strong><span>#A67C52</span></div>
+        <div class="swatch on-dark" style="background:var(--sarsen-deep)"><strong>Sarsen deep</strong><span>#3A3530</span></div>
+        <div class="swatch on-dark" style="background:var(--ink)"><strong>Ink</strong><span>#1A1F1C</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="textures">
+      <h2>Albion ground textures</h2>
+      <p class="intro">
+        Free CC0 / public-domain photographs - fern, bark, oak, hawthorn, mist, bracken - processed soft for washes.
+        Not from Yellow's friend's set; provenance in <code>assets/sarsen/pagan/LICENSE.txt</code>.
+      </p>
+      <div class="tex-grid">
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.55)),var(--tex-fern)"><strong>Fern</strong><span>Undergrowth</span></div>
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.55)),var(--tex-bark)"><strong>Bark</strong><span>Oak skin</span></div>
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.55)),var(--tex-oak)"><strong>Oak</strong><span>Standing wood</span></div>
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.45)),var(--tex-hawthorn)"><strong>Hawthorn</strong><span>May blossom</span></div>
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.45)),var(--tex-mist)"><strong>Mist</strong><span>Morning air</span></div>
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.55)),var(--tex-bracken)"><strong>Bracken</strong><span>Forest floor</span></div>
+        <div class="tex-tile" style="background-image:linear-gradient(180deg,transparent,rgba(26,31,28,0.55)),var(--tex-stone)"><strong>Sarsen</strong><span>Stone grain</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="stone">
+      <h2>Stone as material</h2>
+      <p class="intro">
+        No hard page border. Sunrise enters from the right; a simplified henge silhouette holds the ground line.
+        Keep heavy stone and bark for footers and Circle chrome - not behind long body copy.
+      </p>
+      <div class="grid-2">
+        <div class="stone-panel">
+          <strong>Albion Faeries</strong>
+          <span style="opacity:0.9;margin-top:0.35rem">Standing stone band sample</span>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;font-size:1.15rem">Principles</h3>
+          <ul class="clean">
+            <li><strong>Brand first</strong> on the chalk or dawn wash.</li>
+            <li><strong>One composition</strong> - hearth, not dashboard.</li>
+            <li><strong>Sunrise from the side</strong> - light enters; no costume border.</li>
+            <li><strong>One photo plane</strong> - full-bleed sunrise image, not a collage.</li>
+            <li><strong>Real places</strong> - public-domain atmosphere; gathering photos when we have consent.</li>
+            <li><strong>Two thresholds</strong> - public dawn; Circles quieter on chalk + stone accent.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <h2>Typography</h2>
+      <p class="intro"><strong>Newsreader</strong> for brand and headlines - clear, slightly monumental. <strong>Figtree</strong> for body and UI.</p>
+      <div class="panel">
+        <div class="type-meta">Display · Newsreader</div>
+        <p class="display-xl">Albion Faeries</p>
+        <p class="display-m">light finds the gap between the stones</p>
+        <p style="margin:1rem 0 0;max-width:36rem">
+          The Albion Faeries are part of the global Radical Faerie web - awakening, nature-loving,
+          compassionate queers finding each other in old Albion and beyond.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <h2>Components</h2>
+      <div class="panel" style="margin-bottom:1rem">
+        <div class="type-meta">Buttons</div>
+        <div class="btn-row" style="margin-top:0.75rem">
+          <span class="btn btn-primary">See what's on</span>
+          <span class="btn btn-secondary">Who we are</span>
+          <span class="btn btn-ghost">Circle sign-in</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <div class="type-meta">Public nav</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;font-weight:700">Albion Faeries</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);font-weight:600">What's on · Gatherings · Who we are · Get involved</p>
+        </div>
+        <div class="panel" style="background:var(--circle-wash)">
+          <div class="type-meta" style="color:var(--circle-accent)">Circle chrome</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.2rem;font-weight:700">Circles · Albion</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--bark)">Chalk wash, sarsen accent, stone texture only in the header strip.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <h2>Voice</h2>
+      <div class="do-dont">
+        <div class="do">
+          <h3>Say</h3>
+          <ul class="clean">
+            <li>"Come along to a circle or gathering."</li>
+            <li>"What's stirring this solstice."</li>
+            <li>"Open actions from the last Comms moot."</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Avoid</h3>
+          <ul class="clean">
+            <li>New-age sunrise cliches</li>
+            <li>Appropriating ceremonial claims we do not hold</li>
+            <li>Tourist-brochure Stonehenge copy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Sarsen Dawn draft · August 2026. Procedural chalk/sarsen plus CC0 Albion ground photos
+      (<a href="assets/sarsen/pagan/LICENSE.txt">pagan LICENSE</a>; hero in <a href="assets/sarsen/PHOTO-LICENSE.txt">PHOTO-LICENSE</a>).
+      Pair with <a href="site-structure-sarsen-dawn.html">site structure</a>. Not Circle-ratified.
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries - Option 2: Hot Spore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens-hot-spore.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      color: var(--ink);
+      background: var(--cream);
+      min-height: 100vh;
+    }
+
+    a { color: var(--magenta-deep); }
+    a:hover { color: var(--ember-deep); }
+
+    .wrap {
+      width: min(100% - 2 * var(--gutter), var(--page));
+      margin-inline: auto;
+      padding-block: 2.5rem 5rem;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+
+    .topnav .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .topnav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.1rem;
+      font-size: var(--fs-small);
+      font-weight: 700;
+    }
+
+    .topnav nav a {
+      text-decoration: none;
+      color: var(--bark);
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.1rem;
+    }
+
+    .topnav nav a[aria-current="page"],
+    .topnav nav a:hover {
+      color: var(--magenta-deep);
+      border-color: var(--magenta);
+    }
+
+    .hero-label {
+      font-size: var(--fs-label);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--magenta-deep);
+      margin: 0 0 0.75rem;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      line-height: var(--lh-tight);
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: var(--fs-hero);
+      max-width: 12ch;
+      margin: 0 0 1rem;
+    }
+
+    .lede {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      max-width: 40rem;
+      color: var(--bark);
+      margin: 0 0 1.5rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      background: color-mix(in srgb, var(--gold) 35%, white);
+      color: var(--ink);
+      font-size: var(--fs-small);
+      font-weight: 700;
+      border: 1px solid var(--stroke);
+    }
+
+    .section {
+      margin-block: 3.5rem;
+      scroll-margin-top: 1.5rem;
+    }
+
+    .section > h2 {
+      font-size: var(--fs-h2);
+      margin: 0 0 0.5rem;
+    }
+
+    .section > .intro {
+      max-width: var(--measure);
+      margin: 0 0 1.75rem;
+      color: var(--bark);
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+
+    .panel {
+      background: var(--surface-raised);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.35rem;
+    }
+
+    .hero-band {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 16rem;
+      border: 1px solid var(--stroke-strong);
+      background-image: var(--tex-dunes);
+      background-size: cover;
+      background-position: center;
+      color: var(--cream);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      isolation: isolate;
+    }
+
+    .hero-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 20%, rgba(10, 9, 11, 0.72));
+      z-index: 0;
+    }
+
+    .hero-band > * { position: relative; z-index: 1; }
+
+    .hero-band strong {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .swatch {
+      border-radius: var(--radius-md);
+      min-height: 6.5rem;
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--stroke);
+    }
+
+    .swatch strong {
+      font-size: var(--fs-small);
+      font-weight: 800;
+    }
+
+    .swatch span {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .swatch.on-dark { color: var(--cream); }
+    .swatch.on-light { color: var(--ink); }
+
+    .type-sample {
+      border-top: 1px solid var(--stroke);
+      padding: 1.1rem 0;
+    }
+
+    .type-sample:first-child { border-top: 0; padding-top: 0; }
+
+    .type-meta {
+      font-size: var(--fs-label);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--magenta-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: var(--lh-tight);
+      letter-spacing: -0.045em;
+      color: var(--ink);
+      margin: 0;
+      font-weight: 800;
+    }
+
+    .display-m {
+      font-family: var(--font-display);
+      font-size: var(--fs-h2);
+      font-weight: 600;
+      color: var(--magenta-deep);
+      margin: 0.35rem 0 0;
+    }
+
+    .do-dont {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    .do, .dont {
+      border-radius: var(--radius-lg);
+      padding: 1.15rem 1.25rem;
+      border: 1px solid var(--stroke);
+    }
+
+    .do { background: color-mix(in srgb, var(--gold) 22%, white); }
+    .dont { background: color-mix(in srgb, var(--magenta) 14%, white); }
+
+    .do h3, .dont h3 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .dont h3 { color: var(--magenta-deep); }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    ul.clean li { margin: 0.35rem 0; }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: default;
+      transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--magenta);
+      color: #fff8fb;
+    }
+
+    .btn-primary:hover { background: var(--magenta-deep); }
+
+    .btn-secondary {
+      background: var(--void);
+      color: var(--cream);
+    }
+
+    .btn-ember {
+      background: var(--ember);
+      color: var(--void);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--stroke-strong);
+    }
+
+    .tex-tile {
+      border-radius: var(--radius-lg);
+      min-height: 11rem;
+      border: 1px solid var(--stroke-strong);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tex-tile figcaption {
+      position: absolute;
+      left: 0.85rem;
+      bottom: 0.85rem;
+      margin: 0;
+      padding: 0.3rem 0.55rem;
+      border-radius: var(--radius-sm);
+      background: rgba(10, 9, 11, 0.72);
+      color: var(--cream);
+      font-size: var(--fs-small);
+      font-weight: 700;
+    }
+
+    .illo-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    }
+
+    .illo {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke-strong);
+      padding: 1.25rem 1.25rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 13rem;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .illo.dunes { background-image: var(--tex-dunes); }
+    .illo.wood { background-image: var(--tex-wood); }
+
+    .illo img {
+      width: min(100%, 9rem);
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 2px 10px rgba(10, 9, 11, 0.35));
+    }
+
+    .illo p {
+      margin: 0.85rem 0 0;
+      text-align: center;
+      color: var(--cream);
+      font-size: var(--fs-small);
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 1px 8px rgba(10, 9, 11, 0.55);
+    }
+
+    .combo {
+      display: grid;
+      gap: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--stroke-strong);
+      min-height: 14rem;
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    @media (max-width: 700px) {
+      .combo { grid-template-columns: 1fr; }
+    }
+
+    .combo-tex {
+      background-image: var(--tex-wood);
+      background-size: cover;
+      background-position: center;
+      min-height: 12rem;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--cream);
+    }
+
+    .combo-tex strong {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      text-shadow: 0 2px 14px rgba(10, 9, 11, 0.45);
+    }
+
+    .combo-illo {
+      background-image: var(--tex-dunes);
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+    }
+
+    .combo-illo img {
+      width: min(75%, 9rem);
+      height: auto;
+      filter: drop-shadow(0 2px 12px rgba(10, 9, 11, 0.4));
+    }
+
+    .option-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      align-items: center;
+      font-size: var(--fs-small);
+      font-weight: 700;
+    }
+
+    .option-nav .option-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--magenta-deep);
+      padding-right: 0.35rem;
+      border-right: 2px solid color-mix(in srgb, var(--magenta) 45%, transparent);
+      margin-right: 0.15rem;
+    }
+
+    .option-nav a.switch {
+      margin-left: auto;
+      color: var(--smoke);
+      font-weight: 600;
+      border-bottom: none;
+    }
+
+    .option-nav a.switch:hover {
+      color: var(--magenta-deep);
+    }
+
+    .motion-demo {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    .motion-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background: var(--surface-raised);
+      min-height: 9rem;
+      padding: 1.1rem;
+    }
+
+    .motion-card p {
+      margin: 0.35rem 0 0;
+      font-size: var(--fs-small);
+      color: var(--bark);
+    }
+
+    .wiggle {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--magenta-deep);
+      animation: wiggle 2.8s var(--ease-out) infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2.5deg); }
+    }
+
+    .pulse-chip {
+      display: inline-block;
+      margin-top: 0.75rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 1.8s var(--ease-out) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.12); opacity: 0.75; }
+    }
+
+    .drift-spiral {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-top: 0.75rem;
+      background:
+        center / 72% no-repeat url("assets-yellow/illo-spiral-cutout.png"),
+        var(--tex-dunes) center / cover;
+      border-radius: 50%;
+      border: 1px solid var(--stroke-strong);
+      animation: spin-slow 10s linear infinite;
+    }
+
+    @keyframes spin-slow {
+      to { transform: rotate(360deg); }
+    }
+
+    .footer-note {
+      margin-top: 4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--stroke);
+      font-size: var(--fs-small);
+      color: var(--smoke);
+      max-width: 42rem;
+    }
+
+    .compare-strip {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    .compare-strip a {
+      text-decoration: none;
+      color: inherit;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      padding: 1rem 1.1rem;
+      background: var(--surface-raised);
+    }
+
+    .compare-strip a:hover { border-color: var(--magenta); }
+
+    .compare-strip strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .compare-strip span {
+      font-size: var(--fs-small);
+      color: var(--bark);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="../../index.html">Albion Faeries / Design</a>
+      <nav class="option-nav" aria-label="Hot Spore design docs">
+        <span class="option-name">Hot Spore</span>
+        <a href="style-guide-hot-spore.html" aria-current="page">Style guide</a>
+        <a href="site-structure-hot-spore.html">Site structure</a>
+        <a class="switch" href="../../style-guide.html">Foxglove Glade →</a>
+      </nav>
+    </header>
+
+    <p class="hero-label">Option 2 · Hot Spore</p>
+    <h1>Heat, wood, and doodle magic</h1>
+    <p class="lede">
+      Inspired by the heat and grain Yellow loves - our own magenta-orange dune noise and gold-orange wood grain,
+      plus soft doodle companions. Louder, campier, still clearly Albion.
+    </p>
+    <div class="meta">
+      <span class="chip">Original textures</span>
+      <span class="chip">Public hearth</span>
+      <span class="chip">Event minisites</span>
+      <span class="chip">Private Circles</span>
+    </div>
+
+    <section class="section" id="direction">
+      <h2>Direction</h2>
+      <p class="intro">
+        Name: <strong>Hot Spore</strong>. Mood: festival heat meeting forest floor - dual-tone grain,
+        heart-capped mushrooms, a shy smile in the dark. Brand name still leads; the textures do the atmosphere.
+      </p>
+      <div class="grid-2">
+        <div class="hero-band">
+          <span class="chip" style="align-self:flex-start;margin-bottom:auto;background:rgba(10,9,11,0.45);color:var(--cream);border-color:rgba(255,246,235,0.25)">Hero on dune texture</span>
+          <strong>Albion Faeries</strong>
+          <span style="opacity:0.92;margin-top:0.4rem;max-width:28rem">An online space of fabulousness for the Radical Faeries of old Albion.</span>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;font-size:1.15rem">Design principles</h3>
+          <ul class="clean">
+            <li><strong>Brand first</strong> - "Albion Faeries" still owns the first screen.</li>
+            <li><strong>Texture as place</strong> - dunes and wood are the landscape, not wallpaper sprinkle.</li>
+            <li><strong>Doodles as charm</strong> - mushrooms, spiral, smile mark sections and empty corners.</li>
+            <li><strong>Hot, not harsh</strong> - cream reading surfaces between loud bands.</li>
+            <li><strong>Hand-made edge</strong> - slightly wonky energy; avoid corporate polish.</li>
+            <li><strong>Two thresholds</strong> - public heat; Circles go quieter on void + gold.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="textures">
+      <h2>Heat textures</h2>
+      <p class="intro">
+        Original grain fields made for this kit - same mood as the examples Yellow shared (hot dual-tone, stipple, organic flow),
+        not those project files. Use one dominant texture per band. Keep type large and high-contrast on top.
+      </p>
+      <div class="grid-2">
+        <figure class="tex-tile" style="background-image:var(--tex-dunes)">
+          <figcaption>Dune heat · pink + orange grain</figcaption>
+        </figure>
+        <figure class="tex-tile" style="background-image:var(--tex-wood)">
+          <figcaption>Ember wood · gold + orange grain</figcaption>
+        </figure>
+      </div>
+      <div class="do-dont" style="margin-top:1.25rem">
+        <div class="do">
+          <h3>Lean into</h3>
+          <ul class="clean">
+            <li>Hero and gathering banners on dunes or wood</li>
+            <li>Dark scrim under type for readability</li>
+            <li>Alternating texture bands down long pages</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Steer away from</h3>
+          <ul class="clean">
+            <li>Both textures fighting in the same viewport</li>
+            <li>Tiny repeating wallpaper behind dense body copy</li>
+            <li>Purple-indigo glow stacks on top of the grain</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="illos">
+      <h2>Illustrations</h2>
+      <p class="intro">
+        Yellow's doodles sit on our heat textures as cream-ink cutouts - soft, hand-drawn, a little shy.
+        Use as section marks and companions, not as a second logo fighting the wordmark.
+      </p>
+      <div class="illo-grid">
+        <figure class="illo dunes">
+          <img src="assets-yellow/illo-mushrooms-cutout.png" alt="Three hand-drawn mushrooms with sparkles" />
+          <p>Mushrooms · gatherings / land</p>
+        </figure>
+        <figure class="illo wood">
+          <img src="assets-yellow/illo-spiral-cutout.png" alt="Hand-drawn spiral" />
+          <p>Spiral · Circles / return</p>
+        </figure>
+        <figure class="illo dunes">
+          <img src="assets-yellow/illo-face-cutout.png" alt="Simple smiling face doodle" />
+          <p>Smile · welcome / get involved</p>
+        </figure>
+      </div>
+
+      <div class="combo" style="margin-top:1.25rem" aria-label="Texture plus doodle composition sample">
+        <div class="combo-tex">
+          <span class="chip" style="align-self:flex-start;margin-bottom:auto;background:rgba(10,9,11,0.45);color:var(--cream);border-color:rgba(255,246,235,0.25)">Composition sample</span>
+          <strong>Come as you are</strong>
+        </div>
+        <div class="combo-illo">
+          <img src="assets-yellow/illo-mushrooms-cutout.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colour">
+      <h2>Colour</h2>
+      <p class="intro">
+        Pull magenta and ember from the dunes, gold from the wood, void and charcoal from the doodles.
+        Cream keeps body text kind after the heat.
+      </p>
+      <div class="grid-3">
+        <div class="swatch on-dark" style="background:var(--magenta)"><strong>Magenta</strong><span>#E84A8A · primary heat</span></div>
+        <div class="swatch on-dark" style="background:var(--magenta-deep)"><strong>Magenta deep</strong><span>#C22668 · hover</span></div>
+        <div class="swatch on-dark" style="background:var(--ember)"><strong>Ember</strong><span>#F07820 · secondary CTA</span></div>
+        <div class="swatch on-light" style="background:var(--gold)"><strong>Gold</strong><span>#F0C01A · spark / Circle</span></div>
+        <div class="swatch on-dark" style="background:var(--void)"><strong>Void</strong><span>#0A090B · doodle ground</span></div>
+        <div class="swatch on-dark" style="background:var(--charcoal)"><strong>Charcoal</strong><span>#2C272A · doodle ink</span></div>
+        <div class="swatch on-light" style="background:var(--cream)"><strong>Cream</strong><span>#FFF6EB · reading wash</span></div>
+        <div class="swatch on-dark" style="background:var(--ink)"><strong>Ink</strong><span>#140E12 · type</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <h2>Typography</h2>
+      <p class="intro">
+        <strong>Bricolage Grotesque</strong> for brand and headlines - chunky, slightly odd, matches the doodle spirit.
+        <strong>Figtree</strong> for body - same friendly reader as Option 1 so Circles stay usable.
+      </p>
+      <div class="panel">
+        <div class="type-sample">
+          <div class="type-meta">Display · Bricolage 800</div>
+          <p class="display-xl">Albion Faeries</p>
+          <p class="display-m">hot spore season is open</p>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta">Body · Figtree 400/700</div>
+          <p style="margin:0;max-width:36rem">
+            The Albion Faeries are part of the global Radical Faerie web - awakening,
+            nature-loving, compassionate queers finding each other in old Albion and beyond.
+            Come to a full-moon circle, a gathering, or start with the newsletter.
+          </p>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta">Label · Figtree 800 caps</div>
+          <p class="hero-label" style="margin:0">Next gathering · Lughnasadh</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <h2>Voice</h2>
+      <p class="intro">Same Albion warmth as Option 1 - a notch more mischievous. Invite first; dazzle second.</p>
+      <div class="grid-2">
+        <div class="panel" style="background:var(--void);color:var(--cream);border-color:#1c181a">
+          <p style="font-family:var(--font-display);font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.2;letter-spacing:-0.03em;margin:0;font-weight:700">
+            An online space of fabulousness for the Radical Faeries of old Albion.
+          </p>
+          <p style="margin:1rem 0 0;font-size:var(--fs-small);color:var(--ash)">Keep the inherited line - it still sounds like us.</p>
+        </div>
+        <div class="do-dont">
+          <div class="do">
+            <h3>Say</h3>
+            <ul class="clean">
+              <li>"Come along - boots, glitter, both."</li>
+              <li>"What's glowing this moon."</li>
+              <li>"Open actions from the last Comms moot."</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h3>Avoid</h3>
+            <ul class="clean">
+              <li>Edgy for edgy's sake</li>
+              <li>"Members-only portal unlock"</li>
+              <li>Irony that freezes newcomers out</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <h2>Components</h2>
+      <p class="intro">Loud colour, soft corners, doodles as punctuation. Cards only when someone acts.</p>
+      <div class="panel" style="margin-bottom:1rem">
+        <div class="type-meta">Buttons</div>
+        <div class="btn-row" style="margin-top:0.75rem">
+          <span class="btn btn-primary">See what's on</span>
+          <span class="btn btn-ember">Join a gathering</span>
+          <span class="btn btn-secondary">Who we are</span>
+          <span class="btn btn-ghost">Circle sign-in</span>
+        </div>
+        <p style="margin:0.9rem 0 0;font-size:var(--fs-small);color:var(--bark)">
+          Magenta primary, ember secondary, void for quiet weight. One hot button per section.
+        </p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <div class="type-meta">Public nav</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;font-weight:800">Albion Faeries</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);font-weight:600">What's on · Gatherings · Who we are · Get involved</p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--bark)">On texture heroes, nav sits in a cream or void strip - never lost in the grain.</p>
+        </div>
+        <div class="panel" style="background:var(--circle-wash);color:var(--cream);border-color:#2a2026">
+          <div class="type-meta" style="color:var(--gold)">Circle chrome</div>
+          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.2rem;font-weight:800">Circles · Albion</p>
+          <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--ash)">Comms · Gatherings &amp; Events · Finance</p>
+          <p style="margin:0.75rem 0 0;font-size:var(--fs-small);color:var(--ash)">Void ground, gold accent, spiral as a quiet companion. Still not a SaaS dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="motion">
+      <h2>Motion</h2>
+      <p class="intro">Playful, short, reduced-motion aware. Circles stay calmer than the public hearth.</p>
+      <div class="motion-demo">
+        <div class="motion-card">
+          <div class="type-meta">1 · Soft wiggle</div>
+          <span class="wiggle">Hello, lovely</span>
+          <p>Display lines can tip a degree or two - never dizzy.</p>
+        </div>
+        <div class="motion-card">
+          <div class="type-meta">2 · Gold pulse</div>
+          <div class="pulse-chip" aria-hidden="true"></div>
+          <p>Rare spark on a featured gathering chip.</p>
+        </div>
+        <div class="motion-card">
+          <div class="type-meta">3 · Spiral drift</div>
+          <div class="drift-spiral" aria-hidden="true"></div>
+          <p>Optional Circle-space ambient - very slow.</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Hot Spore draft · August 2026. Textures are original (mood inspired by Yellow);
+      doodle illustrations from Yellow live in <code>design/assets-yellow/</code>.
+      Tokens in <code>design/tokens-hot-spore.css</code>.
+      Pair with the <a href="site-structure-hot-spore.html">Hot Spore site structure</a>.
+      Not yet a Circle-ratified brand system.
+    </p>
+  </div>
+
+  <script>
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll(".wiggle, .pulse-chip, .drift-spiral").forEach(function (el) {
+        el.style.animation = "none";
+      });
+    }
+  </script>
+</body>
+</html>

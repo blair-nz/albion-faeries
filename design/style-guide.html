@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Albion Faeries - Style Guide (Foxglove Glade)</title>
+  <title>Albion Faeries - Option 1: Foxglove Glade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet" />
@@ -51,23 +51,41 @@
       text-decoration: none;
     }
 
-    .topnav nav {
+    .option-nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem 1.1rem;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.45rem;
       font-size: var(--fs-small);
       font-weight: 600;
     }
 
-    .topnav nav a {
+    .option-nav .style-row,
+    .option-nav .doc-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.95rem;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .option-nav a {
       text-decoration: none;
       color: var(--bark);
       border-bottom: 2px solid transparent;
       padding-bottom: 0.1rem;
     }
 
-    .topnav nav a[aria-current="page"],
-    .topnav nav a:hover {
+    .option-nav .style-row a {
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--fern);
+    }
+
+    .option-nav .style-row a[aria-current="true"],
+    .option-nav .doc-row a[aria-current="page"],
+    .option-nav a:hover {
       color: var(--foxglove-deep);
       border-color: var(--foxglove);
     }
@@ -416,13 +434,20 @@
   <div class="wrap">
     <header class="topnav">
       <a class="brand" href="index.html">Albion Faeries / Design</a>
-      <nav aria-label="Design docs">
-        <a href="style-guide.html" aria-current="page">Style guide</a>
-        <a href="site-structure.html">Site structure</a>
+      <nav class="option-nav" aria-label="Design kit navigation">
+        <div class="style-row" aria-label="Visual direction">
+          <a href="style-guide-sarsen-night.html">Megalith by Night</a>
+          <a href="style-guide-deep-glade.html">Deep Glade</a>
+          <a href="style-guide-faery-fire.html">Faery Fire</a>
+        </div>
+        <div class="doc-row" aria-label="This option">
+          <a href="style-guide.html" aria-current="page">Style guide</a>
+          <a href="site-structure.html">Site structure</a>
+        </div>
       </nav>
     </header>
 
-    <p class="hero-label">Working draft · Foxglove Glade</p>
+    <p class="hero-label">Option 1 · Foxglove Glade</p>
     <h1 class="reveal">A stylish, fun Albion Fae look</h1>
     <p class="lede reveal">
       Light-forward, a little wild, warmly queer: dew on fern, foxglove in the hedge,
@@ -734,8 +759,9 @@
     </section>
 
     <p class="footer-note">
-      Draft style guide for local exploration by Blair / Comms - August 2026.
-      Tokens live in <code>design/tokens.css</code>. Covers public hearth, event minisites, and private Circles.
+      Foxglove Glade draft for local exploration by Blair / Comms - August 2026.
+      Tokens live in <code>design/tokens.css</code>. Pair with the
+      <a href="site-structure.html">Foxglove Glade site structure</a>.
       This is not yet a Circle-ratified brand system.
     </p>
   </div>

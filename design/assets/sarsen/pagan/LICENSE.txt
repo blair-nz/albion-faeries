@@ -1,0 +1,12 @@
+Albion / pagan nature imagery for Sarsen Dawn textures
+All sources are CC0 or Public Domain Mark. No attribution required; provenance kept here.
+
+fern - Male fern, Flickr CC0 https://www.flickr.com/photos/203835554@N06/55316302572
+hartstongue - Hart's-tongue fern, Flickr CC0 https://www.flickr.com/photos/203835554@N06/55317370418
+bark - Texture no. 19 Bark, Flickr CC0 https://www.flickr.com/photos/49976053@N00/15082595535
+forest-floor - Forest floor of Oak - Beech Heath Forest, Flickr CC0 https://www.flickr.com/photos/48711769@N08/15426112188
+hawthorn - Hawthorn Blossom, Flickr CC0 https://www.flickr.com/photos/88123769@N02/22710198028
+mist-forest - USFS / Flickr PDM https://www.flickr.com/photos/41284017@N08/42346166991
+oak - WordPress Photos CC0 https://wordpress.org/photos/photo/4366666aaf/
+
+Processed derivatives in ../texture-*.jpg are for design kit use.

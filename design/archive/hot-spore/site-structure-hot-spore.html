@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Albion Faeries - Site Structure Mockup</title>
+  <title>Albion Faeries - Hot Spore Site Structure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="tokens.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens-hot-spore.css" />
   <style>
     * { box-sizing: border-box; }
     body {
@@ -16,11 +16,11 @@
       font-size: var(--fs-body);
       line-height: var(--lh-body);
       color: var(--ink);
-      background: linear-gradient(180deg, var(--mist), var(--surface));
+      background: var(--cream);
     }
 
-    a { color: var(--fern); }
-    a:hover { color: var(--foxglove-deep); }
+    a { color: var(--magenta-deep); }
+    a:hover { color: var(--ember-deep); }
 
     .wrap {
       width: min(100% - 2 * var(--gutter), var(--page));
@@ -39,29 +39,30 @@
 
     .topnav .brand {
       font-family: var(--font-display);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.15rem;
-      letter-spacing: -0.02em;
-      color: var(--deep-fern);
+      letter-spacing: -0.03em;
+      color: var(--ink);
       text-decoration: none;
     }
 
     .option-nav {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.45rem;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      align-items: center;
       font-size: var(--fs-small);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .option-nav .style-row,
-    .option-nav .doc-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem 0.95rem;
-      justify-content: flex-end;
-      align-items: center;
+    .option-nav .option-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--magenta-deep);
+      padding-right: 0.35rem;
+      border-right: 2px solid color-mix(in srgb, var(--magenta) 45%, transparent);
+      margin-right: 0.15rem;
     }
 
     .option-nav a {
@@ -71,34 +72,35 @@
       padding-bottom: 0.1rem;
     }
 
-    .option-nav .style-row a {
-      font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--fern);
+    .option-nav a[aria-current="page"],
+    .option-nav a:hover {
+      color: var(--magenta-deep);
+      border-color: var(--magenta);
     }
 
-    .option-nav .style-row a[aria-current="true"],
-    .option-nav .doc-row a[aria-current="page"],
-    .option-nav a:hover {
-      color: var(--foxglove-deep);
-      border-color: var(--foxglove);
+    .option-nav a.switch {
+      margin-left: auto;
+      color: var(--smoke);
+      font-weight: 600;
+      border-bottom: none;
     }
+
+    .option-nav a.switch:hover { color: var(--magenta-deep); }
 
     .label {
       font-size: var(--fs-label);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--fern);
+      color: var(--magenta-deep);
       margin: 0 0 0.75rem;
     }
 
     h1, h2, h3 {
       font-family: var(--font-display);
-      letter-spacing: -0.03em;
-      color: var(--deep-fern);
-      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      font-weight: 700;
       line-height: var(--lh-tight);
     }
 
@@ -128,28 +130,36 @@
     .node {
       border: 1px solid var(--stroke);
       border-radius: var(--radius-lg);
-      background: color-mix(in srgb, white 88%, var(--dew));
+      background: var(--surface-raised);
       padding: 1.1rem 1.2rem;
     }
 
     .node.primary {
-      background: var(--deep-fern);
-      color: var(--mist);
+      background-image: linear-gradient(180deg, rgba(10, 9, 11, 0.35), rgba(10, 9, 11, 0.72)), var(--tex-dunes);
+      background-size: cover;
+      background-position: center;
+      color: var(--cream);
       border-color: transparent;
     }
 
-    .node.primary h3 { color: var(--mist); }
-    .node.primary p { color: color-mix(in srgb, var(--mist) 82%, transparent); }
+    .node.primary h3 { color: var(--cream); }
+    .node.primary p { color: color-mix(in srgb, var(--cream) 85%, transparent); }
+    .node.primary li { color: color-mix(in srgb, var(--cream) 90%, transparent); }
 
     .node.event {
-      background: color-mix(in srgb, var(--petal) 55%, white);
-      border-color: color-mix(in srgb, var(--foxglove) 35%, var(--stroke));
+      background: color-mix(in srgb, var(--magenta) 12%, white);
+      border-color: color-mix(in srgb, var(--magenta) 35%, var(--stroke));
     }
 
     .node.circle {
-      background: color-mix(in srgb, var(--circle-wash) 80%, white);
-      border-color: color-mix(in srgb, var(--circle-accent) 35%, var(--stroke));
+      background: var(--circle-wash);
+      color: var(--cream);
+      border-color: #2a2026;
     }
+
+    .node.circle h3 { color: var(--gold); }
+    .node.circle p,
+    .node.circle li { color: var(--ash); }
 
     .node.later {
       background: transparent;
@@ -187,11 +197,11 @@
     }
 
     .path span {
-      background: var(--dew);
+      background: color-mix(in srgb, var(--gold) 30%, white);
       border: 1px solid var(--stroke);
       border-radius: var(--radius-sm);
       padding: 0.2rem 0.5rem;
-      color: var(--deep-fern);
+      color: var(--ink);
     }
 
     .wire {
@@ -209,17 +219,17 @@
       gap: 1rem;
       flex-wrap: wrap;
       padding: 0.65rem 0.9rem;
-      background: var(--dew);
+      background: color-mix(in srgb, var(--gold) 28%, white);
       border-bottom: 1px solid var(--stroke);
       font-size: var(--fs-small);
-      font-weight: 700;
-      color: var(--deep-fern);
+      font-weight: 800;
+      color: var(--ink);
     }
 
     .wire-bar em {
       font-style: normal;
-      font-weight: 500;
-      color: var(--fern);
+      font-weight: 600;
+      color: var(--magenta-deep);
     }
 
     .wire-frame {
@@ -234,21 +244,31 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      color: var(--mist);
+      color: var(--cream);
       background:
-        linear-gradient(105deg, rgba(23, 53, 40, 0.72), rgba(154, 50, 96, 0.42)),
-        repeating-linear-gradient(120deg, rgba(255,255,255,0.05) 0 10px, transparent 10px 20px),
-        radial-gradient(circle at 70% 40%, #6a9472, #173528 60%);
+        linear-gradient(180deg, rgba(10, 9, 11, 0.15), rgba(10, 9, 11, 0.72)),
+        var(--tex-dunes) center / cover;
+      position: relative;
     }
 
     .home-hero .brand-mark {
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
+      font-weight: 800;
+      letter-spacing: -0.045em;
       line-height: 1;
       margin: 0;
       max-width: 10ch;
+    }
+
+    .home-hero .hero-illo {
+      position: absolute;
+      right: 1.25rem;
+      top: 1.25rem;
+      width: min(28vw, 7.5rem);
+      height: auto;
+      opacity: 0.92;
+      filter: drop-shadow(0 2px 10px rgba(10, 9, 11, 0.35));
     }
 
     .home-hero .tag {
@@ -270,11 +290,11 @@
       font-size: 0.9rem;
     }
 
-    .fake-btn.primary { background: var(--foxglove); color: #fff; }
+    .fake-btn.primary { background: var(--magenta); color: #fff; }
     .fake-btn.ghost {
       background: transparent;
-      color: var(--mist);
-      border: 1.5px solid rgba(247, 251, 248, 0.55);
+      color: var(--cream);
+      border: 1.5px solid rgba(255, 246, 235, 0.55);
     }
 
     .home-after {
@@ -299,15 +319,15 @@
       font-size: var(--fs-small);
     }
 
-    .band.alt { background: color-mix(in srgb, var(--dew) 55%, white); }
+    .band.alt { background: color-mix(in srgb, var(--gold) 18%, white); }
 
     .anno {
       margin: 0.65rem 0 0;
       font-size: 0.78rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--foxglove-deep);
+      color: var(--magenta-deep);
     }
 
     .page-shell {
@@ -328,8 +348,9 @@
 
     .page-nav strong {
       font-family: var(--font-display);
-      color: var(--deep-fern);
+      color: var(--ink);
       font-size: 1.1rem;
+      font-weight: 800;
     }
 
     .page-nav .links {
@@ -337,8 +358,8 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       font-size: var(--fs-small);
-      font-weight: 600;
-      color: var(--fern);
+      font-weight: 700;
+      color: var(--magenta-deep);
     }
 
     .page-main { padding: 1.35rem 1.1rem 1.6rem; }
@@ -355,21 +376,22 @@
       display: grid;
       gap: 0.15rem;
       padding: 0.85rem 0.95rem;
-      border-left: 3px solid var(--foxglove);
-      background: color-mix(in srgb, var(--mist) 70%, white);
+      border-left: 3px solid var(--magenta);
+      background: color-mix(in srgb, var(--gold) 12%, white);
     }
 
     .list-item strong {
       font-family: var(--font-display);
-      color: var(--deep-fern);
+      color: var(--ink);
+      font-weight: 800;
     }
 
     .list-item span { font-size: var(--fs-small); color: var(--bark); }
 
     .page-foot {
       padding: 0.85rem 1.1rem;
-      background: var(--deep-fern);
-      color: color-mix(in srgb, var(--mist) 85%, transparent);
+      background: var(--void);
+      color: color-mix(in srgb, var(--cream) 85%, transparent);
       font-size: var(--fs-small);
     }
 
@@ -388,14 +410,14 @@
     .compare .box h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
     .compare .box ul { margin: 0; padding-left: 1.05rem; font-size: var(--fs-small); }
     .compare .from { background: #f3f1ef; }
-    .compare .to { background: color-mix(in srgb, var(--lichen) 30%, white); }
+    .compare .to { background: color-mix(in srgb, var(--gold) 22%, white); }
 
     .footer-note {
       margin-top: 3rem;
       padding-top: 1.25rem;
       border-top: 1px solid var(--stroke);
       font-size: var(--fs-small);
-      color: var(--fern);
+      color: var(--smoke);
       max-width: 42rem;
     }
 
@@ -409,21 +431,16 @@
 <body>
   <div class="wrap">
     <header class="topnav">
-      <a class="brand" href="index.html">Albion Faeries / Design</a>
-      <nav class="option-nav" aria-label="Design kit navigation">
-        <div class="style-row" aria-label="Visual direction">
-          <a href="site-structure-sarsen-night.html">Megalith by Night</a>
-          <a href="site-structure-deep-glade.html">Deep Glade</a>
-          <a href="site-structure-faery-fire.html">Faery Fire</a>
-        </div>
-        <div class="doc-row" aria-label="This option">
-          <a href="style-guide.html">Style guide</a>
-          <a href="site-structure.html" aria-current="page">Site structure</a>
-        </div>
+      <a class="brand" href="../../index.html">Albion Faeries / Design</a>
+      <nav class="option-nav" aria-label="Hot Spore design docs">
+        <span class="option-name">Hot Spore</span>
+        <a href="style-guide-hot-spore.html">Style guide</a>
+        <a href="site-structure-hot-spore.html" aria-current="page">Site structure</a>
+        <a class="switch" href="../../site-structure.html">Foxglove Glade →</a>
       </nav>
     </header>
 
-    <p class="label">Foxglove Glade · information architecture</p>
+    <p class="label">Hot Spore · information architecture</p>
     <h1>Site structure mockup</h1>
     <p class="lede">
       One Albion home with three layers: a slim public hearth, event minisites under the same domain,
@@ -565,7 +582,8 @@
         <div class="wire-bar">Wire · Home <em>viewport 1 = hearth only</em></div>
         <div class="wire-frame">
           <div class="home-hero">
-            <p class="label" style="color:rgba(238,245,240,0.8)">Full-bleed photo · gathering / land</p>
+            <img class="hero-illo" src="assets-yellow/illo-mushrooms-cutout.png" alt="" />
+            <p class="label" style="color:rgba(255,246,235,0.85)">Full-bleed dune texture · doodle companion</p>
             <p class="brand-mark">Albion Faeries</p>
             <p class="tag">An online space of fabulousness for the Radical Faeries of old Albion.</p>
             <div class="cta-row">
@@ -586,7 +604,7 @@
             </div>
             <div class="band">
               <h3>Join the list</h3>
-              <p>Newsletter as its own quiet closing hearth - one field, one button, foxglove once.</p>
+              <p>Newsletter as its own quiet closing hearth - one field, one button, magenta once.</p>
               <p class="anno">Section job: stay in touch</p>
             </div>
           </div>
@@ -596,7 +614,7 @@
 
     <section class="section" id="inner-wires">
       <h2>Inner pages · skeleton</h2>
-      <p class="intro">Same chrome everywhere: compact brand, short nav, deep-fern footer. Content sections keep one job each.</p>
+      <p class="intro">Same chrome everywhere: compact brand, short nav, void footer. Content sections keep one job each.</p>
 
       <div class="two">
         <div class="wire">
@@ -614,7 +632,7 @@
                   <strong>Lughnasadh Gathering</strong>
                   <span>Open call · opens minisite</span>
                 </div>
-                <div class="list-item" style="border-color:var(--fern)">
+                <div class="list-item" style="border-color:var(--ember)">
                   <strong>London Full Moon</strong>
                   <span>Drum circle · workshop · social</span>
                 </div>
@@ -681,7 +699,7 @@
     <section class="section" id="circles-wire">
       <h2>Private Circles · structure wire</h2>
       <p class="intro">
-        Same Foxglove Glade family with Circle wash and copper accent.
+        Same Hot Spore family: void wash, gold accent, spiral companion.
         Jobs: find your Circle, read the latest notes, carry open actions, use templates so work does not vanish.
       </p>
 
@@ -689,28 +707,28 @@
         <div class="wire">
           <div class="wire-bar">Wire · Circles home <em>signed in</em></div>
           <div class="page-shell">
-            <div class="page-nav" style="background:var(--circle-wash)">
-              <strong>Circles · Albion</strong>
-              <div class="links"><span>My Circles</span><span>Actions</span><span>Sign out</span></div>
+            <div class="page-nav" style="background:var(--circle-wash);color:var(--cream)">
+              <strong style="color:var(--cream)">Circles · Albion</strong>
+              <div class="links" style="color:var(--gold)"><span>My Circles</span><span>Actions</span><span>Sign out</span></div>
             </div>
-            <div class="page-main" style="background:var(--circle-panel)">
-              <h3>My Circles</h3>
-              <p>Only Circles this faerie can enter. Each opens notes, actions, and templates.</p>
+            <div class="page-main" style="background:var(--circle-panel);color:var(--cream)">
+              <h3 style="color:var(--gold)">My Circles</h3>
+              <p style="color:var(--ash)">Only Circles this faerie can enter. Each opens notes, actions, and templates.</p>
               <div class="list-blocks">
-                <div class="list-item" style="border-color:var(--circle-accent)">
-                  <strong>Communications</strong>
-                  <span>Convenor needed · Record keeper needed · 4 open actions</span>
+                <div class="list-item" style="border-color:var(--gold);background:rgba(255,246,235,0.06)">
+                  <strong style="color:var(--cream)">Communications</strong>
+                  <span style="color:var(--ash)">Convenor needed · Record keeper needed · 4 open actions</span>
                 </div>
-                <div class="list-item" style="border-color:var(--fern)">
-                  <strong>Gatherings &amp; Events</strong>
-                  <span>Venue notes · gathering how-to · Lughnasadh helpers</span>
+                <div class="list-item" style="border-color:var(--magenta);background:rgba(255,246,235,0.06)">
+                  <strong style="color:var(--cream)">Gatherings &amp; Events</strong>
+                  <span style="color:var(--ash)">Venue notes · gathering how-to · Lughnasadh helpers</span>
                 </div>
-                <div class="list-item" style="border-color:var(--lichen)">
-                  <strong>Finance</strong>
-                  <span>Hosting costs · insurance exploration</span>
+                <div class="list-item" style="border-color:var(--ember);background:rgba(255,246,235,0.06)">
+                  <strong style="color:var(--cream)">Finance</strong>
+                  <span style="color:var(--ash)">Hosting costs · insurance exploration</span>
                 </div>
               </div>
-              <p class="anno">Threshold clear: this is not the public site</p>
+              <p class="anno" style="color:var(--gold)">Threshold clear: this is not the public site</p>
             </div>
             <div class="page-foot">Back to public hearth · care &amp; access note</div>
           </div>
@@ -720,23 +738,23 @@
           <div class="wire-bar">Wire · Circle room · Comms</div>
           <div class="page-shell">
             <div class="page-nav" style="background:var(--circle-wash)">
-              <strong>Comms Circle</strong>
-              <div class="links"><span>Notes</span><span>Actions</span><span>Templates</span><span>People</span></div>
+              <strong style="color:var(--cream)">Comms Circle</strong>
+              <div class="links" style="color:var(--gold)"><span>Notes</span><span>Actions</span><span>Templates</span><span>People</span></div>
             </div>
             <div class="page-main" style="background:var(--circle-panel)">
-              <h3>Notes &amp; actions</h3>
-              <p>Latest meeting note on top. Open actions with owner and due date - reviewed at the start of each meeting (Moot mandate).</p>
+              <h3 style="color:var(--gold)">Notes &amp; actions</h3>
+              <p style="color:var(--ash)">Latest meeting note on top. Open actions with owner and due date - reviewed at the start of each meeting (Moot mandate).</p>
               <div class="list-blocks">
-                <div class="list-item" style="border-color:var(--circle-accent)">
-                  <strong>Bring hosting recommendation to Finance</strong>
-                  <span>Owner: Blair · Due: next Comms · Open</span>
+                <div class="list-item" style="border-color:var(--gold);background:rgba(255,246,235,0.06)">
+                  <strong style="color:var(--cream)">Bring hosting recommendation to Finance</strong>
+                  <span style="color:var(--ash)">Owner: Blair · Due: next Comms · Open</span>
                 </div>
-                <div class="list-item" style="border-color:var(--fern)">
-                  <strong>Confirm two DNS administrators</strong>
-                  <span>Owner: Comms · Due: Gate 1 · Open</span>
+                <div class="list-item" style="border-color:var(--magenta);background:rgba(255,246,235,0.06)">
+                  <strong style="color:var(--cream)">Confirm two DNS administrators</strong>
+                  <span style="color:var(--ash)">Owner: Comms · Due: Gate 1 · Open</span>
                 </div>
               </div>
-              <p class="anno">Templates: moot minutes, Circle notes, gathering how-to</p>
+              <p class="anno" style="color:var(--gold)">Templates: moot minutes, Circle notes, gathering how-to</p>
             </div>
             <div class="page-foot">Archivists can find this later · exportable</div>
           </div>
@@ -806,8 +824,8 @@
     </section>
 
     <p class="footer-note">
-      Foxglove Glade structure draft · August 2026. Same IA as Sarsen Dawn / Night, different temperature.
-      Pair with the <a href="style-guide.html">Foxglove Glade style guide</a>.
+      Hot Spore structure draft · August 2026. Same IA as Foxglove Glade, different temperature.
+      Pair with the <a href="style-guide-hot-spore.html">Hot Spore style guide</a>.
       Next step: pick a direction, then a clickable homepage prototype.
     </p>
   </div>
