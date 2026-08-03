@@ -86,13 +86,31 @@
       box-shadow: 0 0 0 1px var(--stroke-strong);
     }
     .mark-size span { font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--mute); }
+    .mark-family {
+      display: grid; gap: 0.75rem; grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 0 0 1.25rem;
+    }
+    .mark-family-item {
+      display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+      padding: 0.85rem 0.6rem; border-radius: var(--radius-md);
+      border: 1px solid var(--stroke); background: var(--surface-raised);
+      text-decoration: none; color: var(--mute); font-size: var(--fs-small); font-weight: 700;
+    }
+    .mark-family-item img { display: block; border-radius: 50%; width: 56px; height: 56px; }
+    .mark-family-item.current { border-color: var(--circle-accent); color: var(--star); }
+    .mark-family-item:hover { color: var(--star); border-color: var(--stroke-strong); }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .brand-lockup img { display: block; width: 1.65rem; height: 1.65rem; border-radius: 50%; }
     .footer-note { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--stroke); font-size: var(--fs-small); color: var(--mute); max-width: 42rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="topnav">
-      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <a class="brand brand-lockup" href="index.html">
+        <img src="assets/sarsen/favicon.svg" alt="" width="26" height="26" />
+        Albion Faeries / Design
+      </a>
       <nav class="option-nav" aria-label="Design kit navigation">
         <div class="style-row" aria-label="Visual direction">
           <a href="style-guide-sarsen-night.html" aria-current="true">Megalith by Night</a>
@@ -150,7 +168,7 @@
       <h2>Mark</h2>
       <p class="intro">
         Moon-circle emblem: nested trilithons under a crescent, star gold on night plum.
-        Site favicon and apple touch icon. Keep the circle intact - do not crop to a square stone crop.
+        Site favicon, apple touch icon, and nav badge. Keep the circle intact - do not crop to a square stone crop.
       </p>
       <div class="mark-row">
         <div class="mark-size">
@@ -165,6 +183,21 @@
           <img src="assets/sarsen/favicon.svg" alt="" width="32" height="32" />
           <span>32 · favicon</span>
         </div>
+      </div>
+      <div class="type-meta" style="margin-bottom:0.65rem">Portal family</div>
+      <div class="mark-family" aria-label="Theme mark family">
+        <div class="mark-family-item current" aria-current="true">
+          <img src="assets/sarsen/favicon.svg" alt="" width="56" height="56" />
+          <span>Night</span>
+        </div>
+        <a class="mark-family-item" href="style-guide-deep-glade.html#mark">
+          <img src="assets/deep-glade/favicon.svg" alt="" width="56" height="56" />
+          <span>Glade</span>
+        </a>
+        <a class="mark-family-item" href="style-guide-faery-fire.html#mark">
+          <img src="assets/faery-fire/favicon.svg" alt="" width="56" height="56" />
+          <span>Fire</span>
+        </a>
       </div>
       <div class="panel">
         <div class="type-meta">Files</div>
@@ -239,12 +272,18 @@
       <div class="grid-2">
         <div class="panel">
           <div class="type-meta">Public nav</div>
-          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--star)">Albion Faeries</p>
+          <p class="brand-lockup" style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--star)">
+            <img src="assets/sarsen/favicon.svg" alt="" width="28" height="28" />
+            Albion Faeries
+          </p>
           <p style="margin:0.35rem 0 0;font-size:var(--fs-small);font-weight:600;color:var(--mute)">What's on · Gatherings · Who we are · Get involved</p>
         </div>
         <div class="panel" style="background:var(--circle-wash)">
           <div class="type-meta">Circle chrome</div>
-          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--star)">Circles · Albion</p>
+          <p class="brand-lockup" style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--star)">
+            <img src="assets/sarsen/favicon.svg" alt="" width="26" height="26" />
+            Circles · Albion
+          </p>
           <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--mute)">Void panels, star-gold accent, almost no motion.</p>
         </div>
       </div>

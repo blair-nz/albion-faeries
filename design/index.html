@@ -50,12 +50,48 @@
       line-height: var(--lh-body);
       font-size: 1.1rem;
     }
+    .mark-family {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0 0 1.5rem;
+    }
+    .mark-family a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 0.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(247, 240, 230, 0.14);
+      background: rgba(247, 240, 230, 0.04);
+      text-decoration: none;
+      color: #a8a092;
+      font-size: var(--fs-small);
+      font-weight: 700;
+    }
+    .mark-family a:hover { color: #f7f0e6; border-color: rgba(247, 240, 230, 0.28); }
+    .mark-family img { display: block; width: 48px; height: 48px; border-radius: 50%; }
     .options { display: grid; gap: 1rem; }
     .option {
       border: 1px solid rgba(247, 240, 230, 0.14);
       border-radius: var(--radius-lg);
       padding: 1.2rem 1.3rem;
     }
+    .option-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 0.35rem;
+    }
+    .option-head img {
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .option-head h2 { margin: 0; }
     .option.night {
       background: #12182c;
       border-color: rgba(244, 239, 230, 0.18);
@@ -146,11 +182,29 @@
   <main>
     <p class="label">Local design kit · August 2026</p>
     <h1>Albion Faeries</h1>
-    <p class="lede">Three active visual directions. Same site structure; different light.</p>
+    <p class="lede">Three active visual directions. Same site structure; different light. Each has its own portal mark for favicon and nav.</p>
+
+    <div class="mark-family" aria-label="Theme marks">
+      <a href="style-guide-sarsen-night.html#mark">
+        <img src="assets/sarsen/favicon.svg" alt="" width="48" height="48" />
+        <span>Night</span>
+      </a>
+      <a href="style-guide-deep-glade.html#mark">
+        <img src="assets/deep-glade/favicon.svg" alt="" width="48" height="48" />
+        <span>Glade</span>
+      </a>
+      <a href="style-guide-faery-fire.html#mark">
+        <img src="assets/faery-fire/favicon.svg" alt="" width="48" height="48" />
+        <span>Fire</span>
+      </a>
+    </div>
 
     <div class="options">
       <section class="option night">
-        <h2>1 · Megalith by Night</h2>
+        <div class="option-head">
+          <img src="assets/sarsen/favicon.svg" alt="" width="40" height="40" />
+          <h2>1 · Megalith by Night</h2>
+        </div>
         <p>Moonlit night over stone - ink sky, star gold, public-domain night photo.</p>
         <div class="links">
           <a href="style-guide-sarsen-night.html">Style guide</a>
@@ -159,7 +213,10 @@
       </section>
 
       <section class="option forest">
-        <h2>2 · Deep Glade</h2>
+        <div class="option-head">
+          <img src="assets/deep-glade/favicon.svg" alt="" width="40" height="40" />
+          <h2>2 · Deep Glade</h2>
+        </div>
         <p>Deep England forest film - moss canopy, leaf light, looping woodland atmosphere.</p>
         <div class="links">
           <a href="style-guide-deep-glade.html">Style guide</a>
@@ -168,7 +225,10 @@
       </section>
 
       <section class="option fire">
-        <h2>3 · Faery Fire</h2>
+        <div class="option-head">
+          <img src="assets/faery-fire/favicon.svg" alt="" width="40" height="40" />
+          <h2>3 · Faery Fire</h2>
+        </div>
         <p>Golden embers on coal - looping faery-fire film, amber spark, hearth warmth.</p>
         <div class="links">
           <a href="style-guide-faery-fire.html">Style guide</a>

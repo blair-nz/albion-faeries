@@ -244,14 +244,25 @@
     }
 
     .home-hero .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 6vw, 4.2rem);
       font-weight: 700;
       letter-spacing: -0.035em;
       line-height: 1;
       margin: 0;
-      max-width: 10ch;
+      max-width: 14ch;
     }
+    .home-hero .brand-mark img {
+      width: 0.85em; height: 0.85em; border-radius: 50%; flex-shrink: 0;
+    }
+    .page-nav .brand-lockup {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+    }
+    .page-nav .brand-lockup img { width: 1.35rem; height: 1.35rem; border-radius: 50%; }
 
     .home-hero .tag {
       margin: 0.75rem 0 1.15rem;
@@ -458,13 +469,54 @@
     .compare .to { background: rgba(224,181,106,0.08); }
     .compare h3 { color: var(--star); }
     .footer-note { color: var(--mute); border-color: var(--stroke); }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .brand-lockup img { display: block; width: 1.65rem; height: 1.65rem; border-radius: 50%; }
+    .mark-row {
+      display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: end;
+      margin: 0 0 1.25rem;
+    }
+    .mark-size { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .mark-size img {
+      display: block; border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--stroke-strong);
+    }
+    .mark-size span {
+      font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 800; color: var(--mute);
+    }
+    .mark-family {
+      display: grid; gap: 0.75rem; grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 0 0 1.25rem;
+    }
+    .mark-family-item {
+      display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+      padding: 0.85rem 0.6rem; border-radius: var(--radius-md);
+      border: 1px solid var(--stroke); background: var(--surface-raised);
+      text-decoration: none; color: var(--mute); font-size: var(--fs-small); font-weight: 700;
+    }
+    .mark-family-item img { display: block; border-radius: 50%; width: 56px; height: 56px; }
+    .mark-family-item.current { border-color: var(--circle-accent); color: var(--star); }
+    .mark-family-item:hover { color: var(--star); border-color: var(--stroke-strong); }
+    .mark-panel {
+      background: var(--surface-raised); border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg); padding: 1.15rem 1.25rem;
+    }
+    .mark-panel .type-meta {
+      font-size: var(--fs-label); letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 800; color: var(--circle-accent); margin-bottom: 0.35rem;
+    }
+    .mark-panel ul { margin: 0.65rem 0 0; padding-left: 1.1rem; color: var(--mute); }
+    .mark-panel li { margin: 0.3rem 0; }
 
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="topnav">
-      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <a class="brand brand-lockup" href="index.html">
+        <img src="assets/sarsen/favicon.svg" alt="" width="26" height="26" />
+        Albion Faeries / Design
+      </a>
       <nav class="option-nav" aria-label="Design kit navigation">
         <div class="style-row" aria-label="Visual direction">
           <a href="site-structure-sarsen-night.html" aria-current="true">Megalith by Night</a>
@@ -485,6 +537,51 @@
       and a signed-in Circles space for notes, actions, and living memory.
     </p>
 
+    <section class="section" id="mark">
+      <h2>Brand mark</h2>
+      <p class="intro">
+        Moon-circle mark for this direction: favicon, apple touch icon, and nav badge on every public and Circles page.
+        Pair with the <a href="style-guide-sarsen-night.html#mark">style guide Mark section</a>.
+      </p>
+      <div class="mark-row">
+        <div class="mark-size">
+          <img src="assets/sarsen/favicon.svg" alt="Albion Faeries moon-circle mark" width="96" height="96" />
+          <span>96</span>
+        </div>
+        <div class="mark-size">
+          <img src="assets/sarsen/favicon.svg" alt="" width="48" height="48" />
+          <span>48 · nav</span>
+        </div>
+        <div class="mark-size">
+          <img src="assets/sarsen/favicon.svg" alt="" width="32" height="32" />
+          <span>32 · favicon</span>
+        </div>
+      </div>
+      <div class="mark-family" aria-label="Theme mark family">
+        <div class="mark-family-item current" aria-current="true">
+          <img src="assets/sarsen/favicon.svg" alt="" width="56" height="56" />
+          <span>Night</span>
+        </div>
+        <a class="mark-family-item" href="site-structure-deep-glade.html#mark">
+          <img src="assets/deep-glade/favicon.svg" alt="" width="56" height="56" />
+          <span>Glade</span>
+        </a>
+        <a class="mark-family-item" href="site-structure-faery-fire.html#mark">
+          <img src="assets/faery-fire/favicon.svg" alt="" width="56" height="56" />
+          <span>Fire</span>
+        </a>
+      </div>
+      <div class="mark-panel">
+        <div class="type-meta">Where it appears</div>
+        <ul>
+          <li>Browser tab / home screen - <code>assets/sarsen/favicon.svg</code>, <code>.ico</code>, <code>apple-touch-icon.png</code></li>
+          <li>Public nav lockup beside "Albion Faeries"</li>
+          <li>Home hero brand signal (circle intact, not cropped)</li>
+          <li>Circles chrome - same mark, quieter gold accent</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="map">
       <h2>Map of the whole home</h2>
       <p class="intro">Fewer public doors than the current WordPress tree. Private Circles sit behind a clear threshold - same brand, different enclosure.</p>
@@ -494,7 +591,7 @@
           <h3>Home</h3>
           <p>Brand hearth. One hero, one promise, two paths.</p>
           <ul>
-            <li>Albion Faeries (hero mark)</li>
+            <li>Moon-circle mark + Albion Faeries</li>
             <li>Short promise line</li>
             <li>CTAs: What's on / Get involved</li>
           </ul>
@@ -621,7 +718,10 @@
         <div class="wire-frame">
           <div class="home-hero">
             <p class="label" style="color:rgba(238,245,240,0.8)">Full-bleed moonlit photo · standing stone</p>
-            <p class="brand-mark">Albion Faeries</p>
+            <p class="brand-mark">
+              <img src="assets/sarsen/favicon.svg" alt="" width="48" height="48" />
+              Albion Faeries
+            </p>
             <p class="tag">An online space of fabulousness for the Radical Faeries of old Albion.</p>
             <div class="cta-row">
               <span class="fake-btn primary">See what's on</span>
@@ -658,7 +758,10 @@
           <div class="wire-bar">Wire · What's on</div>
           <div class="page-shell">
             <div class="page-nav">
-              <strong>Albion Faeries</strong>
+              <strong class="brand-lockup">
+                <img src="assets/sarsen/favicon.svg" alt="" width="22" height="22" />
+                Albion Faeries
+              </strong>
               <div class="links"><span>What's on</span><span>Gatherings</span><span>Who we are</span><span>Get involved</span></div>
             </div>
             <div class="page-main">
@@ -703,7 +806,10 @@
           <div class="wire-bar">Wire · Who we are</div>
           <div class="page-shell">
             <div class="page-nav">
-              <strong>Albion Faeries</strong>
+              <strong class="brand-lockup">
+                <img src="assets/sarsen/favicon.svg" alt="" width="22" height="22" />
+                Albion Faeries
+              </strong>
               <div class="links"><span>What's on</span><span>Gatherings</span><span>Who we are</span><span>Get involved</span></div>
             </div>
             <div class="page-main">
@@ -719,7 +825,10 @@
           <div class="wire-bar">Wire · Get involved</div>
           <div class="page-shell">
             <div class="page-nav">
-              <strong>Albion Faeries</strong>
+              <strong class="brand-lockup">
+                <img src="assets/sarsen/favicon.svg" alt="" width="22" height="22" />
+                Albion Faeries
+              </strong>
               <div class="links"><span>What's on</span><span>Gatherings</span><span>Who we are</span><span>Get involved</span></div>
             </div>
             <div class="page-main">

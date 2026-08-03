@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">Albion Faeries - Faery Fire</title>
+  <desc id="desc">Embers in the dark: a hearth portal holding flame on a coal circle mark.</desc>
+  <defs>
+    <radialGradient id="coal" cx="42%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#2A1A10"/>
+      <stop offset="55%" stop-color="#16110C"/>
+      <stop offset="100%" stop-color="#070604"/>
+    </radialGradient>
+    <radialGradient id="hearthGlow" cx="50%" cy="55%" r="50%">
+      <stop offset="0%" stop-color="#FFD56A" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#E07A2A" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#070604" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flameOuter" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FFD56A"/>
+      <stop offset="45%" stop-color="#F0A040"/>
+      <stop offset="100%" stop-color="#E07A2A"/>
+    </linearGradient>
+    <linearGradient id="flameInner" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FFF1C2"/>
+      <stop offset="60%" stop-color="#FFD56A"/>
+      <stop offset="100%" stop-color="#F0A040"/>
+    </linearGradient>
+    <linearGradient id="ashStone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2E24"/>
+      <stop offset="100%" stop-color="#1A1410"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge disc -->
+  <circle cx="180" cy="180" r="156" fill="url(#coal)"/>
+  <circle cx="180" cy="180" r="146" fill="none" stroke="#FFD56A" stroke-width="3" opacity="0.9"/>
+
+  <!-- Soft hearth glow behind the portal -->
+  <circle cx="180" cy="200" r="88" fill="url(#hearthGlow)"/>
+
+  <!-- Outer ash uprights (hearth portal) -->
+  <g fill="url(#ashStone)">
+    <path d="M98 158 Q92 158 90 166 L78 286 Q76 296 86 296 H116 Q126 296 124 286 L114 166 Q113 158 106 158 Z"/>
+    <path d="M254 158 Q248 158 247 166 L236 286 Q234 296 244 296 H274 Q284 296 282 286 L270 166 Q269 158 262 158 Z"/>
+  </g>
+  <!-- Ember lintel -->
+  <path d="M88 134
+           Q88 124 98 122
+           L262 116
+           Q274 116 274 128
+           L270 162
+           Q268 172 258 172
+           L100 176
+           Q90 176 89 166 Z"
+        fill="url(#ashStone)"/>
+  <rect x="108" y="128" width="144" height="6" rx="2" fill="#8A4A22" opacity="0.75"/>
+
+  <!-- Rising flame held in the portal -->
+  <path d="M180 128
+           C198 158 224 188 218 228
+           C214 252 198 268 180 268
+           C162 268 146 252 142 228
+           C136 188 162 158 180 128 Z"
+        fill="url(#flameOuter)"/>
+  <path d="M180 158
+           C190 178 204 198 200 226
+           C198 244 190 254 180 254
+           C170 254 162 244 160 226
+           C156 198 170 178 180 158 Z"
+        fill="url(#flameInner)"/>
+  <path d="M180 188
+           C186 200 192 212 190 228
+           C189 238 185 244 180 244
+           C175 244 171 238 170 228
+           C168 212 174 200 180 188 Z"
+        fill="#FFF1C2" opacity="0.9"/>
+
+  <!-- Inner smaller uprights (depth) -->
+  <g fill="#16110C" opacity="0.9">
+    <path d="M142 198 Q138 198 137 204 L132 286 Q130 296 140 296 H156 Q164 296 163 286 L158 204 Q157 198 152 198 Z"/>
+    <path d="M204 198 Q200 198 199 204 L194 286 Q192 296 202 296 H218 Q226 296 225 286 L220 204 Q219 198 214 198 Z"/>
+  </g>
+
+  <!-- Ash ground line -->
+  <path d="M78 298 Q180 320 282 298" fill="none" stroke="#8A4A22" stroke-width="6" stroke-linecap="round"/>
+  <path d="M120 302 Q180 312 240 302" fill="none" stroke="#A89888" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- Floating sparks / ember orbs -->
+  <g fill="#FFD56A">
+    <circle cx="108" cy="92" r="3.5"/>
+    <circle cx="272" cy="120" r="2.5"/>
+    <circle cx="68" cy="178" r="2"/>
+    <circle cx="292" cy="200" r="2"/>
+    <circle cx="96" cy="230" r="1.8" opacity="0.8"/>
+    <path d="M268 74
+             C271 84 274 87 284 90
+             C274 93 271 96 268 106
+             C265 96 262 93 252 90
+             C262 87 265 84 268 74 Z"/>
+  </g>
+  <circle cx="248" cy="98" r="2" fill="#FFF1C2"/>
+  <circle cx="124" cy="108" r="1.8" fill="#F0A040"/>
+</svg>

@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Albion Faeries - Option 3: Faery Fire</title>
+  <link rel="icon" href="assets/faery-fire/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/faery-fire/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/faery-fire/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -73,6 +76,31 @@
     .pillar.ember { background: linear-gradient(160deg, var(--ember), var(--spark)); color: var(--coal); }
     .pillar strong { font-family: var(--font-display); font-size: 1.35rem; }
     .pillar p { margin: 0.35rem 0 0; font-size: var(--fs-small); }
+    .mark-row {
+      display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: end;
+      margin: 0 0 1.25rem;
+    }
+    .mark-size { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .mark-size img {
+      display: block; border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--stroke-strong);
+    }
+    .mark-size span { font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--mute); }
+    .mark-family {
+      display: grid; gap: 0.75rem; grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 0 0 1.25rem;
+    }
+    .mark-family-item {
+      display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+      padding: 0.85rem 0.6rem; border-radius: var(--radius-md);
+      border: 1px solid var(--stroke); background: var(--surface-raised);
+      text-decoration: none; color: var(--mute); font-size: var(--fs-small); font-weight: 700;
+    }
+    .mark-family-item img { display: block; border-radius: 50%; width: 56px; height: 56px; }
+    .mark-family-item.current { border-color: var(--ember); color: var(--mist); }
+    .mark-family-item:hover { color: var(--spark); border-color: var(--stroke-strong); }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .brand-lockup img { display: block; width: 1.65rem; height: 1.65rem; border-radius: 50%; }
     .footer-note { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--stroke); font-size: var(--fs-small); color: var(--mute); max-width: 42rem; }
   </style>
 </head>
@@ -86,7 +114,10 @@
 
   <div class="wrap">
     <header class="topnav">
-      <a class="brand" href="index.html">Albion Faeries / Design</a>
+      <a class="brand brand-lockup" href="index.html">
+        <img src="assets/faery-fire/favicon.svg" alt="" width="26" height="26" />
+        Albion Faeries / Design
+      </a>
       <nav class="option-nav" aria-label="Design kit navigation">
         <div class="style-row" aria-label="Visual direction">
           <a href="style-guide-sarsen-night.html">Megalith by Night</a>
@@ -144,6 +175,52 @@
       </div>
     </section>
 
+    <section class="section" id="mark">
+      <h2>Mark</h2>
+      <p class="intro">
+        Ember-hearth emblem: ash uprights holding a rising flame on coal dark, with drifting sparks.
+        Site favicon, apple touch icon, and nav badge. Keep the circle intact.
+      </p>
+      <div class="mark-row">
+        <div class="mark-size">
+          <img src="assets/faery-fire/favicon.svg" alt="Albion Faeries Faery Fire mark" width="128" height="128" />
+          <span>128</span>
+        </div>
+        <div class="mark-size">
+          <img src="assets/faery-fire/favicon.svg" alt="" width="64" height="64" />
+          <span>64</span>
+        </div>
+        <div class="mark-size">
+          <img src="assets/faery-fire/favicon.svg" alt="" width="32" height="32" />
+          <span>32 · favicon</span>
+        </div>
+      </div>
+      <div class="type-meta" style="margin-bottom:0.65rem">Portal family</div>
+      <div class="mark-family" aria-label="Theme mark family">
+        <a class="mark-family-item" href="style-guide-sarsen-night.html#mark">
+          <img src="assets/sarsen/favicon.svg" alt="" width="56" height="56" />
+          <span>Night</span>
+        </a>
+        <a class="mark-family-item" href="style-guide-deep-glade.html#mark">
+          <img src="assets/deep-glade/favicon.svg" alt="" width="56" height="56" />
+          <span>Glade</span>
+        </a>
+        <div class="mark-family-item current" aria-current="true">
+          <img src="assets/faery-fire/favicon.svg" alt="" width="56" height="56" />
+          <span>Fire</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="type-meta">Files</div>
+        <ul class="clean" style="margin-top:0.65rem">
+          <li><code>assets/faery-fire/favicon.svg</code> - primary favicon</li>
+          <li><code>assets/faery-fire/favicon.ico</code> - legacy fallback</li>
+          <li><code>assets/faery-fire/apple-touch-icon.png</code> - 180px home-screen</li>
+          <li><code>assets/faery-fire/mark-ember-hearth.png</code> - 512px master raster</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="colour">
       <h2>Colour</h2>
       <p class="intro">
@@ -189,12 +266,18 @@
       <div class="grid-2">
         <div class="panel">
           <div class="type-meta">Public nav</div>
-          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.45rem;font-weight:700">Albion Faeries</p>
+          <p class="brand-lockup" style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.45rem;font-weight:700">
+            <img src="assets/faery-fire/favicon.svg" alt="" width="28" height="28" />
+            Albion Faeries
+          </p>
           <p style="margin:0.35rem 0 0;font-size:var(--fs-small);font-weight:600;color:var(--mute)">What's on · Gatherings · Who we are · Get involved</p>
         </div>
         <div class="panel" style="background:var(--circle-wash)">
           <div class="type-meta" style="color:var(--circle-accent)">Circle chrome</div>
-          <p style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.3rem;font-weight:700">Circles · Albion</p>
+          <p class="brand-lockup" style="margin:0.5rem 0 0;font-family:var(--font-display);font-size:1.3rem;font-weight:700">
+            <img src="assets/faery-fire/favicon.svg" alt="" width="26" height="26" />
+            Circles · Albion
+          </p>
           <p style="margin:0.35rem 0 0;font-size:var(--fs-small);color:var(--mute)">Deeper ash panels; spark accent; film optional behind Circles.</p>
         </div>
       </div>

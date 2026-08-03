@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">Albion Faeries - Deep Glade</title>
+  <desc id="desc">A sunshaft through a living tree portal in a deep woodland circle mark.</desc>
+  <defs>
+    <radialGradient id="canopy" cx="40%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#3A5528"/>
+      <stop offset="55%" stop-color="#152414"/>
+      <stop offset="100%" stop-color="#0B1608"/>
+    </radialGradient>
+    <radialGradient id="shaft" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#F2E7A8"/>
+      <stop offset="50%" stop-color="#C5E078"/>
+      <stop offset="100%" stop-color="#9BC84E" stop-opacity="0.8"/>
+    </radialGradient>
+    <linearGradient id="barkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A3024"/>
+      <stop offset="100%" stop-color="#2C2418"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge disc -->
+  <circle cx="180" cy="180" r="156" fill="url(#canopy)"/>
+  <circle cx="180" cy="180" r="146" fill="none" stroke="#9BC84E" stroke-width="3" opacity="0.9"/>
+
+  <!-- Soft sunshaft held in the portal -->
+  <circle cx="180" cy="156" r="52" fill="url(#shaft)" opacity="0.95"/>
+  <circle cx="180" cy="156" r="26" fill="#F2E7A8" opacity="0.5"/>
+
+  <!-- Outer living trunks (root flare, slight lean) -->
+  <g fill="url(#barkFill)">
+    <path d="M104 148
+             C96 148 94 156 92 168
+             L78 270
+             C76 286 70 296 86 298
+             H118
+             C132 296 128 286 126 272
+             L116 168
+             C114 154 112 148 104 148 Z"/>
+    <path d="M256 148
+             C248 148 246 154 244 168
+             L234 272
+             C232 286 228 296 242 298
+             H274
+             C290 296 284 286 282 270
+             L268 168
+             C266 156 264 148 256 148 Z"/>
+  </g>
+
+  <!-- Leafy crown joining the trunks (lobed, not a smooth eyelid) -->
+  <g fill="#3A5528">
+    <ellipse cx="118" cy="128" rx="28" ry="22"/>
+    <ellipse cx="152" cy="112" rx="26" ry="20"/>
+    <ellipse cx="180" cy="106" rx="30" ry="22"/>
+    <ellipse cx="208" cy="112" rx="26" ry="20"/>
+    <ellipse cx="242" cy="128" rx="28" ry="22"/>
+  </g>
+  <g fill="#9BC84E" opacity="0.88">
+    <ellipse cx="132" cy="124" rx="16" ry="12"/>
+    <ellipse cx="180" cy="112" rx="20" ry="14"/>
+    <ellipse cx="228" cy="124" rx="16" ry="12"/>
+  </g>
+
+  <!-- Inner sapling portal -->
+  <g fill="#2C2418">
+    <path d="M144 192 Q140 192 139 198 L132 286 Q130 296 140 296 H158 Q166 296 165 286 L158 198 Q157 192 152 192 Z"/>
+    <path d="M202 192 Q198 192 197 198 L190 286 Q188 296 198 296 H216 Q224 296 223 286 L216 198 Q215 192 210 192 Z"/>
+  </g>
+  <!-- Small leaf cluster over saplings -->
+  <g fill="#6A7A48">
+    <ellipse cx="162" cy="186" rx="12" ry="9"/>
+    <ellipse cx="180" cy="180" rx="14" ry="10"/>
+    <ellipse cx="198" cy="186" rx="12" ry="9"/>
+  </g>
+
+  <!-- Moss ground + cool stream hint -->
+  <path d="M78 298 Q180 322 282 298" fill="none" stroke="#6A7A48" stroke-width="6" stroke-linecap="round"/>
+  <path d="M120 302 Q180 314 240 302" fill="none" stroke="#8AA4A8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Dappled light motes -->
+  <g fill="#C5E078">
+    <circle cx="104" cy="90" r="3"/>
+    <circle cx="270" cy="116" r="2.5"/>
+    <circle cx="70" cy="186" r="2"/>
+    <path d="M266 76
+             C269 84 272 86 280 88
+             C272 90 269 92 266 100
+             C263 92 260 90 252 88
+             C260 86 263 84 266 76 Z"/>
+  </g>
+
+  <!-- Tiny moss flecks on trunks -->
+  <circle cx="102" cy="210" r="3" fill="#6A7A48" opacity="0.7"/>
+  <circle cx="258" cy="228" r="2.5" fill="#6A7A48" opacity="0.6"/>
+</svg>
