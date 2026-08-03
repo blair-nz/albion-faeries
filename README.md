@@ -2,6 +2,13 @@
 
 Local design and rebuild work for [albionfaeries.org.uk](https://albionfaeries.org.uk/) — a stylish, fun digital home for the Radical Faeries of Albion.
 
+## Layout
+
+| Path | Role | Cloudflare Pages |
+| --- | --- | --- |
+| [`design/`](design/) | Style guides + site structure | `albion-faeries` → https://albion-faeries.pages.dev/ |
+| [`site/`](site/) | Public site build | `albion-faeries-site` → https://albion-faeries-site.pages.dev/ · interim custom host `albion-faeries.blair.solutions` |
+
 ## Design kit
 
 Open locally (no build step):
@@ -21,8 +28,6 @@ Tokens and assets:
 
 Archived (hidden from the kit index): [`design/archive/`](design/archive/)
 
-Or from this folder:
-
 ```bash
 cd design
 python -m http.server 8765
@@ -30,18 +35,29 @@ python -m http.server 8765
 
 Then visit `http://127.0.0.1:8765/`.
 
-## Live preview
-
-Cloudflare Pages project `albion-faeries` on the blair.solutions account:
-
-- https://albion-faeries.pages.dev/
-- https://albionfaeries.blair.solutions/ (custom domain; needs CNAME `albionfaeries` → `albion-faeries.pages.dev` if not already present)
-
 Redeploy the design folder:
 
 ```bash
 CLOUDFLARE_ACCOUNT_ID=e9b13349d94ef8f35c5b1e4470f12b6f npx wrangler pages deploy design --project-name=albion-faeries
 ```
+
+## Site build
+
+Scaffold lives in [`site/`](site/). Local preview:
+
+```bash
+cd site
+python -m http.server 8766
+```
+
+Create / deploy the Pages project:
+
+```bash
+CLOUDFLARE_ACCOUNT_ID=e9b13349d94ef8f35c5b1e4470f12b6f npx wrangler pages project create albion-faeries-site --production-branch=main
+CLOUDFLARE_ACCOUNT_ID=e9b13349d94ef8f35c5b1e4470f12b6f npx wrangler pages deploy site --project-name=albion-faeries-site
+```
+
+Interim custom domain: add `albion-faeries.blair.solutions` on the `albion-faeries-site` project (CNAME `albion-faeries` → `albion-faeries-site.pages.dev`). Later swap to `albionfaeries.org.uk`.
 
 ## Scope in the design
 

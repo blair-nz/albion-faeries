@@ -1,0 +1,62 @@
+/* Albion Faeries site tokens
+   Copied from design/tokens.css (Foxglove Glade) for the Pages site root.
+   Visual direction is still open in the design kit — swap when Circles pick. */
+
+:root {
+  /* Atmosphere */
+  --mist: #eef5f0;
+  --dew: #dce9e1;
+  --lichen: #b7c9b4;
+  --fern: #2f5d45;
+  --deep-fern: #173528;
+  --bark: #2a2622;
+  --ink: #1a1816;
+
+  /* Accent */
+  --foxglove: #c24a7c;
+  --foxglove-deep: #9a3260;
+  --pollen: #d9a441;
+  --copper: #b57a52;
+  --petal: #f3d5e2;
+
+  /* Circle space (private inner glade - same family, quieter enclosure) */
+  --circle-wash: #e7efe9;
+  --circle-panel: #f4f8f5;
+  --circle-ink: #1a221c;
+  --circle-accent: #8a4f2e;
+
+  /* Surfaces */
+  --surface: #f7fbf8;
+  --surface-raised: #ffffff;
+  --stroke: rgba(23, 53, 40, 0.14);
+  --stroke-strong: rgba(23, 53, 40, 0.28);
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 7vw, 5.5rem);
+  --fs-h1: clamp(2rem, 4vw, 3.25rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --measure: 38rem;
+  --page: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius-sm: 0.35rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med: 420ms;
+  --dur-slow: 900ms;
+}
