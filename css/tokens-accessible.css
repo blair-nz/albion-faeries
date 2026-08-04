@@ -1,0 +1,65 @@
+/* Accessible — high contrast, system fonts, no atmosphere video */
+[data-theme="accessible"] {
+  --void: #000000;
+  --night: #111111;
+  --accent: #ffd100;
+  --accent-ink: #000000;
+  --ink: #ffffff;
+  --mute: #d0d0d0;
+  --bark: #eeeeee;
+  --surface: #000000;
+  --surface-raised: #1a1a1a;
+  --stroke: rgba(255, 255, 255, 0.45);
+  --stroke-strong: rgba(255, 255, 255, 0.75);
+  --hero-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9));
+  --font-display: system-ui, "Segoe UI", Tahoma, sans-serif;
+  --font-body: system-ui, "Segoe UI", Tahoma, sans-serif;
+  --bg-image: none;
+  --hero-poster: none;
+  --field-image: none;
+  --field-veil: none;
+  --fs-body: 1.2rem;
+  --fs-small: 1rem;
+  --panel: #111111;
+  --panel-stroke: rgba(255, 255, 255, 0.55);
+  --panel-shadow: none;
+  color-scheme: dark;
+}
+
+[data-theme="accessible"] .site-header,
+[data-theme="accessible"] .site-footer,
+[data-theme="accessible"] .content-panel,
+[data-theme="accessible"] main > .section,
+[data-theme="accessible"] main > .page-hero,
+[data-theme="accessible"] main > article.section,
+[data-theme="accessible"] main > article.prose,
+[data-theme="accessible"] main > .archive-year,
+[data-theme="accessible"] main > .event-hero,
+[data-theme="accessible"] main > .event-nav,
+[data-theme="accessible"] main > .event-section,
+[data-theme="accessible"] main > .prose,
+[data-theme="accessible"] .tab-panels .section,
+[data-theme="accessible"] .tab-panels .prose,
+[data-theme="accessible"] .subnav,
+[data-theme="accessible"] .circles-map-wrap,
+[data-theme="accessible"] .hearth-panel {
+  background: #111111;
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+[data-theme="accessible"] a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+[data-theme="accessible"] .hero-media video,
+[data-theme="accessible"] .atmosphere video {
+  display: none !important;
+}
+
+[data-theme="accessible"] *:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}

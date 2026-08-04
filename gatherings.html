@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gatherings &amp; Events · Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <h1 data-i18n="gatherings.title">Gatherings &amp; Events</h1>
+        <p class="lede" data-i18n="gatherings.lede">What's coming up, how gatherings work, where we land, and the memory of past calls.</p>
+      </header>
+
+      <div data-tabs>
+        <div class="subnav" role="tablist" aria-label="Gatherings and events sections">
+          <button type="button" role="tab" id="tab-on" aria-controls="panel-on" aria-selected="true" data-hash="whats-on" data-hash-aliases="on calendar heart-circle heart" data-i18n="gatherings.tabOn">What's on</button>
+          <button type="button" role="tab" id="tab-ethos" aria-controls="panel-ethos" aria-selected="false" tabindex="-1" data-hash="ethos" data-i18n="gatherings.tabEthos">About gatherings</button>
+          <button type="button" role="tab" id="tab-care" aria-controls="panel-care" aria-selected="false" tabindex="-1" data-hash="care" data-i18n="gatherings.tabCare">Care &amp; funds</button>
+          <button type="button" role="tab" id="tab-places" aria-controls="panel-places" aria-selected="false" tabindex="-1" data-hash="venues" data-hash-aliases="hearths places featherstone glastonbury laughton" data-i18n="gatherings.tabPlaces">Our hearths</button>
+          <button type="button" role="tab" id="tab-archive" aria-controls="panel-archive" aria-selected="false" tabindex="-1" data-hash="archive" data-hash-aliases="past" data-i18n="gatherings.tabArchive">Past gatherings</button>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel" role="tabpanel" id="panel-on" aria-labelledby="tab-on">
+            <section class="section">
+              <h2 data-i18n="whatsOn.gatheringsHeading">Upcoming gatherings</h2>
+              <p class="intro" data-i18n="whatsOn.lede">Gatherings, festival presence, and London full moons. Dates shift as Circles confirm the call — always check before you travel.</p>
+              <div class="list-blocks">
+                <a class="list-item" href="/events/iya-luv-2026/">
+                  <strong data-i18n="whatsOn.northernTitle">Iya Luv · Northern Gathering · Pardshaw Quaker Centre</strong>
+                  <span data-i18n="whatsOn.northernMeta">31 Aug – 6 Sept 2026 · Cockermouth, Cumbria</span>
+                </a>
+                <div class="list-item">
+                  <strong data-i18n="whatsOn.samhainTitle">Samhain · Featherstone Castle</strong>
+                  <span data-i18n="whatsOn.samhainMeta">19–26 October 2026 · Haltwhistle, Northumberland</span>
+                </div>
+                <div class="list-item">
+                  <strong data-i18n="whatsOn.imbolcTitle">Imbolc · Glastonbury</strong>
+                  <span data-i18n="whatsOn.imbolcMeta">29 Jan – 8 Feb 2027 · Paddington Farm</span>
+                </div>
+                <div class="list-item">
+                  <strong data-i18n="whatsOn.beltaneTitle">Beltane · Glastonbury</strong>
+                  <span data-i18n="whatsOn.beltaneMeta">14–24 May 2027 · Paddington Farm</span>
+                </div>
+              </div>
+            </section>
+            <section class="section">
+              <h2 data-i18n="whatsOn.elsewhereHeading">Also on the calendar</h2>
+              <div class="list-blocks">
+                <a class="list-item" href="https://www.queerspirit.net/" rel="noopener noreferrer">
+                  <strong data-i18n="whatsOn.queerSpiritTitle">Radical Faeries at Queer Spirit Festival</strong>
+                  <span data-i18n="whatsOn.queerSpiritMeta">13–17 August 2026 · see Queer Spirit website</span>
+                </a>
+              </div>
+            </section>
+            <section class="section">
+              <h2 data-i18n="whatsOn.londonHeading">London &amp; local</h2>
+              <div class="list-blocks">
+                <div class="list-item">
+                  <strong data-i18n="whatsOn.moonTitle">London Full Moon Drum Circles</strong>
+                  <span data-i18n="whatsOn.moonMeta">Most months around the full moon — drumming, workshops, and social time in London</span>
+                </div>
+                <button type="button" class="list-item" data-sheet-open="sheet-heart" data-sheet-hash="heart-circle">
+                  <strong data-i18n="whatsOn.heartTitle">Heart circles</strong>
+                  <span data-i18n="whatsOn.heartMeta">Speak and listen from the heart — tap for what a heart circle is</span>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-ethos" aria-labelledby="tab-ethos" hidden>
+            <article class="prose section">
+              <h2 data-i18n="gatherings.whatTitle">What is a gathering?</h2>
+              <p data-i18n="gatherings.whatBody">If you have never been, you may wonder what happens. Activities change from one gathering to the next. What tends to return is a fluid, diverse queer space where people of many ages, races, bodies, sexualities, genders, and beliefs come together — liberating for some, unfamiliar for others. If you are new, you can chat with an organiser first. If your heart is already saying yes, listen to that.</p>
+            </article>
+            <article class="prose section">
+              <h2 data-i18n="gatherings.coTitle">Co-creation</h2>
+              <p data-i18n="gatherings.coBody">Faeries say: if you see something that needs doing, the best way is to do it. A team helps beforehand; the event itself happens because of who comes. People chip in — meals, dishes, wood, workshops, heart circles, entertainment, sweeping up. Nothing particular is obligatory; participation is the gathering.</p>
+            </article>
+            <article class="prose section">
+              <h2 data-i18n="gatherings.lifeTitle">Food, heart, and play</h2>
+              <p data-i18n="gatherings.lifeBody">We eat together — vegetarian with vegan options, cooked in the kitchen by whoever wants to help. Heart circles often run freer of city time-pressure and can open profound sharing. Workshops and activities may include ritual, dancing, drumming, theatre, music, art, games, fancy dress, silence, solitude, chaos, and more. If you bring it, it will most likely happen.</p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-care" aria-labelledby="tab-care" hidden>
+            <article class="prose section">
+              <h2 data-i18n="gatherings.careTitle">Care and conduct</h2>
+              <p data-i18n="gatherings.careBody">A gathering aims to be inclusive, safe, and supporting. Organisers may speak with people when behaviour causes conflict, and may ask someone to leave to protect the whole. It is not group counselling — you hold responsibility for your own personal, emotional, physical, and sexual safety. Heart circles, understanding faeries, hugs, and organisers are around with support and love.</p>
+            </article>
+            <article class="prose section">
+              <h2 data-i18n="gatherings.payTitle">How we pay</h2>
+              <p data-i18n="gatherings.payBody">Bank details are shared after booking; cash at the gathering is fine too. We hold NOTAFLOF close — No One Turned Away For Lack Of Funds. Gatherings are non-profit; additional donations are gratefully received.</p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-places" aria-labelledby="tab-places" hidden>
+            <section class="section" id="venues">
+              <h2 data-i18n="gatherings.placesTitle">Our hearths</h2>
+              <p class="intro" data-i18n="gatherings.placesIntro">Castles, farms, lodges, and quieter land Circles return to. Tap a hearth for travel, bedding, access, and what to expect.</p>
+              <div class="venue-grid">
+                <button type="button" class="venue-card" data-sheet-open="sheet-featherstone" data-sheet-hash="featherstone">
+                  <p class="venue-place" data-i18n="gatherings.featherPlace">Northumberland</p>
+                  <h3 data-i18n="gatherings.featherTitle">Featherstone Castle</h3>
+                  <p class="venue-used" data-i18n="gatherings.featherUsed">Samhain · Ostara · autumn &amp; spring gatherings</p>
+                  <p class="venue-blurb" data-i18n="gatherings.featherBody">Near Haltwhistle and Hadrian's Wall — log fires, shared feasts, heart circles, dancing, drumming, and a drag room.</p>
+                  <span class="venue-more" data-i18n="gatherings.venueMore">Open hearth details</span>
+                </button>
+                <button type="button" class="venue-card" data-sheet-open="sheet-glastonbury" data-sheet-hash="glastonbury">
+                  <p class="venue-place" data-i18n="gatherings.glastoPlace">Somerset</p>
+                  <h3 data-i18n="gatherings.glastoTitle">Paddington Farm · Glastonbury</h3>
+                  <p class="venue-used" data-i18n="gatherings.glastoUsed">Imbolc · Beltane · summer &amp; spring gatherings</p>
+                  <p class="venue-blurb" data-i18n="gatherings.glastoBody">A 43-acre organic farm at the foot of the Tor — long-house kitchens, house beds, and camping when the weather softens.</p>
+                  <span class="venue-more" data-i18n="gatherings.venueMore">Open hearth details</span>
+                </button>
+                <button type="button" class="venue-card" data-sheet-open="sheet-laughton" data-sheet-hash="laughton">
+                  <p class="venue-place" data-i18n="gatherings.laughtonPlace">East Sussex</p>
+                  <h3 data-i18n="gatherings.laughtonTitle">Laughton Lodge</h3>
+                  <p class="venue-used" data-i18n="gatherings.laughtonUsed">Lughnasadh · summer gathering</p>
+                  <p class="venue-blurb" data-i18n="gatherings.laughtonBody">Near Lewes on the edge of the South Downs — meadows, woodland, a sprung-floor hall, kitchen, guest rooms, and a fire-pit patio.</p>
+                  <span class="venue-more" data-i18n="gatherings.venueMore">Open hearth details</span>
+                </button>
+                <article class="venue-card">
+                  <p class="venue-place" data-i18n="gatherings.pardshawPlace">Cumbria</p>
+                  <h3 data-i18n="gatherings.pardshawTitle">Pardshaw Quaker Centre</h3>
+                  <p class="venue-used" data-i18n="gatherings.pardshawUsed">Iya Luv · Northern Gathering</p>
+                  <p class="venue-blurb" data-i18n="gatherings.pardshawBody">Near Cockermouth in the Lake District. Communal sleeping across meeting rooms, wood stove, limited camping in the burial ground, no wifi. Intimate capacity — about 20 indoors and 5 camping.</p>
+                  <a href="/events/iya-luv-2026/" data-i18n="gatherings.pardshawLink">Open Iya Luv 2026</a>
+                </article>
+                <article class="venue-card">
+                  <p class="venue-place" data-i18n="gatherings.anybodyPlace">Worcestershire</p>
+                  <h3 data-i18n="gatherings.anybodyTitle">Anybody's Barn</h3>
+                  <p class="venue-used" data-i18n="gatherings.anybodyUsed">Queer Earth Resistance &amp; special gatherings</p>
+                  <p class="venue-blurb" data-i18n="gatherings.anybodyBody">A smaller rural barn venue used for focused co-created gatherings outside the usual festival calendar.</p>
+                </article>
+                <article class="venue-card">
+                  <p class="venue-place" data-i18n="gatherings.sussexPlace">West Sussex</p>
+                  <h3 data-i18n="gatherings.sussexTitle">Bermondsey Huts · Crawley</h3>
+                  <p class="venue-used" data-i18n="gatherings.sussexUsed">Past camping gatherings</p>
+                  <p class="venue-blurb" data-i18n="gatherings.sussexBody">Basic camping on a private estate recommended by faeries who gathered there — private, natural, and quieter than castle bookings when numbers need a different scale.</p>
+                </article>
+                <article class="venue-card">
+                  <p class="venue-place" data-i18n="gatherings.balcombePlace">East Sussex</p>
+                  <h3 data-i18n="gatherings.balcombeTitle">Balcombe</h3>
+                  <p class="venue-used" data-i18n="gatherings.balcombeUsed">Sussex Gathering</p>
+                  <p class="venue-blurb" data-i18n="gatherings.balcombeBody">A southern camping / residential hearth used for summer Sussex gatherings.</p>
+                </article>
+                <article class="venue-card">
+                  <p class="venue-place" data-i18n="gatherings.bridwellPlace">Devon</p>
+                  <h3 data-i18n="gatherings.bridwellTitle">Bridwell Park</h3>
+                  <p class="venue-used" data-i18n="gatherings.bridwellUsed">Queer Spirit Festival · Radical Faerie presence</p>
+                  <p class="venue-blurb" data-i18n="gatherings.bridwellBody">Not an Albion-owned venue — festival land where Albion Faeries join the wider queer spiritual web for play, ritual, and camp.</p>
+                </article>
+              </div>
+              <p class="status" data-i18n="gatherings.venuesNote">Planning a gathering on new land? Write to Gatherings &amp; Events via Get involved.</p>
+            </section>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-archive" aria-labelledby="tab-archive" hidden>
+            <section class="section" id="archive">
+              <h2 data-i18n="archive.title">Past gatherings</h2>
+              <p class="intro" data-i18n="archive.lede">Historic calls kept as PDF memory — gratefully gathered by Sparkling Water — plus gatherings remembered without a surviving call on file.</p>
+
+              <div class="archive-year" id="y2026">
+                <h3>2026</h3>
+                <div class="list-blocks">
+                  <a class="list-item" href="/events/iya-luv-2026/">
+                    <strong>Iya Luv · Northern Gathering 2026</strong>
+                    <span>31 Aug – 6 Sept 2026 · Pardshaw · minisite + PDF call</span>
+                  </a>
+                  <div class="list-item list-item--static">
+                    <strong>Lughnasadh · Laughton Lodge</strong>
+                    <span>July–August 2026 · East Sussex · no call PDF on file</span>
+                  </div>
+                  <a class="list-item" href="/assets/archive/calls/beltane-2026.pdf">
+                    <strong>Beltane · Glastonbury</strong>
+                    <span>8–18 May 2026 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/ostara-2026.pdf">
+                    <strong>Ostara · Featherstone</strong>
+                    <span>7–16 March 2026 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/imbolc-2026.pdf">
+                    <strong>Imbolc · Glastonbury</strong>
+                    <span>29 Jan – 8 Feb 2026 · PDF call</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2025">
+                <h3>2025</h3>
+                <div class="list-blocks">
+                  <div class="list-item list-item--static">
+                    <strong>Samhain · Featherstone Castle</strong>
+                    <span>2025 · no call PDF on file</span>
+                  </div>
+                  <a class="list-item" href="/assets/archive/calls/beltane-2025.pdf">
+                    <strong>Beltane · Glastonbury</strong>
+                    <span>8–18 May 2025 · PDF call</span>
+                  </a>
+                  <div class="list-item list-item--static">
+                    <strong>Ostara · Featherstone Castle</strong>
+                    <span>7–17 March 2025 · no call PDF on file</span>
+                  </div>
+                  <a class="list-item" href="/assets/archive/calls/imbolc-2025.pdf">
+                    <strong>Imbolc · Paddington Farm</strong>
+                    <span>27 Jan – 5 Feb 2025 · PDF call</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2024">
+                <h3>2024</h3>
+                <div class="list-blocks">
+                  <a class="list-item" href="/assets/archive/calls/featherstone-october-2024.pdf">
+                    <strong>Featherstone October gatherings</strong>
+                    <span>Love Healing Retreat (1–10 Oct) &amp; Xtatic-Xpansive Samhain (12–22 Oct) · PDF</span>
+                  </a>
+                  <div class="list-item list-item--static">
+                    <strong>Radical Faeries @ Queer Spirit Festival</strong>
+                    <span>15–19 August 2024 · Bridwell Park, Devon · no call PDF on file</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Summer Solstice · Abundance / Summer Transcendence</strong>
+                    <span>16–24 June 2024 · Paddington Farm · gender minority gathering · no call PDF on file</span>
+                  </div>
+                  <a class="list-item" href="/assets/archive/calls/beltane-2024.pdf">
+                    <strong>Beltane · Paddington Farm</strong>
+                    <span>7–17 May 2024 · PDF call</span>
+                  </a>
+                  <div class="list-item list-item--static">
+                    <strong>Queer Earth Resistance School · Seeding Gathering</strong>
+                    <span>11–18 April 2024 · Anybody's Barn, Worcestershire · no call PDF on file</span>
+                  </div>
+                  <a class="list-item" href="/assets/archive/calls/ostara-2024.pdf">
+                    <strong>Ostara · Featherstone</strong>
+                    <span>12–21 March 2024 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/imbolc-2024.pdf">
+                    <strong>Imbolc · Glastonbury</strong>
+                    <span>29 Jan – 6 Feb 2024 · PDF call</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2023">
+                <h3>2023</h3>
+                <div class="list-blocks">
+                  <a class="list-item" href="/assets/archive/calls/samhain-2023.pdf">
+                    <strong>Samhain · Featherstone</strong>
+                    <span>17–26 October 2023 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/magic-gathering-2023.pdf">
+                    <strong>Magic Gathering</strong>
+                    <span>September 2023 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/sussex-2023.pdf">
+                    <strong>Sussex Gathering · Balcombe</strong>
+                    <span>17–24 June 2023 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/slag-2023.pdf">
+                    <strong>Spring Love Awakening · Glastonbury</strong>
+                    <span>4–14 May 2023 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/featherstone-spring-2023.pdf">
+                    <strong>Spring Ostara · Featherstone</strong>
+                    <span>14–23 March 2023 · PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/imbolc-2023.pdf">
+                    <strong>Imbolc · Glastonbury</strong>
+                    <span>27 Jan – 6 Feb 2023 · PDF call</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2022">
+                <h3>2022</h3>
+                <div class="list-blocks">
+                  <a class="list-item" href="/assets/archive/calls/autumn-2022.pdf">
+                    <strong>Autumn Gathering 2022</strong>
+                    <span>PDF call</span>
+                  </a>
+                  <a class="list-item" href="/assets/archive/calls/slag-2022.pdf">
+                    <strong>Spring Love Awakening 2022</strong>
+                    <span>PDF call</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2021">
+                <h3>2021</h3>
+                <div class="list-blocks">
+                  <div class="list-item list-item--static">
+                    <strong>FeathersHOME · Autumn · Home to the HEART</strong>
+                    <span>12–21 October 2021 · Featherstone Castle · no call PDF on file</span>
+                  </div>
+                  <a class="list-item" href="/assets/archive/calls/crasce-2021.pdf">
+                    <strong>Covid Recovery And Simultaneous Camping</strong>
+                    <span>17–24 May &amp; 24–31 May 2021 · PDF call</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2020">
+                <h3>2020</h3>
+                <div class="list-blocks">
+                  <div class="list-item list-item--static">
+                    <strong>Samhain · Featherstone Castle</strong>
+                    <span>13–22 October 2020 · cancelled</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Summer Gathering · Featherstone Castle</strong>
+                    <span>4–13 August 2020 · cancelled</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Spring Love Awakening · Glastonbury</strong>
+                    <span>15–25 May 2020 · cancelled</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="archive-year" id="y2019">
+                <h3>2019</h3>
+                <div class="list-blocks">
+                  <div class="list-item list-item--static">
+                    <strong>Samhain · Featherstone Castle</strong>
+                    <span>15–24 October 2019 · no call PDF on file</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Faerie Camp @ Queer Spirit Festival</strong>
+                    <span>14–18 August 2019 · Northamptonshire · no call PDF on file</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Spring Love Awakening · Glastonbury</strong>
+                    <span>19–24 May 2019 · no call PDF on file</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Magic Gathering · Gloucestershire</strong>
+                    <span>24–28 April 2019 · no call PDF on file</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Ostara · Featherstone Castle</strong>
+                    <span>19–26 March 2019 · no call PDF on file</span>
+                  </div>
+                  <div class="list-item list-item--static">
+                    <strong>Coming HOME Healing Retreat · Derbyshire</strong>
+                    <span>25 Feb – 4 March 2019 · no call PDF on file</span>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <dialog class="sheet" id="sheet-featherstone" data-sheet-hash="featherstone" aria-labelledby="sheet-feather-title">
+    <div class="sheet-panel">
+      <div class="sheet-head">
+        <div>
+          <p class="sheet-kicker" data-i18n="gatherings.featherPlace">Northumberland</p>
+          <h2 id="sheet-feather-title" data-i18n="gatherings.featherTitle">Featherstone Castle</h2>
+        </div>
+        <button type="button" class="sheet-close" data-sheet-close aria-label="Close">×</button>
+      </div>
+      <div class="sheet-body">
+        <figure class="sheet-hero">
+          <img src="/assets/venues/featherstone-castle.jpg" width="1038" height="576" alt="Featherstone Castle among trees" />
+        </figure>
+        <p class="sheet-meta" data-i18n="gatherings.featherUsed">Samhain · Ostara · autumn &amp; spring gatherings</p>
+
+        <div data-tabs data-tabs-local>
+          <div class="sheet-tabs" role="tablist" aria-label="Featherstone details">
+            <button type="button" role="tab" id="tab-feather-expect" aria-controls="panel-feather-expect" aria-selected="true" data-i18n="gatherings.sheetExpectTitle">What to expect</button>
+            <button type="button" role="tab" id="tab-feather-practical" aria-controls="panel-feather-practical" aria-selected="false" tabindex="-1" data-i18n="gatherings.sheetPracticalTitle">Practical</button>
+            <button type="button" role="tab" id="tab-feather-travel" aria-controls="panel-feather-travel" aria-selected="false" tabindex="-1" data-i18n="gatherings.sheetTravelTitle">Getting there</button>
+          </div>
+          <div class="sheet-tab-panels">
+            <div class="panel" role="tabpanel" id="panel-feather-expect" aria-labelledby="tab-feather-expect">
+              <ul>
+                <li>Log fires</li>
+                <li>Vegetarian feasts</li>
+                <li>Country walks</li>
+                <li>Heart circles</li>
+                <li>Dancing and drumming</li>
+                <li>A place to play</li>
+              </ul>
+              <p data-i18n="gatherings.featherExpectBody">A collaborative, co-created gathering — cook, chop wood, hold workshops, keep the castle cared for. The drag room offers a new outfit for every adventure.</p>
+              <div class="sheet-gallery">
+                <img src="/assets/venues/featherstone-grounds.jpg" width="742" height="410" alt="Featherstone Castle grounds" />
+                <img src="/assets/venues/featherstone-table.jpg" width="768" height="1024" alt="Shared dinner table at a gathering" />
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-feather-practical" aria-labelledby="tab-feather-practical" hidden>
+              <p data-i18n="gatherings.featherPractical1">Vegetarian and vegan meals. The castle can be cold — bring warm layers, slippers, outdoor clothes, boots, and a torch. Bring your own bedding and pillowcase; beds and mattresses are plentiful.</p>
+              <p data-i18n="gatherings.featherPractical2">Baths and showers with hot water — bring towels. Fancy dress welcome in the drag room. Auctions often help fund the gathering.</p>
+              <p data-i18n="gatherings.featherAccess">Ground floor is wheelchair accessible; dining and most social spaces are upstairs by stairs.</p>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-feather-travel" aria-labelledby="tab-feather-travel" hidden>
+              <p data-i18n="gatherings.featherAddress">Featherstone Castle, Hall Bank, Northumberland NE49 0JG — outside Haltwhistle, near Hadrian’s Wall.</p>
+              <ul>
+                <li data-i18n="gatherings.featherTrain">Train via Carlisle or Newcastle to Haltwhistle — book early.</li>
+                <li data-i18n="gatherings.featherCar">By car: three miles south-west of Haltwhistle on the A69.</li>
+                <li data-i18n="gatherings.featherAir">By air: Newcastle, then train to Haltwhistle.</li>
+              </ul>
+              <p data-i18n="gatherings.featherTaxi">Pre-book taxis — Haydonbridge +44 (0)1434 671197, Sproul +44 (0)7712 321064, Diamond +44 (0)7957 641222.</p>
+              <p data-i18n="gatherings.featherArrive">Arrive from noon on the first day; leave by noon on the last.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-glastonbury" data-sheet-hash="glastonbury" aria-labelledby="sheet-glasto-title">
+    <div class="sheet-panel">
+      <div class="sheet-head">
+        <div>
+          <p class="sheet-kicker" data-i18n="gatherings.glastoPlace">Somerset</p>
+          <h2 id="sheet-glasto-title" data-i18n="gatherings.glastoTitle">Paddington Farm · Glastonbury</h2>
+        </div>
+        <button type="button" class="sheet-close" data-sheet-close aria-label="Close">×</button>
+      </div>
+      <div class="sheet-body">
+        <figure class="sheet-hero">
+          <img src="/assets/venues/glastonbury-tor.jpg" width="1024" height="461" alt="Glastonbury Tor across the land" />
+        </figure>
+        <p class="sheet-meta" data-i18n="gatherings.glastoUsed">Imbolc · Beltane · summer &amp; spring gatherings</p>
+
+        <div data-tabs data-tabs-local>
+          <div class="sheet-tabs" role="tablist" aria-label="Glastonbury details">
+            <button type="button" role="tab" id="tab-glasto-expect" aria-controls="panel-glasto-expect" aria-selected="true" data-i18n="gatherings.sheetExpectTitle">What to expect</button>
+            <button type="button" role="tab" id="tab-glasto-practical" aria-controls="panel-glasto-practical" aria-selected="false" tabindex="-1" data-i18n="gatherings.sheetPracticalTitle">Practical</button>
+            <button type="button" role="tab" id="tab-glasto-travel" aria-controls="panel-glasto-travel" aria-selected="false" tabindex="-1" data-i18n="gatherings.sheetTravelTitle">Getting there</button>
+          </div>
+          <div class="sheet-tab-panels">
+            <div class="panel" role="tabpanel" id="panel-glasto-expect" aria-labelledby="tab-glasto-expect">
+              <p data-i18n="gatherings.glastoExpect1">A 43-acre organic farm at the foot of Glastonbury Tor. Gatherings are co-created — a core team holds the call and food; once we arrive, every contribution is welcome.</p>
+              <p data-i18n="gatherings.glastoExpect2">Heart circles, shared vegan/vegetarian meals in the long-house kitchen, and daily tasks. If you see something that needs doing, why not be the one to do it?</p>
+              <div class="sheet-gallery">
+                <img src="/assets/venues/glastonbury-tor-portrait.jpg" width="611" height="1024" alt="Path toward Glastonbury Tor" />
+                <img src="/assets/venues/glastonbury-tor.jpg" width="1024" height="461" alt="View toward Glastonbury Tor" />
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-glasto-practical" aria-labelledby="tab-glasto-practical" hidden>
+              <p data-i18n="gatherings.glastoPractical1">Rooms across several buildings; some uneven paths. Camping in warmer weather. Tell us access needs in advance. House beds usually include duvet, pillow, and bedding.</p>
+              <p data-i18n="gatherings.glastoPractical2">Bring fancy dress for the drag room if you like, auction gifts, wellies, slippers, wet-weather gear, and note dietary needs on the booking form.</p>
+              <p data-i18n="gatherings.glastoArrive">Arrive after 4pm on the first day; leave by 11am on departure day.</p>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-glasto-travel" aria-labelledby="tab-glasto-travel" hidden>
+              <p data-i18n="gatherings.glastoAddress">Paddington Farm Trust, Maidencroft Lane, Glastonbury BA6 8JN — about 30 minutes’ walk from town.</p>
+              <ul>
+                <li data-i18n="gatherings.glastoTrain">Train: London Paddington to Bristol or Taunton, then bus onward.</li>
+                <li data-i18n="gatherings.glastoBus">Bus: Berrys to Glastonbury; National Express / Megabus to Bristol then local bus.</li>
+                <li data-i18n="gatherings.glastoTaxi">Taxi: pre-book Trotta’s 07879 333020 or JJ’s 07977 904064.</li>
+                <li data-i18n="gatherings.glastoDriveShort">By car: approach from the west via Brindham Lane (///steady.rezoning.spurted).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-laughton" data-sheet-hash="laughton" aria-labelledby="sheet-laughton-title">
+    <div class="sheet-panel">
+      <div class="sheet-head">
+        <div>
+          <p class="sheet-kicker" data-i18n="gatherings.laughtonPlace">East Sussex</p>
+          <h2 id="sheet-laughton-title" data-i18n="gatherings.laughtonTitle">Laughton Lodge</h2>
+        </div>
+        <button type="button" class="sheet-close" data-sheet-close aria-label="Close">×</button>
+      </div>
+      <div class="sheet-body">
+        <figure class="sheet-hero">
+          <img src="/assets/venues/laughton-hall.jpg" width="1200" height="800" alt="Shawfield hall at Laughton Lodge" />
+        </figure>
+        <p class="sheet-meta" data-i18n="gatherings.laughtonUsed">Lughnasadh · summer gathering</p>
+
+        <div data-tabs data-tabs-local>
+          <div class="sheet-tabs" role="tablist" aria-label="Laughton Lodge details">
+            <button type="button" role="tab" id="tab-laughton-expect" aria-controls="panel-laughton-expect" aria-selected="true" data-i18n="gatherings.sheetExpectTitle">What to expect</button>
+            <button type="button" role="tab" id="tab-laughton-practical" aria-controls="panel-laughton-practical" aria-selected="false" tabindex="-1" data-i18n="gatherings.sheetPracticalTitle">Practical</button>
+            <button type="button" role="tab" id="tab-laughton-travel" aria-controls="panel-laughton-travel" aria-selected="false" tabindex="-1" data-i18n="gatherings.sheetTravelTitle">Getting there</button>
+          </div>
+          <div class="sheet-tab-panels">
+            <div class="panel" role="tabpanel" id="panel-laughton-expect" aria-labelledby="tab-laughton-expect">
+              <p data-i18n="gatherings.laughtonExpect1">A residential community on the edge of the South Downs near Lewes. Albion Faeries gathered here for Lughnasadh among meadows, woodland, and shared outdoor space.</p>
+              <p data-i18n="gatherings.laughtonExpect2">Shawfield holds a sprung-floor hall, kitchen, dining room, music room, guest rooms, and a patio with a fire pit.</p>
+              <div class="sheet-gallery">
+                <img src="/assets/venues/laughton-patio.jpg" width="1139" height="760" alt="Patio and meadow at Laughton Lodge" />
+                <img src="/assets/venues/laughton-hall.jpg" width="1200" height="800" alt="Decorated hall at Laughton Lodge" />
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-laughton-practical" aria-labelledby="tab-laughton-practical" hidden>
+              <p data-i18n="gatherings.laughtonPractical">Rural community setting with indoor rooms and land to roam. Bring layers for cool evenings and outdoor footwear. Exact bedding notes live with each gathering’s call.</p>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-laughton-travel" aria-labelledby="tab-laughton-travel" hidden>
+              <p data-i18n="gatherings.laughtonAddress">Laughton Lodge, Common Lane, Lewes BN8 6BY — about 90 minutes from London. Stations: Lewes and Uckfield. Free parking on site.</p>
+              <p><a href="https://laughtonlodge.org/hire/" rel="noopener noreferrer" data-i18n="gatherings.laughtonLink">Venue notes at laughtonlodge.org</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="sheet-heart" data-sheet-hash="heart-circle" data-sheet-hash-aliases="heart" aria-labelledby="sheet-heart-title">
+    <div class="sheet-panel">
+      <div class="sheet-head">
+        <div>
+          <p class="sheet-kicker" data-i18n="whatsOn.londonHeading">London &amp; local</p>
+          <h2 id="sheet-heart-title" data-i18n="who.heartCircleTitle">What is a heart circle?</h2>
+        </div>
+        <button type="button" class="sheet-close" data-sheet-close aria-label="Close">×</button>
+      </div>
+      <div class="sheet-body prose">
+        <p data-i18n="who.heartCircleBody">A Radical Faerie tradition for open, honest, loving communication. People meet in sacred space to speak from the heart and be listened to from the heart — with confidentiality, “I” statements, no debate or interruption, and a talisman that holds each person's turn. No one has to speak. It is not formal therapy, yet witnessing and being witnessed can be deeply healing.</p>
+        <p data-i18n="whatsOn.heartSheetMore">Heart circles often sit beside drumming, workshops, and full-moon socials. Ask locally when the next one gathers — or open one yourself with care.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module">
+    import { boot } from "/js/site.js";
+    boot({ current: "gatherings" });
+  </script>
+</body>
+</html>
+

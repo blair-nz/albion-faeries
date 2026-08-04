@@ -1,0 +1,11 @@
+name = "albion-faeries-site"
+compatibility_date = "2026-07-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "CIRCLES_DB"
+database_name = "albion-faeries-circles"
+database_id = "d8fb907c-a3c2-41da-aa6b-b4966fc4af6c"
+
+[vars]
+SITE_NAME = "Albion Faeries"

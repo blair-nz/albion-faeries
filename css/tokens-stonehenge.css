@@ -1,0 +1,33 @@
+/* Stonehenge — default theme */
+[data-theme="stonehenge"] {
+  --void: #070b18;
+  --night: #12182c;
+  --horizon: #2a221c;
+  --star: #f4efe6;
+  --moon: #e8e0d0;
+  --sarsen: #6a665e;
+  --sarsen-deep: #3a3732;
+  --ember-glow: #c4894a;
+  --accent: #e0b56a;
+  --accent-ink: #070b18;
+  --ink: #e8e4dc;
+  --mute: #a8a29a;
+  --bark: #cfc6b8;
+  --surface: #12182a;
+  --surface-raised: #1b2338;
+  --stroke: rgba(244, 239, 230, 0.12);
+  --stroke-strong: rgba(244, 239, 230, 0.22);
+  --hero-overlay: linear-gradient(105deg, rgba(7, 11, 24, 0.88) 0%, rgba(7, 11, 24, 0.55) 45%, rgba(18, 24, 44, 0.4) 100%);
+  --font-display: "Syne", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+  --bg-image: url("/assets/sarsen/photo-night.jpg");
+  --hero-poster: url("/assets/sarsen/photo-night.jpg");
+  /* Soft night sky — no noise tiles, no busy photo wash */
+  --field-image: none;
+  --field-veil:
+    radial-gradient(ellipse 90% 60% at 12% -5%, rgba(224, 181, 106, 0.16) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 50% at 100% 20%, rgba(90, 110, 160, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 45% at 50% 110%, rgba(18, 24, 44, 0.95) 0%, transparent 58%),
+    linear-gradient(165deg, #0c1428 0%, #070b18 48%, #10182a 100%);
+  color-scheme: dark;
+}

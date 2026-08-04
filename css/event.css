@@ -1,0 +1,129 @@
+/* Shared event minisite shell — reuse for future gathering calls */
+.event-hero {
+  margin-bottom: 1.25rem;
+}
+.event-hero .eyebrow {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin: 0 0 0.75rem;
+}
+.event-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.6vw, 2.6rem);
+  letter-spacing: -0.03em;
+  line-height: var(--lh-tight);
+  margin: 0 0 0.75rem;
+  max-width: none;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .event-hero h1 {
+    white-space: normal;
+    font-size: clamp(1.45rem, 7vw, 1.85rem);
+  }
+}
+.event-hero .lede {
+  max-width: 40rem;
+  color: var(--mute);
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  color: var(--bark);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+}
+.event-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  margin: 0 0 1.25rem;
+}
+.event-nav a {
+  color: var(--mute);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.1rem;
+}
+.event-nav a:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+.event-section {
+  margin-block: 1.25rem;
+  scroll-margin-top: 1.25rem;
+}
+.event-section > h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  letter-spacing: -0.03em;
+  margin: 0 0 0.65rem;
+}
+.event-section > h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  margin: 1.35rem 0 0.45rem;
+}
+.event-section p,
+.event-section li {
+  color: var(--bark);
+  max-width: var(--measure);
+}
+.event-section ul {
+  padding-left: 1.15rem;
+  margin: 0.5rem 0 1rem;
+}
+.event-section li { margin: 0.3rem 0; }
+.event-note {
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--void) 35%, var(--surface-raised));
+  padding: 0.85rem 1rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  max-width: var(--measure);
+  color: var(--bark);
+  font-size: var(--fs-small);
+}
+.event-note strong { color: var(--ink); }
+.checklist {
+  columns: 1;
+  gap: 1.5rem;
+}
+@media (min-width: 720px) {
+  .checklist { columns: 2; }
+}
+.checklist ul { break-inside: avoid; }
+.brackets {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0;
+}
+.bracket {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--void) 25%, var(--surface-raised));
+  padding: 0.85rem 1rem;
+  max-width: 28rem;
+}
+.bracket strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+.bracket span { color: var(--mute); font-size: var(--fs-small); }
+.archive-year {
+  margin-block: 1.25rem;
+}
+.archive-year > h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  margin: 0 0 0.85rem;
+}

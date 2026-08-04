@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Who we are - Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+        var h = location.hash.replace(/^#/, "");
+        if (h === "heart-circle" || h === "heart") {
+          location.replace("/gatherings#heart-circle");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <h1 data-i18n="who.title">Who we are</h1>
+        <p class="lede" data-i18n="who.lede">An ever-expanding collective in the global Faerie web - spirit, sexuality, and chosen community across Albion.</p>
+      </header>
+
+      <div data-tabs>
+        <div class="subnav" role="tablist" aria-label="Who we are sections">
+          <button type="button" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="true" data-hash="about" data-i18n="who.tabAbout">About us</button>
+          <button type="button" role="tab" id="tab-organise" aria-controls="panel-organise" aria-selected="false" tabindex="-1" data-hash="organise" data-hash-aliases="circles" data-i18n="who.tabOrganise">How we organise</button>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
+            <article class="prose section">
+              <h2 data-i18n="who.todayTitle">Albion today</h2>
+              <p data-i18n="who.todayBody">The Faeries of Albion are an ever-expanding collective network of lesbians, gay men, trans*, bisexuals, queer hetero people and anyone else in between, who come together to create vibrant, energetic and safe spaces to celebrate the spirituality in our sexuality; to develop our skills as healers, shamans and ritual workers; and as drummers, storytellers, performers, poets and artists, as well as community organisers, activists, and chefs.</p>
+            </article>
+            <article class="prose section">
+              <h2 data-i18n="who.heartTitle">Heart and nature</h2>
+              <p data-i18n="who.heartBody">We appreciate and celebrate nature by communing with her spirits through play and ritual and explore a profound love for each other and the world through coming together in heart circle — a way of opening to one another sensitively and supporting any revelation or experience, with unconditional love.</p>
+              <p data-i18n="who.spiritBody">We are proud to be part of the expansion of gay/queer life into the realms of the heart and spirit; to promote self awareness, expression and growth; and to be part of the renewal of Albion as a magical island where the wonders of spirit manifest.</p>
+            </article>
+            <article class="prose section">
+              <h2 data-i18n="who.webTitle">The wider web</h2>
+              <p data-i18n="who.webBody">The Albion Faeries are part of the global faerie web, connecting awakening, nature-loving, compassionate queers the world over.</p>
+              <p>
+                <a class="btn btn-ghost" href="/blog" data-i18n="involve.blogCta">Faerie blog</a>
+              </p>
+            </article>
+            <article class="prose section">
+              <h2 data-i18n="who.faeriesTitle">What Faeries are</h2>
+              <blockquote class="faerie-quote">
+                <p data-i18n="who.faeriesP1">The Faeries are gay men and women plus men and women who prefer to use any other moniker that might describe them plus people that choose not to be called men or women plus beings who choose not to be called people. Faeries are organized as a group attempting to create community out of ritual and cooperation, except for faeries who are attempting to create community out of subversion of process and structure, as well as some faeries who wish to create chaos, often celebrating it, often not admitting it.</p>
+                <p data-i18n="who.faeriesP2">Many faeries are spiritual, lifting whole or part of their spirituality from any one of the world’s religions or spiritualities. Some make up their own. Some make a mix. Some react against spirituality and religion as its own evil, some find a spiritual path in reacting against spirituality.</p>
+                <p data-i18n="who.faeriesP3">Some Faeries just want to dress up in drag and perform in the woods, some want to dress up and not perform, some faeries want to dress up anywhere they can, some faeries don’t dress particularly different than they would in any other environment.</p>
+                <p data-i18n="who.faeriesP4">Some faeries combine their spirituality with sex, some don’t, some are part of the faeries just to get laid. Some resent that. Some just want to drum by a camp-fire, and some want to camp far away from the drumming and get some sleep.</p>
+                <p data-i18n="who.faeriesP5">This is what faeries are, except for faeries for which none of this applies.</p>
+              </blockquote>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-organise" aria-labelledby="tab-organise" hidden>
+            <article class="prose section" id="circles">
+              <h2 data-i18n="involve.circlesHowTitle">How Circles work</h2>
+              <p data-i18n="involve.circlesHowIntro">Albion Faeries do not seek to be bound by strict policies, but to share and grow values, ethics, and principles together in mutual love and respect. Meetings and decisions aim to be as open and transparent as possible - with no formal membership, and an invitation to those who identify as part of the Radical Faeries of Albion.</p>
+              <ul>
+                <li data-i18n="involve.circlesHow1">Not everyone can be present at everything; a public mail-out keeps people in the loop.</li>
+                <li data-i18n="involve.circlesHow2">Hosts of private meeting spaces may say who receives their address.</li>
+                <li data-i18n="involve.circlesHow3">Working parties handle focused detail; Faessemblies are open potentially to all radical faeries.</li>
+                <li data-i18n="involve.circlesHow4">Faessembly and Core Circle meetings should be advertised with due notice. Major decisions go through Core Circles or Faessemblies - working groups are not empowered to decide for the whole community.</li>
+                <li data-i18n="involve.circlesHow5">Large residential gatherings include a general assembly; Stewards aim for these at least twice a year in different parts of Albion.</li>
+              </ul>
+            </article>
+
+            <figure class="section circles-map-wrap">
+              <img
+                class="circles-map"
+                src="/assets/circles/faerie-circles-map.svg"
+                width="720"
+                height="560"
+                alt="Diagram: Faessembly, Stewards Circle, three Core Circles for Finance, Communications, and Gatherings and Events, with working parties and local stewards below."
+              />
+              <figcaption class="circles-map-caption" data-i18n="involve.circlesMapCaption">From the open Faessembly hearth, care gathers in the Stewards Circle, then flows through three Core Circles - with working parties rooting the practical work.</figcaption>
+            </figure>
+
+            <article class="prose section">
+              <h2 data-i18n="involve.circlesCoreTitle">Core Circles</h2>
+              <p data-i18n="involve.circlesCoreIntro">Day-to-day work runs through three Core Circles. Any Albion Faerie may attend if they wish to help.</p>
+              <ul>
+                <li data-i18n="involve.circlesCoreFinance">Finance - oversees matters relating to finance.</li>
+                <li data-i18n="involve.circlesCoreComms">Communications - oversees matters relating to communication.</li>
+                <li data-i18n="involve.circlesCoreEvents">Gatherings &amp; Events - oversees how gatherings and events are organised.</li>
+              </ul>
+            </article>
+
+            <article class="prose section">
+              <h2 data-i18n="involve.circlesRolesTitle">Roles and service</h2>
+              <p data-i18n="involve.circlesRolesIntro">Roles relate to tasks undertaken as service. A twelve-month pledge is usually requested; roles may be shared. Major roles are asked to find two backups - an elder with experience and a neophyte learning into the work. Convenors, Record-keepers, and local or specialist stewards come together as the Stewards Circle.</p>
+              <h3 data-i18n="involve.circlesConvenorsTitle">Convenors</h3>
+              <p data-i18n="involve.circlesConvenorsBody">Keep each Core Circle meeting regularly, encourage attendance, arrange accessible venues, spot who can lead issues, support facilitators, and keep an overview with other Stewards.</p>
+              <h3 data-i18n="involve.circlesRecordsTitle">Record-keepers</h3>
+              <p data-i18n="involve.circlesRecordsBody">Support Convenors; publicise meetings; ensure minutes are taken, circulated, stored, and followed through; encourage skill-sharing; and co-ordinate with other Stewards. The three Convenors and three Record-keepers also liaise across Circles.</p>
+              <h3 data-i18n="involve.circlesVolunteersTitle">Other volunteer roles</h3>
+              <p data-i18n="involve.circlesVolunteersBody">Facilitators and minute-takers are essential and can serve occasionally. Circles may appoint working-party leaders and specialist stewards - for example a Book-Keeper - who pledge particular skills. Local stewards are still developing wherever enough faeries live nearby.</p>
+            </article>
+
+            <article class="prose section">
+              <h2 data-i18n="involve.circleTitle">Circle sign-in</h2>
+              <p data-i18n="involve.circleBody">For faeries who already hold Circle work - notes, actions, and templates behind a quiet threshold.</p>
+              <p>
+                <a class="btn btn-primary" href="/circles/" data-i18n="involve.circleCta">Enter Circles</a>
+                <a class="btn btn-ghost" href="/get-involved#contact" data-i18n="involve.circlesContactCta">Contact Stewards</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    boot({ current: "who-we-are" });
+  </script>
+</body>
+</html>

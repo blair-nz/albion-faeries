@@ -1,0 +1,26 @@
+/* Faery Fire */
+[data-theme="faery-fire"] {
+  --void: #070604;
+  --night: #16110c;
+  --accent: #e07a2a;
+  --accent-ink: #070604;
+  --ink: #f7f0e6;
+  --mute: #b8a898;
+  --bark: #d4c4b0;
+  --surface: rgba(7, 6, 4, 0.94);
+  --surface-raised: rgba(24, 18, 12, 0.96);
+  --stroke: rgba(247, 240, 230, 0.14);
+  --stroke-strong: rgba(247, 240, 230, 0.28);
+  --hero-overlay: linear-gradient(115deg, rgba(7, 6, 4, 0.88) 0%, rgba(7, 6, 4, 0.62) 38%, rgba(22, 17, 12, 0.55) 100%);
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Palatino, serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+  --bg-image: url("/assets/faery-fire/fire-poster.jpg");
+  --hero-poster: url("/assets/faery-fire/fire-poster.jpg");
+  --field-image: none;
+  --field-veil:
+    radial-gradient(ellipse 75% 55% at 50% 115%, rgba(224, 122, 42, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 40% at 5% 8%, rgba(120, 50, 16, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 35% at 95% 20%, rgba(80, 36, 12, 0.25) 0%, transparent 48%),
+    linear-gradient(170deg, #140e0a 0%, #070604 48%, #1a100c 100%);
+  color-scheme: dark;
+}

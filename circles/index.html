@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Circles · Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <h1 data-i18n="circles.title">My Circles</h1>
+        <p class="lede" data-i18n="circles.lede">Signed-in working memory for Circles — notes, actions, templates.</p>
+      </header>
+
+      <section id="gate" class="prose section" hidden>
+        <h2 data-i18n="circles.lockedTitle">Circle threshold</h2>
+        <p data-i18n="circles.lockedBody">Enter the shared Circle passphrase to reach notes and actions.</p>
+        <form id="gate-form" class="form-row">
+          <input id="passphrase" type="password" autocomplete="current-password" data-i18n-placeholder="involve.passphrase" placeholder="Circle passphrase" required />
+          <button class="btn btn-primary" type="submit" data-i18n="involve.signIn">Sign in</button>
+        </form>
+        <p id="gate-error" class="status" hidden data-i18n="circles.gateError">That passphrase was not accepted.</p>
+      </section>
+
+      <section id="circles-list" class="section" hidden>
+        <div class="list-blocks">
+          <a class="list-item" href="/circles/circle?id=comms">
+            <strong data-i18n="circles.comms">Communications</strong>
+            <span data-i18n="circles.commsMeta">Convenor · Record keeper · open actions</span>
+          </a>
+          <a class="list-item" href="/circles/circle?id=events">
+            <strong data-i18n="circles.events">Gatherings &amp; Events</strong>
+            <span data-i18n="circles.eventsMeta">Venue notes · gathering how-to · helpers</span>
+          </a>
+          <a class="list-item" href="/circles/circle?id=finance">
+            <strong data-i18n="circles.finance">Finance</strong>
+            <span data-i18n="circles.financeMeta">Hosting costs · insurance exploration</span>
+          </a>
+        </div>
+        <p class="status">
+          <button class="btn btn-ghost" type="button" id="sign-out" data-i18n="circles.signOut">Sign out</button>
+          <a href="/" data-i18n="circles.backPublic">Back to public hearth</a>
+        </p>
+      </section>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    await boot({ current: "circles" });
+
+    const gate = document.getElementById("gate");
+    const list = document.getElementById("circles-list");
+    const err = document.getElementById("gate-error");
+
+    async function checkSession() {
+      try {
+        const res = await fetch("/api/circles?action=session", { credentials: "same-origin" });
+        const data = await res.json();
+        if (data.authenticated) {
+          gate.hidden = true;
+          list.hidden = false;
+        } else {
+          gate.hidden = false;
+          list.hidden = true;
+        }
+      } catch {
+        // Offline / no Functions — local demo unlock
+        if (sessionStorage.getItem("af-demo-auth") === "1") {
+          gate.hidden = true;
+          list.hidden = false;
+        } else {
+          gate.hidden = false;
+          list.hidden = true;
+        }
+      }
+    }
+
+    document.getElementById("gate-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      err.hidden = true;
+      const passphrase = document.getElementById("passphrase").value;
+      try {
+        const res = await fetch("/api/circles?action=login", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ passphrase }),
+        });
+        if (!res.ok) {
+          // Demo fallback matches default passphrase
+          if (passphrase === "faerie-hearth") {
+            sessionStorage.setItem("af-demo-auth", "1");
+            await checkSession();
+            return;
+          }
+          err.hidden = false;
+          return;
+        }
+        sessionStorage.setItem("af-demo-auth", "1");
+        await checkSession();
+      } catch {
+        if (passphrase === "faerie-hearth") {
+          sessionStorage.setItem("af-demo-auth", "1");
+          await checkSession();
+        } else {
+          err.hidden = false;
+        }
+      }
+    });
+
+    document.getElementById("sign-out").addEventListener("click", async () => {
+      sessionStorage.removeItem("af-demo-auth");
+      try {
+        await fetch("/api/circles?action=logout", { method: "POST", credentials: "same-origin" });
+      } catch {}
+      await checkSession();
+    });
+
+    await checkSession();
+  </script>
+</body>
+</html>

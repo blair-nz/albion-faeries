@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.dev.vars
+.DS_Store
+*.log
+.mf/
+
+assets/archive/_large-local-only/
+assets/archive/calls/*.txt
+

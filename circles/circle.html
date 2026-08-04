@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Circle room · Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <p><a href="/circles/" data-i18n="circles.title">My Circles</a></p>
+        <h1 id="circle-name">Circle</h1>
+      </header>
+
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-tab="notes" data-i18n="circles.notes">Notes</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="actions" data-i18n="circles.actions">Actions</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="templates" data-i18n="circles.templates">Templates</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="people" data-i18n="circles.people">People</button>
+      </div>
+
+      <section id="panel-notes" class="panel section" role="tabpanel">
+        <form id="note-form" class="form-row">
+          <textarea id="note-body" data-i18n-placeholder="circles.notePlaceholder" placeholder="Meeting note…" required></textarea>
+          <button class="btn btn-primary" type="submit" data-i18n="circles.addNote">Add note</button>
+        </form>
+        <div id="notes" class="list-blocks" style="margin-top:1rem"></div>
+        <p id="notes-empty" class="status" data-i18n="circles.emptyNotes">No notes yet.</p>
+      </section>
+
+      <section id="panel-actions" class="panel section" role="tabpanel" hidden>
+        <form id="action-form" class="form-row">
+          <input id="action-title" type="text" data-i18n-placeholder="circles.actionPlaceholder" placeholder="Action title…" required />
+          <input id="action-owner" type="text" data-i18n-placeholder="circles.ownerPlaceholder" placeholder="Owner" />
+          <button class="btn btn-primary" type="submit" data-i18n="circles.addAction">Add action</button>
+        </form>
+        <div id="actions" class="list-blocks" style="margin-top:1rem"></div>
+        <p id="actions-empty" class="status" data-i18n="circles.emptyActions">No open actions.</p>
+      </section>
+
+      <section id="panel-templates" class="panel prose section" role="tabpanel" hidden>
+        <p data-i18n="circles.templatesBody">Moot minutes, Circle notes, and gathering how-to templates live here as the Circles agree them.</p>
+      </section>
+
+      <section id="panel-people" class="panel prose section" role="tabpanel" hidden>
+        <p data-i18n="circles.peopleBody">Convenor, Record keeper, and helpers invited by the Circle.</p>
+      </section>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    await boot({ current: "circles" });
+
+    const params = new URLSearchParams(location.search);
+    const circleId = params.get("id") || "comms";
+    const names = {
+      comms: "Communications",
+      events: "Gatherings & Events",
+      finance: "Finance",
+    };
+    document.getElementById("circle-name").textContent = names[circleId] || circleId;
+    document.title = `${names[circleId] || "Circle"} · Albion Faeries`;
+
+    const demoKey = `af-demo-${circleId}`;
+    function demoState() {
+      const raw = localStorage.getItem(demoKey);
+      if (raw) return JSON.parse(raw);
+      return {
+        notes: [
+          { id: "d1", body: "Seed note for " + (names[circleId] || circleId), created_at: new Date().toISOString() },
+        ],
+        actions: [
+          { id: "d2", title: "Review open actions at next meeting", owner: "Convenor", status: "open" },
+        ],
+      };
+    }
+    function saveDemo(state) {
+      localStorage.setItem(demoKey, JSON.stringify(state));
+    }
+
+    function render(notes, actions) {
+      const notesEl = document.getElementById("notes");
+      const actionsEl = document.getElementById("actions");
+      notesEl.innerHTML = notes
+        .map((n) => `<div class="list-item"><strong>${escapeHtml(n.body)}</strong><span>${n.created_at || ""}</span></div>`)
+        .join("");
+      actionsEl.innerHTML = actions
+        .map(
+          (a) =>
+            `<div class="list-item"><strong>${escapeHtml(a.title)}</strong><span>${escapeHtml(a.owner || "")} · ${a.status || "open"}</span></div>`
+        )
+        .join("");
+      document.getElementById("notes-empty").hidden = notes.length > 0;
+      document.getElementById("actions-empty").hidden = actions.length > 0;
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    async function load() {
+      try {
+        const res = await fetch(`/api/circles?circle=${encodeURIComponent(circleId)}`, {
+          credentials: "same-origin",
+        });
+        if (res.status === 401) {
+          location.href = "/circles/";
+          return;
+        }
+        if (!res.ok) throw new Error("api");
+        const data = await res.json();
+        render(data.notes || [], data.actions || []);
+      } catch {
+        if (sessionStorage.getItem("af-demo-auth") !== "1") {
+          location.href = "/circles/";
+          return;
+        }
+        const state = demoState();
+        render(state.notes, state.actions);
+      }
+    }
+
+    document.querySelectorAll(".tabs [data-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tabs [data-tab]").forEach((b) => b.setAttribute("aria-selected", "false"));
+        btn.setAttribute("aria-selected", "true");
+        document.querySelectorAll(".panel").forEach((p) => (p.hidden = true));
+        document.getElementById(`panel-${btn.dataset.tab}`).hidden = false;
+      });
+    });
+
+    document.getElementById("note-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const body = document.getElementById("note-body").value.trim();
+      if (!body) return;
+      try {
+        const res = await fetch("/api/circles?action=note", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ circle_id: circleId, body }),
+        });
+        if (!res.ok) throw new Error("api");
+        document.getElementById("note-body").value = "";
+        await load();
+      } catch {
+        const state = demoState();
+        state.notes.unshift({ id: crypto.randomUUID(), body, created_at: new Date().toISOString() });
+        saveDemo(state);
+        document.getElementById("note-body").value = "";
+        render(state.notes, state.actions);
+      }
+    });
+
+    document.getElementById("action-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const title = document.getElementById("action-title").value.trim();
+      const owner = document.getElementById("action-owner").value.trim();
+      if (!title) return;
+      try {
+        const res = await fetch("/api/circles?action=action", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ circle_id: circleId, title, owner }),
+        });
+        if (!res.ok) throw new Error("api");
+        document.getElementById("action-title").value = "";
+        document.getElementById("action-owner").value = "";
+        await load();
+      } catch {
+        const state = demoState();
+        state.actions.unshift({ id: crypto.randomUUID(), title, owner, status: "open" });
+        saveDemo(state);
+        document.getElementById("action-title").value = "";
+        document.getElementById("action-owner").value = "";
+        render(state.notes, state.actions);
+      }
+    });
+
+    await load();
+  </script>
+</body>
+</html>
