@@ -39,7 +39,7 @@
           <button type="button" role="tab" id="tab-on" aria-controls="panel-on" aria-selected="true" data-hash="whats-on" data-hash-aliases="on calendar heart-circle heart" data-i18n="gatherings.tabOn">What's on</button>
           <button type="button" role="tab" id="tab-ethos" aria-controls="panel-ethos" aria-selected="false" tabindex="-1" data-hash="ethos" data-i18n="gatherings.tabEthos">About gatherings</button>
           <button type="button" role="tab" id="tab-care" aria-controls="panel-care" aria-selected="false" tabindex="-1" data-hash="care" data-i18n="gatherings.tabCare">Care &amp; funds</button>
-          <button type="button" role="tab" id="tab-places" aria-controls="panel-places" aria-selected="false" tabindex="-1" data-hash="venues" data-hash-aliases="hearths places featherstone glastonbury laughton" data-i18n="gatherings.tabPlaces">Our hearths</button>
+          <button type="button" role="tab" id="tab-places" aria-controls="panel-places" aria-selected="false" tabindex="-1" data-hash="venues" data-hash-aliases="hearths places featherstone glastonbury laughton" data-i18n="gatherings.tabPlaces">Where we gather</button>
           <button type="button" role="tab" id="tab-archive" aria-controls="panel-archive" aria-selected="false" tabindex="-1" data-hash="archive" data-hash-aliases="past" data-i18n="gatherings.tabArchive">Past gatherings</button>
         </div>
 
@@ -53,15 +53,15 @@
                   <strong data-i18n="whatsOn.northernTitle">Iya Luv · Northern Gathering · Pardshaw Quaker Centre</strong>
                   <span data-i18n="whatsOn.northernMeta">31 Aug – 6 Sept 2026 · Cockermouth, Cumbria</span>
                 </a>
-                <div class="list-item">
+                <div class="list-item place-featherstone">
                   <strong data-i18n="whatsOn.samhainTitle">Samhain · Featherstone Castle</strong>
                   <span data-i18n="whatsOn.samhainMeta">19–26 October 2026 · Haltwhistle, Northumberland</span>
                 </div>
-                <div class="list-item">
+                <div class="list-item place-glastonbury">
                   <strong data-i18n="whatsOn.imbolcTitle">Imbolc · Glastonbury</strong>
                   <span data-i18n="whatsOn.imbolcMeta">29 Jan – 8 Feb 2027 · Paddington Farm</span>
                 </div>
-                <div class="list-item">
+                <div class="list-item place-glastonbury">
                   <strong data-i18n="whatsOn.beltaneTitle">Beltane · Glastonbury</strong>
                   <span data-i18n="whatsOn.beltaneMeta">14–24 May 2027 · Paddington Farm</span>
                 </div>
@@ -119,17 +119,17 @@
 
           <div class="panel" role="tabpanel" id="panel-places" aria-labelledby="tab-places" hidden>
             <section class="section" id="venues">
-              <h2 data-i18n="gatherings.placesTitle">Our hearths</h2>
+              <h2 data-i18n="gatherings.placesTitle">Where we gather</h2>
               <p class="intro" data-i18n="gatherings.placesIntro">Castles, farms, lodges, and quieter land Circles return to. Tap a hearth for travel, bedding, access, and what to expect.</p>
               <div class="venue-grid">
-                <button type="button" class="venue-card" data-sheet-open="sheet-featherstone" data-sheet-hash="featherstone">
+                <button type="button" class="venue-card place-featherstone" data-sheet-open="sheet-featherstone" data-sheet-hash="featherstone">
                   <p class="venue-place" data-i18n="gatherings.featherPlace">Northumberland</p>
                   <h3 data-i18n="gatherings.featherTitle">Featherstone Castle</h3>
                   <p class="venue-used" data-i18n="gatherings.featherUsed">Samhain · Ostara · autumn &amp; spring gatherings</p>
                   <p class="venue-blurb" data-i18n="gatherings.featherBody">Near Haltwhistle and Hadrian's Wall — log fires, shared feasts, heart circles, dancing, drumming, and a drag room.</p>
                   <span class="venue-more" data-i18n="gatherings.venueMore">Open hearth details</span>
                 </button>
-                <button type="button" class="venue-card" data-sheet-open="sheet-glastonbury" data-sheet-hash="glastonbury">
+                <button type="button" class="venue-card place-glastonbury" data-sheet-open="sheet-glastonbury" data-sheet-hash="glastonbury">
                   <p class="venue-place" data-i18n="gatherings.glastoPlace">Somerset</p>
                   <h3 data-i18n="gatherings.glastoTitle">Paddington Farm · Glastonbury</h3>
                   <p class="venue-used" data-i18n="gatherings.glastoUsed">Imbolc · Beltane · summer &amp; spring gatherings</p>
@@ -195,15 +195,15 @@
                     <strong>Lughnasadh · Laughton Lodge</strong>
                     <span>July–August 2026 · East Sussex · no call PDF on file</span>
                   </div>
-                  <a class="list-item" href="/assets/archive/calls/beltane-2026.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/beltane-2026.pdf">
                     <strong>Beltane · Glastonbury</strong>
                     <span>8–18 May 2026 · PDF call</span>
                   </a>
-                  <a class="list-item" href="/assets/archive/calls/ostara-2026.pdf">
+                  <a class="list-item place-featherstone" href="/assets/archive/calls/ostara-2026.pdf">
                     <strong>Ostara · Featherstone</strong>
                     <span>7–16 March 2026 · PDF call</span>
                   </a>
-                  <a class="list-item" href="/assets/archive/calls/imbolc-2026.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/imbolc-2026.pdf">
                     <strong>Imbolc · Glastonbury</strong>
                     <span>29 Jan – 8 Feb 2026 · PDF call</span>
                   </a>
@@ -213,19 +213,19 @@
               <div class="archive-year" id="y2025">
                 <h3>2025</h3>
                 <div class="list-blocks">
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>Samhain · Featherstone Castle</strong>
                     <span>2025 · no call PDF on file</span>
                   </div>
-                  <a class="list-item" href="/assets/archive/calls/beltane-2025.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/beltane-2025.pdf">
                     <strong>Beltane · Glastonbury</strong>
                     <span>8–18 May 2025 · PDF call</span>
                   </a>
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>Ostara · Featherstone Castle</strong>
                     <span>7–17 March 2025 · no call PDF on file</span>
                   </div>
-                  <a class="list-item" href="/assets/archive/calls/imbolc-2025.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/imbolc-2025.pdf">
                     <strong>Imbolc · Paddington Farm</strong>
                     <span>27 Jan – 5 Feb 2025 · PDF call</span>
                   </a>
@@ -235,7 +235,7 @@
               <div class="archive-year" id="y2024">
                 <h3>2024</h3>
                 <div class="list-blocks">
-                  <a class="list-item" href="/assets/archive/calls/featherstone-october-2024.pdf">
+                  <a class="list-item place-featherstone" href="/assets/archive/calls/featherstone-october-2024.pdf">
                     <strong>Featherstone October gatherings</strong>
                     <span>Love Healing Retreat (1–10 Oct) &amp; Xtatic-Xpansive Samhain (12–22 Oct) · PDF</span>
                   </a>
@@ -243,11 +243,11 @@
                     <strong>Radical Faeries @ Queer Spirit Festival</strong>
                     <span>15–19 August 2024 · Bridwell Park, Devon · no call PDF on file</span>
                   </div>
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-glastonbury list-item--static">
                     <strong>Summer Solstice · Abundance / Summer Transcendence</strong>
                     <span>16–24 June 2024 · Paddington Farm · gender minority gathering · no call PDF on file</span>
                   </div>
-                  <a class="list-item" href="/assets/archive/calls/beltane-2024.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/beltane-2024.pdf">
                     <strong>Beltane · Paddington Farm</strong>
                     <span>7–17 May 2024 · PDF call</span>
                   </a>
@@ -255,11 +255,11 @@
                     <strong>Queer Earth Resistance School · Seeding Gathering</strong>
                     <span>11–18 April 2024 · Anybody's Barn, Worcestershire · no call PDF on file</span>
                   </div>
-                  <a class="list-item" href="/assets/archive/calls/ostara-2024.pdf">
+                  <a class="list-item place-featherstone" href="/assets/archive/calls/ostara-2024.pdf">
                     <strong>Ostara · Featherstone</strong>
                     <span>12–21 March 2024 · PDF call</span>
                   </a>
-                  <a class="list-item" href="/assets/archive/calls/imbolc-2024.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/imbolc-2024.pdf">
                     <strong>Imbolc · Glastonbury</strong>
                     <span>29 Jan – 6 Feb 2024 · PDF call</span>
                   </a>
@@ -269,7 +269,7 @@
               <div class="archive-year" id="y2023">
                 <h3>2023</h3>
                 <div class="list-blocks">
-                  <a class="list-item" href="/assets/archive/calls/samhain-2023.pdf">
+                  <a class="list-item place-featherstone" href="/assets/archive/calls/samhain-2023.pdf">
                     <strong>Samhain · Featherstone</strong>
                     <span>17–26 October 2023 · PDF call</span>
                   </a>
@@ -281,15 +281,15 @@
                     <strong>Sussex Gathering · Balcombe</strong>
                     <span>17–24 June 2023 · PDF call</span>
                   </a>
-                  <a class="list-item" href="/assets/archive/calls/slag-2023.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/slag-2023.pdf">
                     <strong>Spring Love Awakening · Glastonbury</strong>
                     <span>4–14 May 2023 · PDF call</span>
                   </a>
-                  <a class="list-item" href="/assets/archive/calls/featherstone-spring-2023.pdf">
+                  <a class="list-item place-featherstone" href="/assets/archive/calls/featherstone-spring-2023.pdf">
                     <strong>Spring Ostara · Featherstone</strong>
                     <span>14–23 March 2023 · PDF call</span>
                   </a>
-                  <a class="list-item" href="/assets/archive/calls/imbolc-2023.pdf">
+                  <a class="list-item place-glastonbury" href="/assets/archive/calls/imbolc-2023.pdf">
                     <strong>Imbolc · Glastonbury</strong>
                     <span>27 Jan – 6 Feb 2023 · PDF call</span>
                   </a>
@@ -313,7 +313,7 @@
               <div class="archive-year" id="y2021">
                 <h3>2021</h3>
                 <div class="list-blocks">
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>FeathersHOME · Autumn · Home to the HEART</strong>
                     <span>12–21 October 2021 · Featherstone Castle · no call PDF on file</span>
                   </div>
@@ -327,15 +327,15 @@
               <div class="archive-year" id="y2020">
                 <h3>2020</h3>
                 <div class="list-blocks">
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>Samhain · Featherstone Castle</strong>
                     <span>13–22 October 2020 · cancelled</span>
                   </div>
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>Summer Gathering · Featherstone Castle</strong>
                     <span>4–13 August 2020 · cancelled</span>
                   </div>
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-glastonbury list-item--static">
                     <strong>Spring Love Awakening · Glastonbury</strong>
                     <span>15–25 May 2020 · cancelled</span>
                   </div>
@@ -345,7 +345,7 @@
               <div class="archive-year" id="y2019">
                 <h3>2019</h3>
                 <div class="list-blocks">
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>Samhain · Featherstone Castle</strong>
                     <span>15–24 October 2019 · no call PDF on file</span>
                   </div>
@@ -353,7 +353,7 @@
                     <strong>Faerie Camp @ Queer Spirit Festival</strong>
                     <span>14–18 August 2019 · Northamptonshire · no call PDF on file</span>
                   </div>
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-glastonbury list-item--static">
                     <strong>Spring Love Awakening · Glastonbury</strong>
                     <span>19–24 May 2019 · no call PDF on file</span>
                   </div>
@@ -361,7 +361,7 @@
                     <strong>Magic Gathering · Gloucestershire</strong>
                     <span>24–28 April 2019 · no call PDF on file</span>
                   </div>
-                  <div class="list-item list-item--static">
+                  <div class="list-item place-featherstone list-item--static">
                     <strong>Ostara · Featherstone Castle</strong>
                     <span>19–26 March 2019 · no call PDF on file</span>
                   </div>
@@ -382,7 +382,7 @@
   <dialog class="sheet" id="sheet-featherstone" data-sheet-hash="featherstone" aria-labelledby="sheet-feather-title">
     <div class="sheet-panel">
       <div class="sheet-head">
-        <div>
+        <div class="place-featherstone">
           <p class="sheet-kicker" data-i18n="gatherings.featherPlace">Northumberland</p>
           <h2 id="sheet-feather-title" data-i18n="gatherings.featherTitle">Featherstone Castle</h2>
         </div>
@@ -440,7 +440,7 @@
   <dialog class="sheet" id="sheet-glastonbury" data-sheet-hash="glastonbury" aria-labelledby="sheet-glasto-title">
     <div class="sheet-panel">
       <div class="sheet-head">
-        <div>
+        <div class="place-glastonbury">
           <p class="sheet-kicker" data-i18n="gatherings.glastoPlace">Somerset</p>
           <h2 id="sheet-glasto-title" data-i18n="gatherings.glastoTitle">Paddington Farm · Glastonbury</h2>
         </div>
