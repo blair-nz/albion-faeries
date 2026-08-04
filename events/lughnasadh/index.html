@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lughnasadh · Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+      <a class="brand" href="/">
+        <img src="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" width="48" height="48" alt="" />
+        <span data-i18n="home.brand">Albion Faeries</span>
+      </a>
+      <nav class="nav-main" aria-label="Event">
+        <a href="#call" data-i18n="lugh.navCall">The call</a>
+        <a href="#practicals" data-i18n="lugh.navPracticals">Practicals</a>
+        <a href="#help" data-i18n="lugh.navHelp">Help</a>
+        <a href="/gatherings#whats-on" data-i18n="nav.gatherings">Gatherings &amp; Events</a>
+      </nav>
+      <div class="prefs">
+        <label for="theme-select" data-i18n="nav.theme">Theme</label>
+        <select id="theme-select" data-i18n-aria="nav.theme">
+          <option value="stonehenge" data-theme-id="stonehenge">Stonehenge</option>
+          <option value="deep-glade" data-theme-id="deep-glade">Deep Glade</option>
+          <option value="faery-fire" data-theme-id="faery-fire">Faery Fire</option>
+          <option value="accessible" data-theme-id="accessible">Accessible</option>
+        </select>
+        <label for="lang-select" data-i18n="nav.language">Language</label>
+        <select id="lang-select" data-i18n-aria="nav.language">
+          <option value="en">English</option>
+          <option value="cy">Cymraeg</option>
+          <option value="sco">Scots</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="page-hero">
+        <p class="label" data-i18n="lugh.eyebrow" style="font-size:var(--fs-label);font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute)">Event minisite</p>
+        <h1 data-i18n="lugh.title">Gathering call</h1>
+        <p class="lede" data-i18n="lugh.tag">Template hearth for an Albion gathering — the call, practicals, and how to help.</p>
+      </header>
+
+      <article class="prose section" id="call">
+        <h2 data-i18n="lugh.callTitle">The call</h2>
+        <p data-i18n="lugh.callBody">Come mark the turn of harvest with ritual, feast, and faerie company. Exact dates and place are confirmed on this page as the Events Circle sets them.</p>
+      </article>
+
+      <article class="prose section" id="practicals">
+        <h2 data-i18n="lugh.practicalTitle">Practicals</h2>
+        <p data-i18n="lugh.practicalBody">Travel, camping or beds, what to bring, access notes, and care agreements will live here for this gathering only.</p>
+      </article>
+
+      <article class="prose section" id="help">
+        <h2 data-i18n="lugh.helpTitle">Help</h2>
+        <p data-i18n="lugh.helpBody">Kitchens, stewards, ritual holders, and drivers make the gathering. Offer what you can through the helpers list when it opens.</p>
+      </article>
+
+      <p class="section"><a href="/" data-i18n="lugh.back">Part of Albion Faeries · back to hearth</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <p data-i18n="footer.care">Care first — fabulousness with consent.</p>
+        <div class="footer-links">
+          <a href="/" data-i18n="nav.home">Home</a>
+          <a href="/gatherings#whats-on" data-i18n="nav.gatherings">Gatherings &amp; Events</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="atmosphere" data-atmosphere>
+    <video data-atmosphere-video muted loop playsinline></video>
+    <div class="veil" aria-hidden="true"></div>
+  </div>
+  <script type="module">
+    import { initPrefs } from "/js/prefs.js";
+    document.querySelector("[data-atmosphere-video]").muted = true;
+    initPrefs();
+  </script>
+</body>
+</html>

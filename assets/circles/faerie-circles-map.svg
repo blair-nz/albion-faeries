@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="circles-map-title circles-map-desc">
+  <title id="circles-map-title">How Albion Faerie Circles relate</title>
+  <desc id="circles-map-desc">Faessembly holds the wider community. Under it sits the Stewards Circle, then three Core Circles for Finance, Communications, and Gatherings and Events, supported by working parties and local stewards.</desc>
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="18%" r="75%">
+      <stop offset="0%" stop-color="#24304a"/>
+      <stop offset="55%" stop-color="#141b2e"/>
+      <stop offset="100%" stop-color="#0b1020"/>
+    </radialGradient>
+    <linearGradient id="moonveil" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a455f"/>
+      <stop offset="100%" stop-color="#1d2638"/>
+    </linearGradient>
+    <linearGradient id="emberveil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3a28"/>
+      <stop offset="100%" stop-color="#2a2118"/>
+    </linearGradient>
+    <radialGradient id="hearth" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(224,181,106,0.22)"/>
+      <stop offset="100%" stop-color="rgba(224,181,106,0)"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    .sky { fill: url(#sky); }
+    .hearth { fill: url(#hearth); }
+    .star { fill: #f4efe6; opacity: 0.55; }
+    .star-dim { fill: #e0b56a; opacity: 0.35; }
+    .moon {
+      fill: none;
+      stroke: #e8d7b0;
+      stroke-width: 1.25;
+      opacity: 0.55;
+    }
+    .vine {
+      fill: none;
+      stroke: rgba(201, 164, 90, 0.45);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+    }
+    .path {
+      fill: none;
+      stroke: #c9a45a;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-dasharray: 1.5 7;
+      opacity: 0.85;
+    }
+    .panel {
+      fill: url(#moonveil);
+      stroke: rgba(232, 215, 176, 0.28);
+      stroke-width: 1.1;
+    }
+    .panel-hearth {
+      fill: url(#emberveil);
+      stroke: #d4b06a;
+      stroke-width: 1.35;
+    }
+    .ring {
+      fill: none;
+      stroke: rgba(224, 181, 106, 0.2);
+      stroke-width: 1;
+    }
+    .kicker {
+      fill: #e0b56a;
+      font-family: system-ui, "Segoe UI", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .title {
+      fill: #f7f1e4;
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: 700;
+    }
+    .title-sm {
+      fill: #f7f1e4;
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .title-core {
+      fill: #f7f1e4;
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .body {
+      fill: #d5cbb8;
+      font-family: system-ui, "Segoe UI", sans-serif;
+      font-size: 13px;
+    }
+    .note {
+      fill: #b9ae9c;
+      font-family: system-ui, "Segoe UI", sans-serif;
+      font-size: 12px;
+    }
+  </style>
+
+  <!-- Night field -->
+  <rect class="sky" width="720" height="540" rx="22"/>
+  <ellipse class="hearth" cx="360" cy="250" rx="280" ry="210"/>
+
+  <!-- Constellation dust -->
+  <g aria-hidden="true">
+    <circle class="star" cx="78" cy="48" r="1.2"/>
+    <circle class="star-dim" cx="118" cy="72" r="0.9"/>
+    <circle class="star" cx="620" cy="42" r="1.1"/>
+    <circle class="star" cx="668" cy="88" r="0.8"/>
+    <circle class="star-dim" cx="54" cy="500" r="1"/>
+    <circle class="star" cx="690" cy="470" r="1.1"/>
+    <circle class="star-dim" cx="640" cy="510" r="0.8"/>
+    <circle class="star" cx="96" cy="430" r="0.7"/>
+    <circle class="star-dim" cx="300" cy="24" r="0.8"/>
+    <circle class="star" cx="430" cy="18" r="1"/>
+  </g>
+
+  <!-- Crescent ornaments -->
+  <path class="moon" d="M64 160 c18 -22 48 -22 66 0" />
+  <path class="moon" d="M590 160 c18 -22 48 -22 66 0" />
+
+  <!-- Soft vine flourishes -->
+  <g class="vine" aria-hidden="true">
+    <path d="M52 120 C70 108, 86 108, 104 120"/>
+    <path d="M618 120 C636 108, 652 108, 670 120"/>
+    <path d="M52 420 C74 408, 92 432, 118 420"/>
+    <path d="M602 420 C628 432, 646 408, 668 420"/>
+  </g>
+
+  <!-- Faessembly -->
+  <rect class="panel" x="48" y="36" width="624" height="84" rx="28"/>
+  <circle class="ring" cx="92" cy="78" r="18"/>
+  <circle class="ring" cx="92" cy="78" r="10"/>
+  <text class="kicker" x="128" y="68">Community hearth</text>
+  <text class="title" x="128" y="98">Faessembly</text>
+  <text class="body" x="300" y="96">Open meetings of the wider Radical Faerie community</text>
+
+  <!-- Magical path down -->
+  <path class="path" d="M360 120 C360 132, 360 140, 360 152"/>
+
+  <!-- Stewards -->
+  <rect class="panel-hearth" x="48" y="152" width="624" height="84" rx="28"/>
+  <circle cx="92" cy="194" r="5" fill="#e0b56a"/>
+  <text class="kicker" x="128" y="184">Held by care</text>
+  <text class="title" x="128" y="214">Stewards Circle</text>
+  <text class="body" x="318" y="212">Convenors, Record-keepers, local &amp; specialist stewards</text>
+
+  <!-- Branching star-paths -->
+  <path class="path" d="M360 236 C360 250, 360 258, 360 268"/>
+  <path class="path" d="M360 268 C260 268, 180 268, 148 286"/>
+  <path class="path" d="M360 268 C460 268, 540 268, 572 286"/>
+  <path class="path" d="M360 268 V286"/>
+  <circle cx="148" cy="286" r="2.2" fill="#e0b56a"/>
+  <circle cx="360" cy="286" r="2.2" fill="#e0b56a"/>
+  <circle cx="572" cy="286" r="2.2" fill="#e0b56a"/>
+
+  <!-- Core Circles -->
+  <rect class="panel" x="48" y="296" width="196" height="118" rx="34"/>
+  <text class="kicker" x="72" y="324">Core Circle</text>
+  <text class="title-sm" x="72" y="352">Finance</text>
+  <text class="body" x="72" y="378">Money, banking</text>
+  <text class="body" x="72" y="396">&amp; care of funds</text>
+
+  <rect class="panel" x="262" y="296" width="196" height="118" rx="34"/>
+  <text class="kicker" x="286" y="324">Core Circle</text>
+  <text class="title-sm" x="286" y="352">Communications</text>
+  <text class="body" x="286" y="378">Outreach, lists</text>
+  <text class="body" x="286" y="396">&amp; shared memory</text>
+
+  <rect class="panel" x="476" y="296" width="196" height="118" rx="34"/>
+  <text class="kicker" x="500" y="324">Core Circle</text>
+  <text class="title-core" x="500" y="352">Gatherings &amp; Events</text>
+  <text class="body" x="500" y="378">how we host</text>
+  <text class="body" x="500" y="396">&amp; gather</text>
+
+  <!-- Paths gather again -->
+  <path class="path" d="M146 414 C146 430, 220 438, 360 438"/>
+  <path class="path" d="M360 414 V438"/>
+  <path class="path" d="M574 414 C574 430, 500 438, 360 438"/>
+  <circle cx="360" cy="438" r="2.4" fill="#e0b56a"/>
+
+  <!-- Working parties -->
+  <rect class="panel" x="48" y="448" width="624" height="68" rx="28"/>
+  <text class="kicker" x="72" y="476">In the undergrowth</text>
+  <text class="title-sm" x="72" y="502">Working parties &amp; local stewards</text>
+  <text class="note" x="400" y="500">Practical detail - wider decisions rise</text>
+</svg>

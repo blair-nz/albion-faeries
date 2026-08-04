@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albion Faeries</title>
+  <meta name="description" content="An online space of fabulousness for the Radical Faeries of old Albion." />
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <section class="hearth" aria-label="Home">
+        <div class="hearth-media" data-hearth-media>
+          <img class="poster" src="/assets/sarsen/photo-night.jpg" alt="" />
+          <video muted loop playsinline hidden></video>
+          <div class="veil" aria-hidden="true"></div>
+        </div>
+        <div class="hearth-panel">
+          <p class="label" data-i18n="home.label">Radical Faeries of Albion</p>
+          <h1 class="brand-mark" data-i18n="home.brand">Albion Faeries</h1>
+          <p class="tag" data-i18n="home.tag">An online space of fabulousness for the Radical Faeries of old Albion.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/gatherings#whats-on" data-i18n="home.ctaWhatsOn">See what's on</a>
+            <a class="btn btn-ghost" href="/who-we-are" data-i18n="home.ctaWho">Who we are</a>
+            <a class="btn btn-ghost" href="/get-involved" data-i18n="home.ctaInvolve">Get involved</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    boot({ current: "home", atmosphere: false, page: "home" });
+  </script>
+</body>
+</html>

@@ -1,27 +1,19 @@
-# Local / editor
-.cursor/
+node_modules/
+.wrangler/
+.dev.vars
 .DS_Store
 Thumbs.db
+*.log
 *.tmp
+.mf/
+.cursor/
 _extract_docs.py
 
-# Community working docs and gathering materials (not for public git)
+# Community working docs (not for public git)
 Lughnasadh 2026/
 *.docx
-*.pdf
 *.xlsx
 *.aac
-*.jpg
-*.jpeg
-*.png
-!albion-faeries-current-network-services.png
-!design/assets/**/*.png
-!design/assets/**/*.jpg
-!design/assets/**/*.jpeg
 
-# Keep architecture diagrams that are already shared as project artefacts
-!albion-faeries-current-architecture.svg
-!albion-faeries-current-network-services.svg
-
-.wrangler/
-
+assets/archive/_large-local-only/
+assets/archive/calls/*.txt

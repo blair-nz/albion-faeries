@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get involved - Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <h1 data-i18n="involve.title">Get involved</h1>
+        <p class="lede" data-i18n="involve.lede">We are an informal network of connected individuals. Come to a circle or gathering, join the mailing list, or find us on Faenet and Facebook.</p>
+      </header>
+
+      <div data-tabs>
+        <div class="subnav" role="tablist" aria-label="Get involved sections">
+          <button type="button" role="tab" id="tab-join" aria-controls="panel-join" aria-selected="true" data-hash="join" data-hash-aliases="newsletter connect" data-i18n="involve.tabJoin">Join in</button>
+          <button type="button" role="tab" id="tab-circles" aria-controls="panel-circles" aria-selected="false" tabindex="-1" data-hash="circles" data-i18n="involve.tabCircles">Circles</button>
+          <button type="button" role="tab" id="tab-contact" aria-controls="panel-contact" aria-selected="false" tabindex="-1" data-hash="contact" data-i18n="involve.tabContact">Contact</button>
+          <button type="button" role="tab" id="tab-donate" aria-controls="panel-donate" aria-selected="false" tabindex="-1" data-hash="donate" data-i18n="involve.tabDonate">Donate</button>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel" role="tabpanel" id="panel-join" aria-labelledby="tab-join">
+            <article class="prose section">
+              <h2 data-i18n="involve.comeTitle">Come along</h2>
+              <p data-i18n="involve.comeBody">Start with Gatherings &amp; Events. No application form - arrive with care. If you are new to Faerie or queer space, you can write first and ask.</p>
+              <p><a class="btn btn-primary" href="/gatherings#whats-on" data-i18n="nav.gatherings">Gatherings &amp; Events</a></p>
+            </article>
+            <article class="prose section" id="newsletter">
+              <h2 data-i18n="involve.newsTitle">Newsletter</h2>
+              <p data-i18n="involve.newsBody">Gathering calls, booking openings, and other events. Sign up on the Albion Faeries newsletter list.</p>
+              <p>
+                <a class="btn btn-primary" href="https://lists.faenet.org/postorius/lists/newsletter.lists.albionfaeries.org.uk/" rel="noopener noreferrer" data-i18n="involve.newsCta">Newsletter signup</a>
+              </p>
+            </article>
+            <article class="prose section" id="connect">
+              <h2 data-i18n="involve.connectTitle">Other ways to connect</h2>
+              <p data-i18n="involve.connectBody">Faenet is a private Faerie social space. The Facebook group Radical Faerie UK has regional links and gathering chat.</p>
+              <p>
+                <a class="btn btn-primary" href="https://www.facebook.com/groups/96813529648/" rel="noopener noreferrer" data-i18n="involve.facebookCta">Facebook group</a>
+                <a class="btn btn-ghost" href="https://faenet.org/" rel="noopener noreferrer" data-i18n="involve.faenetCta">Faenet</a>
+                <a class="btn btn-ghost" href="/blog" data-i18n="involve.blogCta">Faerie blog</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-circles" aria-labelledby="tab-circles" hidden>
+            <article class="prose section" id="circles">
+              <h2 data-i18n="involve.circlesHowTitle">How Circles work</h2>
+              <p data-i18n="involve.circlesHowIntro">Albion Faeries do not seek to be bound by strict policies, but to share and grow values, ethics, and principles together in mutual love and respect. Meetings and decisions aim to be as open and transparent as possible - with no formal membership, and an invitation to those who identify as part of the Radical Faeries of Albion.</p>
+              <ul>
+                <li data-i18n="involve.circlesHow1">Not everyone can be present at everything; a public mail-out keeps people in the loop.</li>
+                <li data-i18n="involve.circlesHow2">Hosts of private meeting spaces may say who receives their address.</li>
+                <li data-i18n="involve.circlesHow3">Working parties handle focused detail; Faessemblies are open potentially to all radical faeries.</li>
+                <li data-i18n="involve.circlesHow4">Faessembly and Core Circle meetings should be advertised with due notice. Major decisions go through Core Circles or Faessemblies - working groups are not empowered to decide for the whole community.</li>
+                <li data-i18n="involve.circlesHow5">Large residential gatherings include a general assembly; Stewards aim for these at least twice a year in different parts of Albion.</li>
+              </ul>
+            </article>
+
+            <figure class="section circles-map-wrap">
+              <img
+                class="circles-map"
+                src="/assets/circles/faerie-circles-map.svg"
+                width="720"
+                height="560"
+                alt="Diagram: Faessembly, Stewards Circle, three Core Circles for Finance, Communications, and Gatherings and Events, with working parties and local stewards below."
+              />
+              <figcaption class="circles-map-caption" data-i18n="involve.circlesMapCaption">From the open Faessembly hearth, care gathers in the Stewards Circle, then flows through three Core Circles - with working parties rooting the practical work.</figcaption>
+            </figure>
+
+            <article class="prose section">
+              <h2 data-i18n="involve.circlesCoreTitle">Core Circles</h2>
+              <p data-i18n="involve.circlesCoreIntro">Day-to-day work runs through three Core Circles. Any Albion Faerie may attend if they wish to help.</p>
+              <ul>
+                <li data-i18n="involve.circlesCoreFinance">Finance - oversees matters relating to finance.</li>
+                <li data-i18n="involve.circlesCoreComms">Communications - oversees matters relating to communication.</li>
+                <li data-i18n="involve.circlesCoreEvents">Gatherings &amp; Events - oversees how gatherings and events are organised.</li>
+              </ul>
+            </article>
+
+            <article class="prose section">
+              <h2 data-i18n="involve.circlesRolesTitle">Roles and service</h2>
+              <p data-i18n="involve.circlesRolesIntro">Roles relate to tasks undertaken as service. A twelve-month pledge is usually requested; roles may be shared. Major roles are asked to find two backups - an elder with experience and a neophyte learning into the work. Convenors, Record-keepers, and local or specialist stewards come together as the Stewards Circle.</p>
+              <h3 data-i18n="involve.circlesConvenorsTitle">Convenors</h3>
+              <p data-i18n="involve.circlesConvenorsBody">Keep each Core Circle meeting regularly, encourage attendance, arrange accessible venues, spot who can lead issues, support facilitators, and keep an overview with other Stewards.</p>
+              <h3 data-i18n="involve.circlesRecordsTitle">Record-keepers</h3>
+              <p data-i18n="involve.circlesRecordsBody">Support Convenors; publicise meetings; ensure minutes are taken, circulated, stored, and followed through; encourage skill-sharing; and co-ordinate with other Stewards. The three Convenors and three Record-keepers also liaise across Circles.</p>
+              <h3 data-i18n="involve.circlesVolunteersTitle">Other volunteer roles</h3>
+              <p data-i18n="involve.circlesVolunteersBody">Facilitators and minute-takers are essential and can serve occasionally. Circles may appoint working-party leaders and specialist stewards - for example a Book-Keeper - who pledge particular skills. Local stewards are still developing wherever enough faeries live nearby.</p>
+            </article>
+
+            <article class="prose section">
+              <h2 data-i18n="involve.circleTitle">Circle sign-in</h2>
+              <p data-i18n="involve.circleBody">For faeries who already hold Circle work - notes, actions, and templates behind a quiet threshold.</p>
+              <p>
+                <a class="btn btn-primary" href="/circles/" data-i18n="involve.circleCta">Enter Circles</a>
+                <a class="btn btn-ghost" href="/get-involved#contact" data-i18n="involve.circlesContactCta">Contact Stewards</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-contact" aria-labelledby="tab-contact" hidden>
+            <article class="prose section" id="contact">
+              <h2 data-i18n="involve.contactTitle">Contact</h2>
+              <p data-i18n="involve.contactBody">General questions: faerieuk@gmail.com. Circle invites and organising: info@albionfaeries.org.uk. Prefer a form to a named Circle? Use the contact paths Circles already know - Comms, Finance, Gatherings & Events, Diversity & Inclusivity, or newsletter items.</p>
+              <p>
+                <a href="mailto:faerieuk@gmail.com">faerieuk@gmail.com</a>
+                -
+                <a href="mailto:info@albionfaeries.org.uk">info@albionfaeries.org.uk</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-donate" aria-labelledby="tab-donate" hidden>
+            <article class="prose section" id="donate">
+              <h2 data-i18n="involve.donateTitle">Donate</h2>
+              <p data-i18n="involve.donateBody">Albion Faeries are entirely volunteer-run and not for profit. Donations sustain NOTAFLOF - helping people reach gatherings who might not otherwise - and cover small costs such as hosting.</p>
+              <p><strong data-i18n="involve.donateBank">Co-operative Bank - Account name Faerie UK - Sort code 08-92-99 - Account 65488214 - Reference Donation</strong></p>
+              <p class="status" data-i18n="involve.donateNote">One-off or regular gifts by bank transfer are preferred; PayPal is also used on the legacy site.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    boot({ current: "get-involved" });
+  </script>
+</body>
+</html>

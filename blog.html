@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Faerie blog · Albion Faeries</title>
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <h1 data-i18n="blog.title">Faerie blog</h1>
+        <p class="lede" data-i18n="blog.lede">Stories, history, and reflections from the Albion Faerie web — kept from the long hearth archive.</p>
+      </header>
+
+      <section class="section">
+        <h2 data-i18n="blog.recentTitle">Recent posts</h2>
+        <p class="intro" data-i18n="blog.recentIntro">Full posts still live on the legacy WordPress hearth until they move here. Open any title to read.</p>
+        <div class="list-blocks">
+          <a class="list-item" href="https://albionfaeries.org.uk/20-years-of-the-queer-spirit-circle/" rel="noopener noreferrer">
+            <strong>20 years of the Queer Spirit Circle</strong>
+            <span>3 February 2025</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/imbolc-krystal/" rel="noopener noreferrer">
+            <strong>Imbolc – krystal</strong>
+            <span>18 December 2024</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/who-are-the-radical-faeries/" rel="noopener noreferrer">
+            <strong>Who are the Radical Faeries?</strong>
+            <span>1 October 2024</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/summer-transcendence-solstice-abundance-gathering-2024/" rel="noopener noreferrer">
+            <strong>Summer Transcendence Solstice Abundance Gathering 2024</strong>
+            <span>1 April 2024</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/decolonial-action/" rel="noopener noreferrer">
+            <strong>Decolonial Action</strong>
+            <span>29 January 2024</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/a-samhain-tale-from-the-faerie-castle/" rel="noopener noreferrer">
+            <strong>A Samhain Tale from the Faerie Castle</strong>
+            <span>17 January 2024</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/subjectsubject/" rel="noopener noreferrer">
+            <strong>subject:SUBJECT</strong>
+            <span>23 November 2023</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/the-mystical-art-of-faerie-eclipse/" rel="noopener noreferrer">
+            <strong>The Mystical Art of Faerie Eclipse</strong>
+            <span>13 November 2023</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/a-new-stage-in-the-meaning-of-gay-liberation/" rel="noopener noreferrer">
+            <strong>A new stage in the meaning of Gay Liberation.</strong>
+            <span>5 March 2023</span>
+          </a>
+          <a class="list-item" href="https://albionfaeries.org.uk/a-safe-space/" rel="noopener noreferrer">
+            <strong>A Safe Space?</strong>
+            <span>5 February 2023</span>
+          </a>
+        </div>
+        <p style="margin-top:1.5rem">
+          <a class="btn btn-primary" href="https://albionfaeries.org.uk/faerie-blog/" rel="noopener noreferrer" data-i18n="blog.archiveCta">Full blog archive</a>
+          <a class="btn btn-ghost" href="/who-we-are" data-i18n="nav.whoWeAre">Who we are</a>
+        </p>
+      </section>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    boot({ current: "blog" });
+  </script>
+</body>
+</html>

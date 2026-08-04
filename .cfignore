@@ -1,0 +1,11 @@
+# Exclude large / non-public paths from Pages upload if present
+.git
+node_modules
+.wrangler
+.dev.vars
+*.md
+scripts
+migrations
+
+assets/archive/_large-local-only
+assets/archive/calls/*.txt

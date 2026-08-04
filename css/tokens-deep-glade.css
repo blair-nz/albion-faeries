@@ -1,0 +1,26 @@
+/* Deep Glade */
+[data-theme="deep-glade"] {
+  --void: #0b1608;
+  --night: #152414;
+  --accent: #9bc84e;
+  --accent-ink: #0b1608;
+  --ink: #eef3e6;
+  --mute: #aebca0;
+  --bark: #c5d4b8;
+  --surface: rgba(11, 22, 8, 0.94);
+  --surface-raised: rgba(18, 32, 16, 0.96);
+  --stroke: rgba(238, 243, 230, 0.14);
+  --stroke-strong: rgba(238, 243, 230, 0.28);
+  --hero-overlay: linear-gradient(105deg, rgba(11, 22, 8, 0.82) 0%, rgba(11, 22, 8, 0.55) 42%, rgba(21, 36, 20, 0.45) 100%);
+  --font-display: "Libre Baskerville", "Iowan Old Style", Palatino, serif;
+  --font-body: "Figtree", "Segoe UI", Tahoma, sans-serif;
+  --bg-image: url("/assets/deep-glade/forest-poster.jpg");
+  --hero-poster: url("/assets/deep-glade/forest-poster.jpg");
+  --field-image: none;
+  --field-veil:
+    radial-gradient(ellipse 85% 55% at 8% -5%, rgba(155, 200, 78, 0.14) 0%, transparent 52%),
+    radial-gradient(ellipse 65% 50% at 95% 30%, rgba(40, 80, 36, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 40% at 50% 110%, rgba(8, 18, 6, 0.95) 0%, transparent 55%),
+    linear-gradient(168deg, #102014 0%, #0b1608 46%, #142818 100%);
+  color-scheme: dark;
+}
