@@ -2,6 +2,8 @@
 
 Local site root for the Radical Faeries of Albion public hearth, event minisites, and Circles.
 
+**Handoff:** [`STATUS.md`](STATUS.md). Staging setup: [`STAGING.md`](STAGING.md). Tech Circle GitHub map: [`design/github-staging-flow.html`](design/github-staging-flow.html).
+
 ## Themes
 
 - Stonehenge (default)
@@ -17,6 +19,8 @@ English · Cymraeg (Welsh) · Scots
 
 ```bash
 npm install
+npm run db:migrate:local
+npm run db:migrate:local:tech
 npx wrangler pages dev . --d1=CIRCLES_DB --local
 ```
 
@@ -24,16 +28,13 @@ Circle passphrase (bootstrap): `faerie-hearth` — override with `CIRCLE_PASSPHR
 
 ## Deploy
 
-```bash
-npx wrangler d1 create albion-faeries-circles
-# put database_id into wrangler.toml
-npx wrangler d1 execute albion-faeries-circles --remote --file=./migrations/0001_init.sql
-npx wrangler pages project create albion-faeries-site --production-branch=main
-npx wrangler pages deploy . --project-name=albion-faeries-site
-```
+- **Staging:** push the `staging` branch. Cloudflare Pages preview deploys to **https://staging.albionfaeries.org.uk** (own D1). See [`STAGING.md`](STAGING.md).
+- **Live:** merge `staging` into `main`. Pages production deploys to **https://albionfaeries.org.uk**.
+
+Do not push feature work straight to `main`. Do not `wrangler pages deploy` from a dirty tree.
 
 Account: blair.solutions / `e9b13349d94ef8f35c5b1e4470f12b6f`
 
 ## Design kit
 
-Earlier visual direction work lives under [`design/`](design/) (open `design/index.html` locally).
+Earlier visual direction work lives under [`design/`](design/) (open `design/index.html` locally). The GitHub / staging map uses the live Stonehenge chrome: [`design/github-staging-flow.html`](design/github-staging-flow.html).

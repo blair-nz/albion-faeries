@@ -256,12 +256,21 @@
     "eventsMeta": "Venue notes · gatherin hou-tae · helpers",
     "finance": "Finance",
     "financeMeta": "Hostin costs · NOTAFLOF · book-keepin",
+    "technology": "Technology",
+    "technologyMeta": "Site · DNS · GitHub · stagin an live",
     "signOut": "Sign oot",
     "backPublic": "Back tae public hearth",
     "notes": "Notes",
     "actions": "Actions",
     "templates": "Templates",
     "people": "Fowk",
+    "architecture": "Architecture",
+    "architectureKicker": "Technology | livin map",
+    "architectureTitle": "Hoo we ship",
+    "architectureBody": "The live hearth is albionfaeries.org.uk. Try changes on staging.albionfaeries.org.uk. Push the staging branch tae update stagin; merge tae main for live. Stagin keeps its ain Circles database.",
+    "archFigureCap": "GitHub tae stagin an live — zoom or open in a new tab tae share wi the Circle",
+    "archOpenSvg": "Open SVG",
+    "archOpenPage": "Hoo tae read it",
     "addNote": "Add note",
     "addAction": "Add action",
     "notePlaceholder": "Meetin note…",
@@ -275,6 +284,9 @@
     "lockedTitle": "Circle threshold",
     "lockedBody": "Enter the shared Circle passphrase tae reach notes an actions.",
     "gateError": "That passphrase wisnae accepted."
+  },
+  "staging": {
+    "banner": "Stagin hearth — no the live site. Push the staging branch tae try changes here; merge tae main for albionfaeries.org.uk."
   },
   "footer": {
     "care": "Radical Faeries of Albion",

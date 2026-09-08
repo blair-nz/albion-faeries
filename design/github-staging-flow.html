@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="stonehenge">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub, staging, and the live hearth - Albion Faeries</title>
+  <meta name="description" content="How Technology Circle works with GitHub, the staging hearth, and albionfaeries.org.uk." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/logos/radical_faeries_albion_moon_circle_clean_icon_preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Figtree:wght@400;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;family=Syne:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tokens-stonehenge.css" />
+  <link rel="stylesheet" href="/css/tokens-deep-glade.css" />
+  <link rel="stylesheet" href="/css/tokens-faery-fire.css" />
+  <link rel="stylesheet" href="/css/tokens-accessible.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <style>
+    .flow-map {
+      margin: 0;
+      border: 1px solid var(--stroke-strong);
+      border-radius: var(--radius-lg);
+      background: var(--void);
+      overflow: hidden;
+    }
+    .flow-map img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("af-theme");
+        if (t === "megalith-night") { t = "stonehenge"; localStorage.setItem("af-theme", t); }
+        if (t) document.documentElement.dataset.theme = t;
+        var l = localStorage.getItem("af-lang");
+        if (l === "cy") document.documentElement.lang = "cy";
+        else if (l === "sco") document.documentElement.lang = "sco";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main">
+      <header class="page-hero">
+        <p class="sheet-kicker">Technology map</p>
+        <h1>GitHub, staging, and the live hearth</h1>
+        <p class="lede">One private repo. Push <code>staging</code> to try the hearth. Merge to <code>main</code> for albionfaeries.org.uk. Staging keeps its own Circles database.</p>
+      </header>
+
+      <figure class="flow-map">
+        <img src="/assets/circles/github-staging-flow.svg" alt="Flow from a laptop through GitHub staging and main branches to Cloudflare Pages, then the staging hearth and the live hearth." width="1200" height="1180" />
+      </figure>
+
+      <article class="prose section">
+        <h2>How to read it</h2>
+        <p>The moss box is staging: <code>staging.albionfaeries.org.uk</code>. Try copy, layout, and Circles there. It does not share the live database, so a test note cannot land on the public hearth.</p>
+        <p>The gold box is live: <code>albionfaeries.org.uk</code>. It updates only when <code>staging</code> is merged into <code>main</code>. Do not push feature work straight to <code>main</code>.</p>
+        <p>Local <code>npm run dev</code> is a third hearth on your laptop. It is not staging and not live. Keep <code>.dev.vars</code> on the machine.</p>
+        <p>Blair invites Tech Circle GitHub accounts as collaborators on the private repo. When the Circle is happy with staging, open a pull request from <code>staging</code> into <code>main</code>.</p>
+        <p class="cta-row">
+          <a class="btn btn-ghost" href="/design/">Design index</a>
+          <a class="btn btn-ghost" href="/assets/circles/github-staging-flow.svg">Open the SVG</a>
+          <a class="btn btn-ghost" href="/circles/circle?id=technology">Technology Circle</a>
+        </p>
+      </article>
+    </main>
+  </div>
+  <script type="module">
+    import { boot } from "/js/site.js";
+    boot({ current: "" });
+  </script>
+</body>
+</html>

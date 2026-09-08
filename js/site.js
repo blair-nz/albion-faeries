@@ -176,9 +176,38 @@ export function initTabs(root = document) {
   });
 }
 
+function isStagingHearth() {
+  if (document.documentElement.dataset.hearth === "staging") return true;
+  if (new URLSearchParams(location.search).get("hearth") === "staging") return true;
+  const host = location.hostname.toLowerCase();
+  if (host === "staging.albionfaeries.org.uk") return true;
+  if (host === "staging.albion-faeries-site.pages.dev") return true;
+  return false;
+}
+
+function mountStagingBanner() {
+  if (!isStagingHearth() || document.querySelector("[data-staging-banner]")) return;
+  const bar = document.createElement("div");
+  bar.className = "staging-banner";
+  bar.dataset.stagingBanner = "";
+  bar.setAttribute("role", "status");
+  bar.innerHTML =
+    '<p data-i18n="staging.banner">Staging hearth — not the live site. Push the staging branch to try changes here; merge to main for albionfaeries.org.uk.</p>';
+  const header = document.querySelector(".site-header");
+  if (header && header.parentNode) {
+    header.parentNode.insertBefore(bar, header);
+  } else {
+    const shell = document.querySelector(".page-shell");
+    const main = document.querySelector("main");
+    if (shell && main) shell.insertBefore(bar, main);
+    else document.body.prepend(bar);
+  }
+}
+
 export async function boot(opts = {}) {
   if (opts.page) document.body.dataset.page = opts.page;
   mountChrome(opts);
+  mountStagingBanner();
   await initPrefs();
   initTabs();
   initSheets();

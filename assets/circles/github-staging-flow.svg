@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1180" role="img" aria-labelledby="title desc">
+  <title id="title">How Tech Circle works with GitHub, staging, and the live hearth</title>
+  <desc id="desc">Clone the private GitHub repo. Push the staging branch to try changes on staging.albionfaeries.org.uk. Merge to main to update the live hearth. Staging has its own Circles database. Do not push feature work straight to main.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c9a45a"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7a9a78"/>
+    </marker>
+    <marker id="arr-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8fa3c4"/>
+    </marker>
+    <style type="text/css"><![CDATA[
+      .bg { fill: #070b18; }
+      .kicker { fill: #e0b56a; font-family: system-ui, "Segoe UI", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; }
+      .title { fill: #f7f1e4; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 700; }
+      .sub { fill: #b9ae9c; font-family: system-ui, "Segoe UI", sans-serif; font-size: 12px; }
+      .h { fill: #e0b56a; font-family: Georgia, "Times New Roman", serif; font-size: 13px; font-weight: 700; }
+      .h2 { fill: #f4efe6; font-family: Georgia, "Times New Roman", serif; font-size: 13px; font-weight: 700; }
+      .t { fill: #d5cbb8; font-family: system-ui, "Segoe UI", sans-serif; font-size: 11.5px; }
+      .s { fill: #a8a29a; font-family: system-ui, "Segoe UI", sans-serif; font-size: 10.5px; }
+      .mono { fill: #e0b56a; font-family: Consolas, "Courier New", monospace; font-size: 10.5px; }
+      .zone { fill: #12182a; stroke: rgba(232,215,176,0.22); stroke-width: 1.4; }
+      .lap { fill: #1b2338; stroke: rgba(143,163,196,0.55); stroke-width: 1.5; }
+      .git { fill: #241c16; stroke: rgba(196,137,74,0.65); stroke-width: 1.5; }
+      .pages { fill: #1b2338; stroke: rgba(224,181,106,0.5); stroke-width: 1.5; }
+      .stage { fill: #1c2a24; stroke: rgba(122,154,120,0.7); stroke-width: 1.6; }
+      .live { fill: #162028; stroke: #d4b06a; stroke-width: 1.7; }
+      .warn { fill: #241c16; stroke: rgba(196,137,74,0.45); stroke-width: 1.3; }
+      .edge { stroke: #c9a45a; stroke-width: 1.5; fill: none; marker-end: url(#arr); }
+      .edge-g { stroke: #7a9a78; stroke-width: 1.4; fill: none; marker-end: url(#arr-g); }
+      .edge-b { stroke: #8fa3c4; stroke-width: 1.4; fill: none; marker-end: url(#arr-b); }
+      .chip { fill: #070b18; stroke: rgba(224,181,106,0.35); stroke-width: 1; }
+      .chipt { fill: #e8e0d0; font-family: system-ui, "Segoe UI", sans-serif; font-size: 10px; }
+      .foot { fill: #6a665e; font-family: system-ui, "Segoe UI", sans-serif; font-size: 10px; }
+    ]]></style>
+  </defs>
+
+  <rect class="bg" width="1200" height="1180" rx="14"/>
+
+  <text class="kicker" x="32" y="34">ALBION FAERIES  |  STONEHENGE</text>
+  <text class="title" x="32" y="60">How Tech Circle ships with GitHub</text>
+  <text class="sub" x="32" y="80">Try it on staging. Merge to main for the live hearth. Staging keeps its own Circles database.</text>
+
+  <!-- 1 Laptop -->
+  <rect class="zone" x="24" y="100" width="1152" height="168" rx="12"/>
+  <text class="h" x="40" y="124">1. Laptop</text>
+
+  <rect class="lap" x="40" y="140" width="540" height="108" rx="10"/>
+  <text class="h2" x="56" y="164">Clone the private repo</text>
+  <text class="mono" x="56" y="184">blair-nz/albion-faeries</text>
+  <text class="t" x="56" y="204">Blair invites Tech Circle GitHub accounts as collaborators.</text>
+  <text class="s" x="56" y="222">git clone  then  git checkout staging</text>
+
+  <rect class="lap" x="600" y="140" width="556" height="108" rx="10"/>
+  <text class="h2" x="616" y="164">Local only  |  npm run dev</text>
+  <text class="t" x="616" y="184">Your machine. Not staging. Not live.</text>
+  <text class="s" x="616" y="204">Copy .dev.vars.example to .dev.vars</text>
+  <text class="s" x="616" y="222">Never commit .dev.vars or node_modules</text>
+
+  <!-- 2 GitHub -->
+  <rect class="zone" x="24" y="288" width="1152" height="188" rx="12"/>
+  <text class="h" x="40" y="312">2. GitHub  |  source of truth</text>
+
+  <rect class="git" x="40" y="328" width="540" height="124" rx="10"/>
+  <text class="h2" x="56" y="352">Branch  staging</text>
+  <text class="t" x="56" y="372">Day-to-day work. Push here to try the hearth.</text>
+  <text class="mono" x="56" y="392">git push origin staging</text>
+  <text class="s" x="56" y="412">Or a short-lived branch, then merge into staging.</text>
+  <text class="s" x="56" y="430">Cloudflare builds this as a preview deploy.</text>
+
+  <rect class="live" x="600" y="328" width="556" height="124" rx="10"/>
+  <text class="h2" x="616" y="352">Branch  main</text>
+  <text class="t" x="616" y="372">The live hearth. Do not push feature work here.</text>
+  <text class="mono" x="616" y="392">Pull request:  staging  -&gt;  main</text>
+  <text class="s" x="616" y="412">When the Circle is happy with staging, merge.</text>
+  <text class="s" x="616" y="430">That is the only path onto albionfaeries.org.uk</text>
+
+  <path class="edge" d="M 580 390 L 598 390"/>
+
+  <!-- 3 Pages -->
+  <rect class="zone" x="24" y="496" width="1152" height="168" rx="12"/>
+  <text class="h" x="40" y="520">3. Cloudflare Pages  |  one project, two deploys</text>
+
+  <rect class="pages" x="40" y="536" width="1116" height="108" rx="10"/>
+  <text class="h2" x="56" y="560">Project  albion-faeries-site</text>
+  <text class="t" x="56" y="580">Production branch is main. The staging branch is a preview with its own D1.</text>
+  <text class="s" x="56" y="600">Preview alias: staging.albion-faeries-site.pages.dev  (then the custom domain)</text>
+  <text class="s" x="56" y="618">DNS: proxied CNAME staging -&gt; staging.albion-faeries-site.pages.dev. Do not touch MX or mail.</text>
+
+  <!-- 4 Hearths -->
+  <rect class="zone" x="24" y="684" width="1152" height="268" rx="12"/>
+  <text class="h" x="40" y="708">4. Two hearths</text>
+
+  <rect class="stage" x="40" y="724" width="540" height="204" rx="10"/>
+  <text class="h2" x="56" y="748">Staging hearth</text>
+  <text class="mono" x="56" y="768">staging.albionfaeries.org.uk</text>
+  <text class="t" x="56" y="790">Try Circles, copy, and layout here.</text>
+  <text class="t" x="56" y="808">Own D1: albion-faeries-circles-staging</text>
+  <text class="s" x="56" y="828">No live people, newsletter, or passwords.</text>
+  <text class="s" x="56" y="846">Different Circle passphrase from live.</text>
+  <text class="s" x="56" y="864">Search engines: noindex. Gold bar says staging.</text>
+  <rect class="chip" x="56" y="878" width="200" height="28" rx="8"/>
+  <text class="chipt" x="68" y="896">Push staging to update</text>
+
+  <rect class="live" x="600" y="724" width="556" height="204" rx="10"/>
+  <text class="h2" x="616" y="748">Live hearth</text>
+  <text class="mono" x="616" y="768">albionfaeries.org.uk</text>
+  <text class="t" x="616" y="790">Public visitors. Real Circles. Real mail.</text>
+  <text class="t" x="616" y="808">D1: albion-faeries-circles</text>
+  <text class="s" x="616" y="828">Updates only when main is merged.</text>
+  <text class="s" x="616" y="846">Ask before commit or push to main.</text>
+  <text class="s" x="616" y="864">www points here too. Mail stays on MXRouting.</text>
+  <rect class="chip" x="616" y="878" width="220" height="28" rx="8"/>
+  <text class="chipt" x="628" y="896">Merge to main to update</text>
+
+  <path class="edge-g" d="M 310 452 L 310 536"/>
+  <path class="edge" d="M 878 452 L 878 536"/>
+  <path class="edge-g" d="M 310 644 L 310 724"/>
+  <path class="edge" d="M 878 644 L 878 724"/>
+
+  <!-- Foot -->
+  <rect class="warn" x="24" y="972" width="1152" height="168" rx="12"/>
+  <text class="h" x="40" y="996">Do not</text>
+  <text class="t" x="40" y="1018">Push feature work straight to main.</text>
+  <text class="t" x="40" y="1036">Test a newsletter send on staging (Maileroo is unset on preview on purpose).</text>
+  <text class="t" x="40" y="1054">Share the live D1 or live private files with staging.</text>
+  <text class="s" x="40" y="1074">Local .dev.vars stays on the laptop. DNS: leave MX, SPF, DKIM, and DMARC alone.</text>
+  <text class="s" x="40" y="1092">preview.albionfaeries.org.uk used to be the live site. Point it at the staging branch alias, or retire it.</text>
+  <text class="foot" x="40" y="1124">Technology Circle map  |  GitHub + Pages  |  Stonehenge</text>
+</svg>

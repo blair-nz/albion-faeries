@@ -9,3 +9,18 @@ database_id = "d8fb907c-a3c2-41da-aa6b-b4966fc4af6c"
 
 [vars]
 SITE_NAME = "Albion Faeries"
+SITE_ENV = "production"
+PUBLIC_ORIGIN = "https://albionfaeries.org.uk"
+
+# Preview deploys: git branch `staging` (and any other non-main branch).
+# Create the D1 first (`npm run db:create:staging`) and paste its id below.
+# Never point preview at the live database — Circles on staging would write to production.
+[[env.preview.d1_databases]]
+binding = "CIRCLES_DB"
+database_name = "albion-faeries-circles-staging"
+database_id = "00000000-0000-4000-a000-000000000001"
+
+[env.preview.vars]
+SITE_NAME = "Albion Faeries (staging)"
+SITE_ENV = "staging"
+PUBLIC_ORIGIN = "https://staging.albionfaeries.org.uk"
