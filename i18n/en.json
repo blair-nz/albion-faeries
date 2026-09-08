@@ -253,12 +253,21 @@
     "eventsMeta": "Venue notes · gathering how-to · helpers",
     "finance": "Finance",
     "financeMeta": "Hosting costs · NOTAFLOF · book-keeping",
+    "technology": "Technology",
+    "technologyMeta": "Site · DNS · GitHub · staging and live",
     "signOut": "Sign out",
     "backPublic": "Back to public hearth",
     "notes": "Notes",
     "actions": "Actions",
     "templates": "Templates",
     "people": "People",
+    "architecture": "Architecture",
+    "architectureKicker": "Technology | living map",
+    "architectureTitle": "How we ship",
+    "architectureBody": "The live hearth is albionfaeries.org.uk. Try changes on staging.albionfaeries.org.uk. Push the staging branch to update staging; merge to main for live. Staging keeps its own Circles database.",
+    "archFigureCap": "GitHub to staging and live — zoom or open in a new tab to share with the Circle",
+    "archOpenSvg": "Open SVG",
+    "archOpenPage": "How to read it",
     "addNote": "Add note",
     "addAction": "Add action",
     "notePlaceholder": "Meeting note…",
@@ -272,6 +281,9 @@
     "lockedTitle": "Circle threshold",
     "lockedBody": "Enter the shared Circle passphrase to reach notes and actions.",
     "gateError": "That passphrase was not accepted."
+  },
+  "staging": {
+    "banner": "Staging hearth — not the live site. Push the staging branch to try changes here; merge to main for albionfaeries.org.uk."
   },
   "blog": {
     "title": "Faerie blog",

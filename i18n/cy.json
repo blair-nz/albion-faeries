@@ -256,12 +256,21 @@
     "eventsMeta": "Nodiadau lleoliad · sut i gynnal casgliad · helpwyr",
     "finance": "Cyllid",
     "financeMeta": "Costau llety · NOTAFLOF · cadw cyfrifon",
+    "technology": "Technoleg",
+    "technologyMeta": "Gwefan · DNS · GitHub · llwyfan a byw",
     "signOut": "Allgofnodi",
     "backPublic": "Yn ôl i'r aelwyd gyhoeddus",
     "notes": "Nodiadau",
     "actions": "Gweithredoedd",
     "templates": "Templedi",
     "people": "Pobl",
+    "architecture": "Pensaernïaeth",
+    "architectureKicker": "Technoleg | map byw",
+    "architectureTitle": "Sut rydyn ni'n cludo",
+    "architectureBody": "Mae'r aelwyd fyw ar albionfaeries.org.uk. Profwch newidiadau ar staging.albionfaeries.org.uk. Gwthiwch y gangen staging i ddiweddaru llwyfan; uno i main ar gyfer byw. Mae gan llwyfan ei gronfa D1 ei hun.",
+    "archFigureCap": "GitHub i lwyfan a byw — chwyddo neu agor mewn tab newydd i'w rannu gyda'r Cylch",
+    "archOpenSvg": "Agor SVG",
+    "archOpenPage": "Sut i'w ddarllen",
     "addNote": "Ychwanegu nodyn",
     "addAction": "Ychwanegu gweithred",
     "notePlaceholder": "Nodyn cyfarfod…",
@@ -275,6 +284,9 @@
     "lockedTitle": "Trothwy Cylch",
     "lockedBody": "Rhowch gyfrinair cyffredin y Cylch i gyrraedd nodiadau a gweithredoedd.",
     "gateError": "Ni dderbyniwyd y cyfrinair hwnnw."
+  },
+  "staging": {
+    "banner": "Aelwyd llwyfan — nid y wefan fyw. Gwthiwch y gangen staging i brofi yma; uno i main ar gyfer albionfaeries.org.uk."
   },
   "footer": {
     "care": "Radical Faeries of Albion",

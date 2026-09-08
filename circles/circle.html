@@ -27,6 +27,7 @@
         <button type="button" role="tab" aria-selected="false" data-tab="actions" data-i18n="circles.actions">Actions</button>
         <button type="button" role="tab" aria-selected="false" data-tab="templates" data-i18n="circles.templates">Templates</button>
         <button type="button" role="tab" aria-selected="false" data-tab="people" data-i18n="circles.people">People</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="architecture" hidden data-i18n="circles.architecture">Architecture</button>
       </div>
 
       <section id="panel-notes" class="panel section" role="tabpanel">
@@ -55,6 +56,29 @@
       <section id="panel-people" class="panel prose section" role="tabpanel" hidden>
         <p data-i18n="circles.peopleBody">Convenor, Record keeper, and helpers invited by the Circle.</p>
       </section>
+
+      <section id="panel-architecture" class="panel section" role="tabpanel" hidden>
+        <article class="prose">
+          <p class="sheet-kicker" data-i18n="circles.architectureKicker">Technology | living map</p>
+          <h2 data-i18n="circles.architectureTitle">How we ship</h2>
+          <p data-i18n="circles.architectureBody">The live hearth is albionfaeries.org.uk. Try changes on staging.albionfaeries.org.uk. Push the staging branch to update staging; merge to main for live. Staging keeps its own Circles database.</p>
+        </article>
+        <figure class="arch-figure">
+          <figcaption class="sheet-kicker" data-i18n="circles.archFigureCap">GitHub to staging and live — zoom or open in a new tab to share with the Circle</figcaption>
+          <img
+            class="arch-figure__img"
+            src="/assets/circles/github-staging-flow.svg"
+            width="1200"
+            height="1180"
+            alt="Diagram of how Technology Circle works with GitHub, the staging hearth, and the live hearth."
+          />
+          <p>
+            <a href="/assets/circles/github-staging-flow.svg" target="_blank" rel="noopener" data-i18n="circles.archOpenSvg">Open SVG</a>
+            ·
+            <a href="/design/github-staging-flow.html" data-i18n="circles.archOpenPage">How to read it</a>
+          </p>
+        </figure>
+      </section>
     </main>
   </div>
   <script type="module">
@@ -67,9 +91,19 @@
       comms: "Communications",
       events: "Gatherings & Events",
       finance: "Finance",
+      technology: "Technology",
     };
     document.getElementById("circle-name").textContent = names[circleId] || circleId;
     document.title = `${names[circleId] || "Circle"} · Albion Faeries`;
+
+    const archTab = document.querySelector('[data-tab="architecture"]');
+    const archPanel = document.getElementById("panel-architecture");
+    if (circleId === "technology") {
+      if (archTab) archTab.hidden = false;
+    } else if (archTab) {
+      archTab.hidden = true;
+      if (archPanel) archPanel.hidden = true;
+    }
 
     const demoKey = `af-demo-${circleId}`;
     function demoState() {
