@@ -76,6 +76,11 @@
     const err = document.getElementById("gate-error");
 
     async function checkSession() {
+      if (sessionStorage.getItem("af-demo-auth") === "1") {
+        gate.hidden = true;
+        list.hidden = false;
+        return;
+      }
       try {
         const res = await fetch("/api/circles?action=session", { credentials: "same-origin" });
         const data = await res.json();
@@ -87,14 +92,8 @@
           list.hidden = true;
         }
       } catch {
-        // Offline / no Functions — local demo unlock
-        if (sessionStorage.getItem("af-demo-auth") === "1") {
-          gate.hidden = true;
-          list.hidden = false;
-        } else {
-          gate.hidden = false;
-          list.hidden = true;
-        }
+        gate.hidden = false;
+        list.hidden = true;
       }
     }
 
