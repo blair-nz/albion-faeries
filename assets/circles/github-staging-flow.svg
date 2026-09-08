@@ -116,11 +116,6 @@
   <rect class="chip" x="616" y="878" width="220" height="28" rx="8"/>
   <text class="chipt" x="628" y="896">Merge to main to update</text>
 
-  <path class="edge-g" d="M 310 452 L 310 536"/>
-  <path class="edge" d="M 878 452 L 878 536"/>
-  <path class="edge-g" d="M 310 644 L 310 724"/>
-  <path class="edge" d="M 878 644 L 878 724"/>
-
   <!-- Foot -->
   <rect class="warn" x="24" y="972" width="1152" height="168" rx="12"/>
   <text class="h" x="40" y="996">Do not</text>
